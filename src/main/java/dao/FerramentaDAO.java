@@ -1,8 +1,54 @@
 package dao;
 
 import java.sql.*;
+import java.util.ArrayList;
+import modelo.Ferramenta;
 
 public class FerramentaDAO {
+
+    
+    public ArrayList<Ferramenta> ListaFerramentas = new ArrayList<>();
+
+    public ArrayList<Ferramenta> getMinhaLista() {
+        
+        ListaFerramentas.clear();
+        
+        try {
+            Statement stmt = this.getConexao().createStatement();
+            ResultSet res = stmt.executeQuery("SELECT * FROM tb_ferramentas");
+            while (res.next()) {
+                
+                int id = res.getInt("id_ferramentas");
+                String nome = res.getString("nome");
+                String marca = res.getString("marca");
+                double custoAquisicao = Double.parseDouble(res.getString("custoAquisicao"));
+                
+                Ferramenta objeto = new Ferramenta(id, nome, marca, custoAquisicao);
+                
+                ListaFerramentas.add(objeto);
+            }
+            stmt.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Erro:" + ex);
+        }
+        return ListaFerramentas;
+    }
+    
+    public int maiorId() {
+        int maiorId = 0;
+        try {
+            Statement stmt = this.getConexao().createStatement();
+            ResultSet res = stmt.executeQuery("SELECT MAX(id_ferramentas) id FROM tb_ferramentas");
+            res.next();
+            maiorId = res.getInt("id");
+            stmt.close();
+        } catch (SQLException ex) {
+            System.out.println("Erro: " + ex);
+        }
+        return maiorId;
+    }
+    
     public Connection getConexao() {
 
         Connection connection = null;
@@ -34,4 +80,3 @@ public class FerramentaDAO {
         }
     }
 }
-    
