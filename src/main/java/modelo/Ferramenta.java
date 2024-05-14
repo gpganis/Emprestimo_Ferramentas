@@ -49,4 +49,29 @@ public class Ferramenta {
         this.id = id;
     }
 
+    public ArrayList<Ferramenta> getListaFerramentas() {
+        return dao.getMinhaLista();
+    }
+
+    public boolean inserirFerramenta(String nome, String marca, double custoAquisicao) {
+        id = dao.maiorId() + 1;
+        Ferramenta objeto = new Ferramenta(id, nome, marca, custoAquisicao);
+        dao.inserirFerramentaBD(objeto);
+        return true;
+    }
+
+    public boolean apagarFerramenta(int id) {
+        dao.apagarFerramentaBD(id);
+        return true;
+    }
+
+    public boolean alterarFerramenta(int id, String nome, String marca, double custoAquisicao) {
+        Ferramenta objeto = new Ferramenta(id, nome, marca, custoAquisicao);
+        dao.alterarFerramentaBD(objeto);
+        return true;
+    }
+
+    public Ferramenta carregarFerramenta(int id) {
+        return dao.carregarFerramenta(id);
+    }
 }
