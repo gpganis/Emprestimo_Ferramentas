@@ -33,6 +33,20 @@ public class AmigoDAO {
         return ListaAmigos;
     }
 
+    public int maiorId() {
+        int maiorId = 0;
+        try {
+            Statement stmt = this.getConexao().createStatement();
+            ResultSet res = stmt.executeQuery("SELECT MAX(id_amigos) id FROM tb_amigos");
+            res.next();
+            maiorId = res.getInt("id");
+            stmt.close();
+        } catch (SQLException ex) {
+            System.out.println("Erro: " + ex);
+        }
+        return maiorId;
+    }
+
     public Connection getConexao() {
 
         Connection connection = null;
