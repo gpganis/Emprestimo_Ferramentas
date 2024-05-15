@@ -1,6 +1,8 @@
 package modelo;
 
+import dao.EmprestimoDAO;
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class Emprestimo {
 
@@ -8,6 +10,7 @@ public class Emprestimo {
     private Date dataDevolucao;
     private boolean entregue;
     private int id, idAmg;
+    private EmprestimoDAO dao;
 
     public Emprestimo() {
     }
@@ -18,7 +21,7 @@ public class Emprestimo {
         this.entregue = entregue;
         this.id = id;
         this.idAmg = idAmg;
-        
+
     }
 
     public Date getDataEmprestimo() {
@@ -60,6 +63,31 @@ public class Emprestimo {
     public void setIdAmg(int idAmg) {
         this.idAmg = idAmg;
     }
-    
-    
+
+    public ArrayList<Emprestimo> getListaEmprestimos() {
+        return dao.getMinhaLista();
+    }
+
+    public boolean inserirEmprestimo(Date dataEmprestimo, Date dataDevolucao, boolean entregue, int idAmg) {
+        id = dao.maiorId() + 1;
+        Emprestimo objeto = new Emprestimo(dataEmprestimo, dataDevolucao, entregue, id, idAmg);
+        dao.inserirEmprestimoBD(objeto);
+        return true;
+    }
+
+    public boolean apagarEmprestimo(int id) {
+        dao.apagarEmprestimoBD(id);
+        return true;
+    }
+
+    public boolean alterarEmprestimo(Date dataEmprestimo, Date dataDevolucao, boolean entregue, int id, int idAmg) {
+        Emprestimo objeto = new Emprestimo(dataEmprestimo, dataDevolucao, entregue, id, idAmg);
+        dao.alterarEmprestimoBD(objeto);
+        return true;
+    }
+
+    public Emprestimo carregarEmprestimo(int id) {
+        return dao.carregarEmprestimoBD(id);
+
+    }
 }
