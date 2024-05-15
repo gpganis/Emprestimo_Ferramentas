@@ -80,7 +80,7 @@ public class EmprestimoDAO {
         try {
             Statement stmt = connect.getConexao().createStatement();
 
-            stmt.executeUpdate("DELETE FROM tb_emprestimos WHERE id_emprestimo =" + id);
+            stmt.executeUpdate("DELETE FROM tb_emprestimos WHERE id_emprestimo = " + id);
 
             stmt.close();
         } catch (SQLException erro) {
@@ -90,15 +90,15 @@ public class EmprestimoDAO {
     }
 
     public boolean alterarEmprestimoBD(Emprestimo objeto) {
-        String sql = "UPDATE tb_emprestimos set id_emprestimo = ?, id_amigo = ?, data_emprestimo = ?, data_devolucao = ?, entregue = ? WHERE id_emprestimos = ?";
+        String sql = "UPDATE tb_emprestimos set id_amigo = ?, data_emprestimo = ?, data_devolucao = ?, entregue = ? WHERE id_emprestimo = ?";
         try {
             PreparedStatement stmt = connect.getConexao().prepareStatement(sql);
 
-            stmt.setInt(1, objeto.getId());
-            stmt.setInt(2, objeto.getIdAmg());
+            stmt.setInt(1, objeto.getIdAmg());           
+            stmt.setDate(2, objeto.getDataEmprestimo());
             stmt.setDate(3, objeto.getDataDevolucao());
-            stmt.setDate(4, objeto.getDataEmprestimo());
-            stmt.setBoolean(5, objeto.isEntregue());
+            stmt.setBoolean(4, objeto.isEntregue());
+            stmt.setInt(5, objeto.getId());
 
             stmt.execute();
             stmt.close();
