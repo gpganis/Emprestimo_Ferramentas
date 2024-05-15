@@ -7,17 +7,18 @@ public class Ferramenta {
 
     private String nome, marca;
     private double custoAquisicao;
-    private int id;
+    private int id, idEmp;
     private FerramentaDAO dao;
 
     public Ferramenta() {
     }
 
-    public Ferramenta(String nome, String marca, double custoAquisicao, int id) {
+    public Ferramenta(String nome, String marca, double custoAquisicao, int id, int idEmp) {
         this.nome = nome;
         this.marca = marca;
         this.custoAquisicao = custoAquisicao;
         this.id = id;
+        this.idEmp = idEmp;
         dao = new FerramentaDAO();
     }
 
@@ -53,13 +54,21 @@ public class Ferramenta {
         this.id = id;
     }
 
+    public int getIdEmp() {
+        return idEmp;
+    }
+
+    public void setIdEmp(int idEmp) {
+        this.idEmp = idEmp;
+    }
+    
     public ArrayList<Ferramenta> getListaFerramentas() {
         return dao.getMinhaLista();
     }
 
     public boolean inserirFerramenta(String nome, String marca, double custoAquisicao) {
         id = dao.maiorId() + 1;
-        Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id);
+        Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id, idEmp);
         dao.inserirFerramentaBD(objeto);
         return true;
     }
@@ -70,7 +79,7 @@ public class Ferramenta {
     }
 
     public boolean alterarFerramenta(int id, String nome, String marca, double custoAquisicao) {
-        Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id);
+        Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id, idEmp);
         dao.alterarFerramentaBD(objeto);
         return true;
     }

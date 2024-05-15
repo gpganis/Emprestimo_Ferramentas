@@ -21,8 +21,9 @@ public class FerramentaDAO {
                 String nome = res.getString("nome");
                 String marca = res.getString("marca");
                 double custoAquisicao = Double.parseDouble(res.getString("custo_aquisicao"));
+                int idEmp = res.getInt("id_emprestimo");
 
-                Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id);
+                Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id, idEmp);
 
                 ListaFerramentas.add(objeto);
             }
@@ -80,7 +81,7 @@ public class FerramentaDAO {
     }
 
     public boolean inserirFerramentaBD(Ferramenta objeto) {
-        String sql = "INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao, id_emprestimo) VALUES(?,?,?,?,?)";
         try {
             PreparedStatement stmt = this.getConexao().prepareStatement(sql);
 
