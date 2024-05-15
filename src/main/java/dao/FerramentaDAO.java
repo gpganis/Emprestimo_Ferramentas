@@ -146,6 +146,7 @@ public class FerramentaDAO {
             objeto.setNome(res.getString("nome"));
             objeto.setMarca(res.getString("marca"));
             objeto.setCustoAquisicao(res.getDouble("custo_aquisicao"));
+            objeto.setIdEmp(res.getInt("id_emprestimo"));
 
             stmt.close();
         } catch (SQLException erro) {
