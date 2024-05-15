@@ -20,7 +20,7 @@ public class FerramentaDAO {
                 int id = res.getInt("id_ferramenta");
                 String nome = res.getString("nome");
                 String marca = res.getString("marca");
-                double custoAquisicao = Double.parseDouble(res.getString("custo_aquisicao"));
+                double custoAquisicao = Double.parseDouble(res.getString("custoAquisicao"));
 
                 Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id);
 
