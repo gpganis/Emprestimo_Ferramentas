@@ -9,7 +9,7 @@ public class ConexaoDAO {
     private static Connection connection = null;
 
     public static Connection getConexao() {
-        
+
         if (connection == null) {
             try {
                 String driver = "com.mysql.cj.jdbc.Driver";
@@ -37,4 +37,7 @@ public class ConexaoDAO {
                 System.out.println("Não foi possível conectar...");
                 return null;
             }
-        }
+        }       
+        return connection;
+    }   
+}
