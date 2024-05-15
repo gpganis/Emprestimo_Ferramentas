@@ -17,10 +17,10 @@ public class FerramentaDAO {
             ResultSet res = stmt.executeQuery("SELECT * FROM tb_ferramentas");
             while (res.next()) {
 
-                int id = res.getInt("id_ferramentas");
+                int id = res.getInt("id_ferramenta");
                 String nome = res.getString("nome");
                 String marca = res.getString("marca");
-                double custoAquisicao = Double.parseDouble(res.getString("custoAquisicao"));
+                double custoAquisicao = Double.parseDouble(res.getString("custo_aquisicao"));
 
                 Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id);
 
@@ -38,7 +38,7 @@ public class FerramentaDAO {
         int maiorId = 0;
         try {
             Statement stmt = this.getConexao().createStatement();
-            ResultSet res = stmt.executeQuery("SELECT MAX(id_ferramentas) id FROM tb_ferramentas");
+            ResultSet res = stmt.executeQuery("SELECT MAX(id_ferramenta) id FROM tb_ferramentas");
             res.next();
             maiorId = res.getInt("id");
             stmt.close();
