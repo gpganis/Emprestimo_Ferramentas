@@ -1,13 +1,17 @@
 package modelo;
 
+import dao.FerramentaDAO;
+import java.util.ArrayList;
+
 public class Ferramenta {
 
     private String nome, marca;
-    private double custoAquisicao
+    private double custoAquisicao;
     private int id;
+    private FerramentaDAO dao;
 
     public Ferramenta() {
-
+        dao = new FerramentaDAO();
     }
 
     public Ferramenta(String nome, String marca, double custoAquisicao, int id) {
@@ -15,6 +19,7 @@ public class Ferramenta {
         this.marca = marca;
         this.custoAquisicao = custoAquisicao;
         this.id = id;
+        dao = new FerramentaDAO();
     }
 
     public String getNome() {
@@ -55,7 +60,7 @@ public class Ferramenta {
 
     public boolean inserirFerramenta(String nome, String marca, double custoAquisicao) {
         id = dao.maiorId() + 1;
-        Ferramenta objeto = new Ferramenta(id, nome, marca, custoAquisicao);
+        Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id);
         dao.inserirFerramentaBD(objeto);
         return true;
     }
@@ -66,7 +71,7 @@ public class Ferramenta {
     }
 
     public boolean alterarFerramenta(int id, String nome, String marca, double custoAquisicao) {
-        Ferramenta objeto = new Ferramenta(id, nome, marca, custoAquisicao);
+        Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id);
         dao.alterarFerramentaBD(objeto);
         return true;
     }

@@ -22,7 +22,7 @@ public class FerramentaDAO {
                 String marca = res.getString("marca");
                 double custoAquisicao = Double.parseDouble(res.getString("custoAquisicao"));
 
-                Ferramenta objeto = new Ferramenta(id, nome, marca, custoAquisicao);
+                Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id);
 
                 ListaFerramentas.add(objeto);
             }
