@@ -80,7 +80,7 @@ public class FerramentaDAO {
     }
 
     public boolean inserirFerramentaBD(Ferramenta objeto) {
-        String sql = "INSERT INTO tb_ferramentas(id_ferramentas,nome,marca,custoAquisicao) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao) VALUES(?,?,?,?)";
         try {
             PreparedStatement stmt = this.getConexao().prepareStatement(sql);
 
@@ -103,7 +103,7 @@ public class FerramentaDAO {
         try {
             Statement stmt = this.getConexao().createStatement();
 
-            stmt.executeUpdate("DELETE FROM tb_ferramentas WHERE id_ferramentas =" + id);
+            stmt.executeUpdate("DELETE FROM tb_ferramentas WHERE id_ferramenta =" + id);
 
             stmt.close();
         } catch (SQLException erro) {
@@ -113,7 +113,7 @@ public class FerramentaDAO {
     }
 
     public boolean alterarFerramentaBD(Ferramenta objeto) {
-        String sql = "UPDATE tb_ferramentas set nome = ?, marca = ?, custoAquisicao = ? WHERE id_ferramentas = ?";
+        String sql = "UPDATE tb_ferramentas set nome = ?, marca = ?, custo_aquisicao = ? WHERE id_ferramenta = ?";
         try {
             PreparedStatement stmt = this.getConexao().prepareStatement(sql);
 
@@ -139,12 +139,12 @@ public class FerramentaDAO {
         try {
             Statement stmt = this.getConexao().createStatement();
 
-            ResultSet res = stmt.executeQuery("SELECT * FROM tb_ferramentas WHERE id_ferramentas = " + id);
+            ResultSet res = stmt.executeQuery("SELECT * FROM tb_ferramentas WHERE id_ferramenta = " + id);
             res.next();
 
             objeto.setNome(res.getString("nome"));
             objeto.setMarca(res.getString("marca"));
-            objeto.setCustoAquisicao(res.getDouble("custoAquisicao"));
+            objeto.setCustoAquisicao(res.getDouble("custo_aquisicao"));
 
             stmt.close();
         } catch (SQLException erro) {

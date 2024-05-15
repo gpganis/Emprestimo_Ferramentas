@@ -79,7 +79,7 @@ public class AmigoDAO {
     }
 
     public boolean inserirAmigoBD(Amigo objeto) {
-        String sql = "INSERT INTO tb_amigos(id_amigos,nome,telefone) VALUES(?,?,?)";
+        String sql = "INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES(?,?,?)";
         try {
             PreparedStatement stmt = this.getConexao().prepareStatement(sql);
 
@@ -101,7 +101,7 @@ public class AmigoDAO {
         try {
             Statement stmt = this.getConexao().createStatement();
 
-            stmt.executeUpdate("DELETE FROM tb_amigos WHERE id_amigos =" + id);
+            stmt.executeUpdate("DELETE FROM tb_amigos WHERE id_amigo =" + id);
 
             stmt.close();
         } catch (SQLException erro) {
@@ -111,7 +111,7 @@ public class AmigoDAO {
     }
 
     public boolean alterarAmigoBD(Amigo objeto) {
-        String sql = "UPDATE tb_amigos set nome = ?, telefone = ? WHERE id_amigos = ?";
+        String sql = "UPDATE tb_amigos set nome = ?, telefone = ? WHERE id_amigo = ?";
         try {
             PreparedStatement stmt = this.getConexao().prepareStatement(sql);
 
@@ -136,7 +136,7 @@ public class AmigoDAO {
         try {
             Statement stmt = this.getConexao().createStatement();
 
-            ResultSet res = stmt.executeQuery("SELECT * FROM tb_amigos WHERE id_amigos = " + id);
+            ResultSet res = stmt.executeQuery("SELECT * FROM tb_amigos WHERE id_amigo = " + id);
             res.next();
 
             objeto.setNome(res.getString("nome"));
