@@ -11,7 +11,6 @@ public class Ferramenta {
     private FerramentaDAO dao;
 
     public Ferramenta() {
-        dao = new FerramentaDAO();
     }
 
     public Ferramenta(String nome, String marca, double custoAquisicao, int id) {

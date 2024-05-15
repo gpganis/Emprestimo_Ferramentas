@@ -10,7 +10,6 @@ public class Amigo {
     private AmigoDAO dao;
 
     public Amigo() {
-        dao = new AmigoDAO();
     }
 
     public Amigo(int id, String nome, String telefone) {
