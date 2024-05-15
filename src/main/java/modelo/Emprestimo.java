@@ -60,5 +60,6 @@ public class Emprestimo {
     public void setIdAmg(int idAmg) {
         this.idAmg = idAmg;
     }
-     
+    
+    
 }

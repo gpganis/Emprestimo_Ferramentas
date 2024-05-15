@@ -79,4 +79,81 @@ public class EmprestimoDAO {
             return null;
         }
     }
+    
+    public boolean inserirEmprestimoBD(Emprestimo objeto) {
+        String sql = "INSERT INTO tb_emprestimos(id_emprestimo,id_amigo,data_emprestimo, data_devolucao, entregue) VALUES(?,?,?,?,?)";
+        try {
+            PreparedStatement stmt = this.getConexao().prepareStatement(sql);
+
+            stmt.setInt(1, objeto.getId());
+            stmt.setInt(2, objeto.getIdAmg());
+            stmt.setDate(3, objeto.getDataDevolucao());
+            stmt.setDate(4, objeto.getDataEmprestimo());
+            stmt.setBoolean(5, objeto.isEntregue());
+
+            stmt.execute();
+            stmt.close();
+
+            return true;
+        } catch (SQLException erro) {
+            System.out.println("Erro: " + erro);
+            throw new RuntimeException(erro);
+        }
+    }
+
+    public boolean apagarEmprestimoBD(int id) {
+        try {
+            Statement stmt = this.getConexao().createStatement();
+
+            stmt.executeUpdate("DELETE FROM tb_emprestimos WHERE id_emprestimo =" + id);
+
+            stmt.close();
+        } catch (SQLException erro) {
+            System.out.println("Erro: " + erro);
+        }
+        return true;
+    }
+
+    public boolean alterarEmprestimoBD(Emprestimo objeto) {
+        String sql = "UPDATE tb_emprestimos set id_emprestimo = ?, id_amigo = ?, data_emprestimo = ?, data_devolucao = ?, entregue = ? WHERE id_emprestimos = ?";
+        try {
+            PreparedStatement stmt = this.getConexao().prepareStatement(sql);
+
+            stmt.setInt(1, objeto.getId());
+            stmt.setInt(2, objeto.getIdAmg());
+            stmt.setDate(3, objeto.getDataDevolucao());
+            stmt.setDate(4, objeto.getDataEmprestimo());
+            stmt.setBoolean(5, objeto.isEntregue());
+
+            stmt.execute();
+            stmt.close();
+
+            return true;
+
+        } catch (SQLException erro) {
+            System.out.println("Erro: " + erro);
+            throw new RuntimeException(erro);
+        }
+    }
+
+    public Emprestimo carregarEmprestimoBD(int id) {
+        Emprestimo objeto = new Emprestimo();
+        objeto.setId(id);
+        try {
+            Statement stmt = this.getConexao().createStatement();
+
+            ResultSet res = stmt.executeQuery("SELECT * FROM tb_emprestimos WHERE id_emprestimo = " + id);
+            res.next();
+
+            objeto.setIdAmg(res.getInt("id_amigo"));
+            objeto.setDataEmprestimo(res.getDate("data_emprestimo"));
+            objeto.setDataDevolucao(res.getDate("data_devolucao"));
+            objeto.setEntregue(res.getBoolean("entregue"));
+
+            stmt.close();
+        } catch (SQLException erro) {
+            System.out.println("Erro:" + erro);
+        }
+        return objeto;
+    }
 }
