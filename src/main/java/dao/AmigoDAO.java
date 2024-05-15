@@ -17,7 +17,7 @@ public class AmigoDAO {
             ResultSet res = stmt.executeQuery("SELECT * FROM tb_amigos");
             while (res.next()) {
 
-                int id = res.getInt("id_amigos");
+                int id = res.getInt("id_amigo");
                 String nome = res.getString("nome");
                 String telefone = res.getString("telefone");
 
@@ -37,7 +37,7 @@ public class AmigoDAO {
         int maiorId = 0;
         try {
             Statement stmt = this.getConexao().createStatement();
-            ResultSet res = stmt.executeQuery("SELECT MAX(id_amigos) id FROM tb_amigos");
+            ResultSet res = stmt.executeQuery("SELECT MAX(id_amigo) id FROM tb_amigos");
             res.next();
             maiorId = res.getInt("id");
             stmt.close();
