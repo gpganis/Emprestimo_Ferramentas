@@ -57,8 +57,8 @@ public class AmigoDAO {
             String server = "localhost";
             String database = "Database";
             String url = "jdbc:mysql://" + server + ":3306/" + database + "?useTimezone=true&serverTimezone=UTC";
-            String user = "root";
-            String password = "root";
+            String user = "my_user";
+            String password = "my_user";
 
             connection = DriverManager.getConnection(url, user, password);
 
