@@ -24,3 +24,12 @@
   
 - RNF03 - Segurança: O software deve garantir a segurança dos dados cadastrados, protegendo informações pessoais e financeiras dos usuários.
 
+# Grupo
+
+- Gabriel Pagani de Souza
+
+- Matheus Joseph de Freitas Coloni
+
+- Rafael Mendes Morais
+
+- Rennan Rosa Guedes
