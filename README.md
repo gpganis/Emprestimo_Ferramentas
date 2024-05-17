@@ -24,6 +24,12 @@
   
 - RNF03 - Segurança: O software deve garantir a segurança dos dados cadastrados, protegendo informações pessoais e financeiras dos usuários.
 
+# Configuração do Banco de Dados
+
+- Login: my_user
+
+- Senha: my_user
+
 # Grupo
 
 - Gabriel Pagani de Souza
