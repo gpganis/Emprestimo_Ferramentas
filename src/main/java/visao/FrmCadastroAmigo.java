@@ -1,7 +1,11 @@
 package visao;
 
-public class FrmCadastroAmigo extends javax.swing.JFrame {
+import javax.swing.JOptionPane;
+import modelo.Amigo;
 
+public class FrmCadastroAmigo extends javax.swing.JFrame {
+    private Amigo objAmigos;
+    
     public FrmCadastroAmigo() {
         initComponents();
     }
@@ -152,6 +156,37 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
 
     private void JBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarActionPerformed
         // TODO add your handling code here:
+        try {
+            String regex = "^\\d{2} 9\\d{4} \\d{4}$";
+            String nome, telefone = "";
+            int id = 0;
+            
+            if (this.JTFAmigoNome.getText().length() < 2) {
+                throw new Mensagens("Nome deve conter ao menos 2 caracteres.");
+            } else {
+                nome = this.JTFAmigoNome.getText();
+            }
+            if (this.JTFAmigoTelefone.getText().matches(regex)) {
+                telefone = this.JTFAmigoTelefone.getText();
+            } else {             
+                throw new Mensagens("""
+                                    Telefone deve conter o seguite formato: 
+                                               XX 9XXXX XXXX
+                                    """);
+            }
+
+            if (this.objAmigos.inserirAmigo(nome, telefone)) {
+                JOptionPane.showMessageDialog(rootPane, "Amigo Cadastrado com Sucesso!");
+                this.JTFAmigoNome.setText("");
+                this.JTFAmigoTelefone.setText("");
+
+            }
+            System.out.println(this.objAmigos.getListaAmigos().toString());
+        } catch (Mensagens erro) {
+            JOptionPane.showMessageDialog(null, erro.getMessage());
+        } catch (NumberFormatException erro2) {
+            JOptionPane.showMessageDialog(null, "Informe um número válido.");
+        }
     }//GEN-LAST:event_JBCadastrarActionPerformed
 
     private void JTFAmigoNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFAmigoNomeFocusGained
