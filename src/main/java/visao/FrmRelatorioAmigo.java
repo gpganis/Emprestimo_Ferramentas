@@ -1,11 +1,13 @@
 package visao;
 
 import dao.AmigoDAO;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Amigo;
 
 public class FrmRelatorioAmigo extends javax.swing.JFrame {
     private AmigoDAO dao = new AmigoDAO();
+    private Amigo objAmigo = new Amigo();
     
     public FrmRelatorioAmigo() {
         initComponents();
@@ -155,6 +157,42 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
 
     private void JBAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBAlterarActionPerformed
         // TODO add your handling code here:
+        try {
+            int id = 0;
+            String regex = "^\\d{2} 9\\d{4} \\d{4}$";
+            String nome, telefone = "";
+
+            if (this.JTFNome.getText().length() < 2) {
+                throw new Mensagens("Nome deve conter ao menos 2 caracteres.");
+            } else {
+                nome = this.JTFNome.getText();
+            }
+            if (this.JTFTelefone.getText().matches(regex)) {
+                telefone = this.JTFTelefone.getText();
+            } else {
+                throw new Mensagens("""
+                                    Telefone deve conter o seguite formato: 
+                                               XX 9XXXX XXXX
+                                    """);
+            }
+            if (this.jTable.getSelectedRow() == -1) {
+                throw new Mensagens("Primeiro Selecione um Amigo para Alterar");
+            } else {
+                id = Integer.parseInt(this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString());
+            }
+            if (this.objAmigo.alterarAmigo(id, nome, telefone)) {
+                this.JTFNome.setText("");
+                this.JTFTelefone.setText("");
+                JOptionPane.showMessageDialog(rootPane, "Amigo Alterado com Sucesso!");
+            }
+            System.out.println(this.dao.getMinhaLista().toString());
+        } catch (Mensagens erro) {
+            JOptionPane.showMessageDialog(null, erro.getMessage());
+        } catch (NumberFormatException erro2) {
+            JOptionPane.showMessageDialog(null, "Informe um número válido.");
+        } finally {
+            carregaTabelaAmigos();
+        }
     }//GEN-LAST:event_JBAlterarActionPerformed
 
     private void JBApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBApagarActionPerformed
