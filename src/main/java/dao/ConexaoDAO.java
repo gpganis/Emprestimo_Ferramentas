@@ -18,8 +18,8 @@ public class ConexaoDAO {
                 String server = "localhost";
                 String database = "Database";
                 String url = "jdbc:mysql://" + server + ":3306/" + database + "?useTimezone=true&serverTimezone=UTC";
-                String user = "my_user";
-                String password = "my_user";
+                String user = "root";
+                String password = "Unisul@1520";
 
                 connection = DriverManager.getConnection(url, user, password);
 
