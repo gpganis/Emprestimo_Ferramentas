@@ -11,6 +11,7 @@ public class Ferramenta {
     private FerramentaDAO dao;
 
     public Ferramenta() {
+        this("","",0,0,0);
     }
 
     public Ferramenta(String nome, String marca, double custoAquisicao, int id, int idEmp) {

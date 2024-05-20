@@ -13,6 +13,7 @@ public class Emprestimo {
     private EmprestimoDAO dao;
 
     public Emprestimo() {
+        this(null, null, false, 0, 0);
     }
 
     public Emprestimo(Date dataEmprestimo, Date dataDevolucao, boolean entregue, int id, int idAmg) {

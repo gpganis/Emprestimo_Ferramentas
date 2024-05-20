@@ -10,6 +10,7 @@ public class Amigo {
     private AmigoDAO dao;
 
     public Amigo() {
+        this(0,"","");
     }
 
     public Amigo(int id, String nome, String telefone) {
