@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 import modelo.Amigo;
 
 public class FrmCadastroAmigo extends javax.swing.JFrame {
+    private boolean countNome = true, countTelefone = true;
     private Amigo objAmigos;
     
     public FrmCadastroAmigo() {
@@ -139,6 +140,10 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
 
     private void JTFAmigoTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFAmigoTelefoneMouseClicked
         // TODO add your handling code here:
+        if (countTelefone == true){
+            JTFAmigoTelefone.setText("");
+            countTelefone = false;
+        }
     }//GEN-LAST:event_JTFAmigoTelefoneMouseClicked
 
     private void JTFAmigoTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFAmigoTelefoneActionPerformed
@@ -147,6 +152,10 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
 
     private void JTFAmigoTelefoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFAmigoTelefoneKeyPressed
         // TODO add your handling code here:
+        if (countTelefone == true){
+            JTFAmigoTelefone.setText("");
+            countTelefone = false;
+        }
     }//GEN-LAST:event_JTFAmigoTelefoneKeyPressed
 
     private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
@@ -195,6 +204,10 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
 
     private void JTFAmigoNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFAmigoNomeMouseClicked
         // TODO add your handling code here:
+        if (countNome == true){
+            JTFAmigoNome.setText("");
+            countNome = false;
+        }
     }//GEN-LAST:event_JTFAmigoNomeMouseClicked
 
     private void JTFAmigoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFAmigoNomeActionPerformed
@@ -203,6 +216,10 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
 
     private void JTFAmigoNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFAmigoNomeKeyPressed
         // TODO add your handling code here:
+        if (countNome == true){
+            JTFAmigoNome.setText("");
+            countNome = false;
+        }
     }//GEN-LAST:event_JTFAmigoNomeKeyPressed
 
     public static void main(String args[]) {
