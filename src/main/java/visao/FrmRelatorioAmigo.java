@@ -163,6 +163,13 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
 
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
         // TODO add your handling code here:
+        if (this.jTable.getSelectedRow() != -1) {
+            String nome = this.jTable.getValueAt(this.jTable.getSelectedRow(), 1).toString();
+            String telefone = this.jTable.getValueAt(this.jTable.getSelectedRow(), 2).toString();
+
+            this.JTFNome.setText(nome);
+            this.JTFTelefone.setText(telefone);
+        }
     }//GEN-LAST:event_jTableMouseClicked
 
     public static void main(String args[]) {
