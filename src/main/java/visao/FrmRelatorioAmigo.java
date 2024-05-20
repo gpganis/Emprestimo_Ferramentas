@@ -197,6 +197,31 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
 
     private void JBApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBApagarActionPerformed
         // TODO add your handling code here:
+        try {
+            int id = 0;
+            if (this.jTable.getSelectedRow() == -1) {
+                throw new Mensagens(
+                        "Primeiro Selecione um Amigo para APAGAR");
+            } else {
+                id = Integer.parseInt(this.jTable.
+                        getValueAt(this.jTable.getSelectedRow(), 0).
+                        toString());
+            }
+            int respostaUsuario = JOptionPane.showConfirmDialog(null,"Tem certeza que deseja apagar este Amigo?");
+            
+            if (respostaUsuario == 0) {
+                if (this.objAmigo.apagarAmigo(id)) {
+                    this.JTFNome.setText("");
+                    this.JTFTelefone.setText("");
+                    JOptionPane.showMessageDialog(rootPane, "Amigo Apagado com Sucesso!");
+                }
+            }
+            System.out.println(this.dao.getMinhaLista().toString());
+        } catch (Mensagens erro) {
+            JOptionPane.showMessageDialog(null, erro.getMessage());
+        } finally {
+            carregaTabelaAmigos();
+        }
     }//GEN-LAST:event_JBApagarActionPerformed
 
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
