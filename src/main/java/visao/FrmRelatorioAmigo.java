@@ -1,11 +1,28 @@
 package visao;
 
-public class FrmRelatorioAmigo extends javax.swing.JFrame {
+import dao.AmigoDAO;
+import javax.swing.table.DefaultTableModel;
+import modelo.Amigo;
 
+public class FrmRelatorioAmigo extends javax.swing.JFrame {
+    private AmigoDAO dao = new AmigoDAO();
+    
     public FrmRelatorioAmigo() {
         initComponents();
+        this.carregaTabelaAmigos();
     }
-
+    
+    public void carregaTabelaAmigos() {
+        DefaultTableModel modelo = (DefaultTableModel) this.jTable.getModel();
+        modelo.setNumRows(0);
+        for (Amigo a : dao.getMinhaLista()) {
+            modelo.addRow(new Object[]{
+                a.getId(),
+                a.getNome(),
+                a.getTelefone(),});
+        }
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
