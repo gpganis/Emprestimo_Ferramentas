@@ -44,6 +44,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         jLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         JTFMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,7 +155,8 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 .addGap(41, 41, 41))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(512, 448));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void JTFMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFMarcaActionPerformed

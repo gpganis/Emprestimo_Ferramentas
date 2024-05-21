@@ -27,6 +27,7 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
         JLMarca = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         JTFFerramentaMarca.setText("Digite o Nome da Marca");
         JTFFerramentaMarca.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -155,7 +156,8 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
                 .addContainerGap(55, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(412, 405));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void JTFFerramentaMarcaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFFerramentaMarcaMouseClicked

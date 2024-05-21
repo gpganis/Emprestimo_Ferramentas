@@ -24,6 +24,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
         JTFAmigoNome = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         JLTelefone.setText("Telefone:");
 
@@ -131,7 +132,8 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(414, 320));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void JTFAmigoTelefoneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFAmigoTelefoneFocusGained

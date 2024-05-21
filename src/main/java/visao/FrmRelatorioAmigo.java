@@ -40,6 +40,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
         jTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setText("Nome:");
 
@@ -143,7 +144,8 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(517, 311));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void JTFTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFTelefoneActionPerformed
