@@ -11,7 +11,6 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
     
     public FrmRelatorioAmigo() {
         initComponents();
-        this.carregaTabelaAmigos();
     }
     
     public void carregaTabelaAmigos() {
@@ -87,7 +86,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                 "ID", "Nome", "Telefone"
             }
         ));
-        jTable.setShowGrid(false);
+        jTable.setShowGrid(true);
         jTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTableMouseClicked(evt);
