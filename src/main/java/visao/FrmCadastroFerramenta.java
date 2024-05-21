@@ -1,6 +1,11 @@
 package visao;
 
+import javax.swing.JOptionPane;
+import modelo.Ferramenta;
+
 public class FrmCadastroFerramenta extends javax.swing.JFrame {
+
+    private Ferramenta objFerramenta;
 
     public FrmCadastroFerramenta() {
         initComponents();
@@ -187,6 +192,42 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
 
     private void JBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarActionPerformed
         // TODO add your handling code here:
+                try {
+            String nome, marca = "";
+            double custoAquisicao = 0.0;
+            int id = 0;
+
+            if (this.JTFFerramentaNome.getText().length() < 2) {
+                throw new Mensagens("Nome deve conter ao menos 2 caracteres.");
+            } else {
+                nome = this.JTFFerramentaNome.getText();
+            }
+
+            if (this.JTFFerramentaMarca.getText().length() < 2) {
+                throw new Mensagens("Marca deve conter ao menos 2 caracteres.");
+            } else {
+                marca = this.JTFFerramentaMarca.getText();
+            }
+
+            if (this.JTFFerramentaCusto.getText().length() <= 0) {
+                throw new Mensagens("Custo da Aquisicao deve ser maior que zero.");
+            } else {
+                custoAquisicao = Double.parseDouble(this.JTFFerramentaCusto.getText());
+            }
+
+            if (this.objFerramenta.inserirFerramenta(nome, marca, custoAquisicao)) {
+                JOptionPane.showMessageDialog(rootPane, "Ferramenta Cadastrada com Sucesso!");
+                this.JTFFerramentaNome.setText("");
+                this.JTFFerramentaMarca.setText("");
+                this.JTFFerramentaCusto.setText("");
+
+            }
+            System.out.println(this.objFerramenta.getListaFerramentas().toString());
+        } catch (Mensagens erro) {
+            JOptionPane.showMessageDialog(null, erro.getMessage());
+        } catch (NumberFormatException erro2) {
+            JOptionPane.showMessageDialog(null, "Informe um número válido.");
+        }
     }//GEN-LAST:event_JBCadastrarActionPerformed
 
     private void JTFFerramentaNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFFerramentaNomeMouseClicked
