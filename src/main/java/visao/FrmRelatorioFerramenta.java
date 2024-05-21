@@ -84,7 +84,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nome", "Telefone", "Custo Aquisição", "ID Emprestimo"
+                "ID", "Nome", "Marca", "Custo Aquisição", "ID Emprestimo"
             }
         ));
         jTable.setShowGrid(true);
