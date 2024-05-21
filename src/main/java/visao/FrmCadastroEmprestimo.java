@@ -1,18 +1,30 @@
 package visao;
 
+import com.google.protobuf.TextFormat;
+import dao.AmigoDAO;
 import dao.ConexaoDAO;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import modelo.Emprestimo;
+import modelo.Util;
 
 public class FrmCadastroEmprestimo extends javax.swing.JFrame {
+    private boolean countData = true;
     private Emprestimo objEmprestimo;
     private ConexaoDAO connect;
     
     public FrmCadastroEmprestimo() {
         initComponents();
         preencherComboBox();
+        this.objEmprestimo = new Emprestimo();
+        connect = new ConexaoDAO();
+        String data = Util.dataAtual().toString();
+        JTFDataEmp.setText(data);
     }
     private void preencherComboBox() {
         try {
@@ -182,6 +194,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
     private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_JBCancelarActionPerformed
 
     private void JCBAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBAmigoActionPerformed
@@ -206,6 +219,43 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
     private void JBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarActionPerformed
         // TODO add your handling code here:
+        try {
+            String regex = "d{4}-\\d{2}-\\d{2}";
+            int idAmg = 0;
+            Date dataEmprestimo = Util.dataAtual();            
+            boolean entregue = false;
+            Date dataDevolucao = null;
+
+            if ("".equals(this.JTFAmigo.getText())){
+                throw new Mensagens("Primeiro selecione um Amigo.");
+            } else {
+                idAmg = AmigoDAO.getIdPeloNome(JTFAmigo.getText());
+            }
+            
+            if (this.JTFDataDev.getText().matches(regex)) {
+                dataDevolucao = Util.stringParaDateSQL(JTFDataDev.getText());
+                                                                                                                                                        
+            } else {
+                throw new Mensagens("""
+                                    Data de Devolução deve conter o seguite formato: 
+                                                    yyyy-MM-dd
+                                    """);
+            }
+
+            if (this.objEmprestimo.inserirEmprestimo(dataEmprestimo, dataDevolucao, entregue, idAmg)) {
+                JOptionPane.showMessageDialog(rootPane, "Empréstimo Cadastrado com Sucesso!");
+                this.JTFAmigo.setText("");
+                this.JTFDataDev.setText("");
+
+            }
+            System.out.println(this.objEmprestimo.getListaFerramentas().toString());
+        } catch (Mensagens erro) {
+            JOptionPane.showMessageDialog(null, erro.getMessage());
+        } catch (TextFormat.ParseException ex) {
+            Logger.getLogger(FrmCadastroEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (java.text.ParseException ex) {
+            Logger.getLogger(FrmCadastroEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_JBCadastrarActionPerformed
 
     public static void main(String args[]) {
