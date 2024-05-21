@@ -167,7 +167,50 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
     }//GEN-LAST:event_JBCancelarActionPerformed
 
     private void JBAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBAlterarActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here: 
+        try {
+            int id = 0;
+            String nome, marca = "";
+            double custo = 0.0;
+
+            if (this.JTFNome.getText().length() < 2) {
+                throw new Mensagens("Nome deve conter ao menos 2 caracteres.");
+            } else {
+                nome = this.JTFNome.getText();
+            }
+
+            if (this.JTFMarca.getText().length() < 2) {
+                throw new Mensagens("Marca deve conter ao menos 2 caracteres.");
+            } else {
+                marca = this.JTFMarca.getText();
+            }
+
+            if (this.JTFCusto.getText().length() <= 0) {
+                throw new Mensagens("Custo da Aquisicao deve ser maior que zero.");
+            } else {
+                custo = Double.parseDouble(this.JTFCusto.getText());
+            }
+
+            if (this.jTable.getSelectedRow() == -1) {
+                throw new Mensagens("Primeiro Selecione uma Ferramenta para Alterar");
+            } else {
+                id = Integer.parseInt(this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString());
+            }
+            if (this.objFerramenta.alterarFerramenta(id, nome, marca, custo)) {
+                this.JTFNome.setText("");
+                this.JTFMarca.setText("");
+                this.JTFCusto.setText("");
+                JOptionPane.showMessageDialog(rootPane, "Ferramenta Alterada com Sucesso!");
+            }
+            // System.out.println(this.dao.getMinhaLista().toString());
+        } catch (Mensagens erro) {
+            JOptionPane.showMessageDialog(null, erro.getMessage());
+        } catch (NumberFormatException erro2) {
+            JOptionPane.showMessageDialog(null, "Informe um número válido.");
+        } finally {
+            carregaTabelaFerramentas();
+        }
+
     }//GEN-LAST:event_JBAlterarActionPerformed
 
     private void JBApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBApagarActionPerformed
