@@ -1,9 +1,34 @@
 package visao;
 
-public class FrmCadastroEmprestimo extends javax.swing.JFrame {
+import dao.ConexaoDAO;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import modelo.Emprestimo;
 
+public class FrmCadastroEmprestimo extends javax.swing.JFrame {
+    private Emprestimo objEmprestimo;
+    private ConexaoDAO connect;
+    
     public FrmCadastroEmprestimo() {
         initComponents();
+        preencherComboBox();
+    }
+    private void preencherComboBox() {
+        try {
+            String query = "SELECT nome FROM tb_amigos";
+            PreparedStatement statement = connect.getConexao().prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                String nome = resultSet.getString("nome");
+                JCBAmigo.addItem(nome);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Erro:" + ex);
+            // Lidar com exceções adequadamente
+        }
     }
 
     @SuppressWarnings("unchecked")
