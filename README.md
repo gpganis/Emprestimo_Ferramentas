@@ -39,3 +39,5 @@
 - Rafael Mendes Morais
 
 - Rennan Rosa Guedes
+
+- Pedro Henrique Menezes André
