@@ -122,5 +122,24 @@ public class AmigoDAO {
         }
         return objeto;
     }
+    
+    public static int getIdPeloNome(String nome) {
+        int id = -1; 
+
+        try {
+            String query = "SELECT id_amigo FROM tb_amigos WHERE nome = ?";
+            PreparedStatement statement = ConexaoDAO.getConexao().prepareStatement(query);
+            statement.setString(1, nome);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                id = resultSet.getInt("id_amigo");
+            }
+        } catch (SQLException ex) {
+            System.out.println("Erro:" + ex);
+        }
+
+        return id;
+    }
 }
 
