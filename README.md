@@ -26,9 +26,9 @@
 
 # Configuração do Banco de Dados
 
-- Login: my_user
+- Login: root
 
-- Senha: my_user
+- Senha: Unisul@1520
 
 # Grupo
 
