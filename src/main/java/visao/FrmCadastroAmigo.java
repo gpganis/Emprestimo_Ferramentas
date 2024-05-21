@@ -9,6 +9,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
     
     public FrmCadastroAmigo() {
         initComponents();
+        this.objAmigos = new Amigo();
     }
 
     @SuppressWarnings("unchecked")

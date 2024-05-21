@@ -87,6 +87,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                 "ID", "Nome", "Telefone"
             }
         ));
+        jTable.setShowGrid(false);
         jTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTableMouseClicked(evt);
@@ -141,10 +142,10 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                     .addComponent(JBApagar)
                     .addComponent(JBAlterar)
                     .addComponent(JBCancelar))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(517, 311));
+        setSize(new java.awt.Dimension(517, 331));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

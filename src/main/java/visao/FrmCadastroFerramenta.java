@@ -10,6 +10,7 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
 
     public FrmCadastroFerramenta() {
         initComponents();
+        this.objFerramenta = new Ferramenta();
     }
 
     @SuppressWarnings("unchecked")
