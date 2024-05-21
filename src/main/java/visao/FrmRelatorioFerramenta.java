@@ -1,6 +1,7 @@
 package visao;
 
 import dao.FerramentaDAO;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Ferramenta;
 
@@ -170,7 +171,34 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
     }//GEN-LAST:event_JBAlterarActionPerformed
 
     private void JBApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBApagarActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here: 
+        try {
+            int id = 0;
+            if (this.jTable.getSelectedRow() == -1) {
+                throw new Mensagens(
+                        "Primeiro Selecione uma Ferramenta para APAGAR");
+            } else {
+                id = Integer.parseInt(this.jTable.
+                        getValueAt(this.jTable.getSelectedRow(), 0).
+                        toString());
+            }
+            int respostaUsuario = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja apagar esta Ferramenta?");
+
+            if (respostaUsuario == 0) {
+                if (this.objFerramenta.apagarFerramenta(id)) {
+                    this.JTFNome.setText("");
+                    this.JTFMarca.setText("");
+                    this.JTFCusto.setText("");
+                    JOptionPane.showMessageDialog(rootPane, "Ferramenta Apagada com Sucesso!");
+                }
+            }
+            // System.out.println(this.dao.getMinhaLista().toString());
+        } catch (Mensagens erro) {
+            JOptionPane.showMessageDialog(null, erro.getMessage());
+        } finally {
+            carregaTabelaFerramentas();
+        }
+
     }//GEN-LAST:event_JBApagarActionPerformed
 
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
