@@ -11,6 +11,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
     
     public FrmRelatorioAmigo() {
         initComponents();
+        carregaTabelaAmigos();
     }
     
     public void carregaTabelaAmigos() {
