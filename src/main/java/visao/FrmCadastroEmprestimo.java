@@ -199,6 +199,8 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
     private void JCBAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBAmigoActionPerformed
         // TODO add your handling code here
+        String nomeSelecionado = (String) JCBAmigo.getSelectedItem();
+        JTFAmigo.setText(nomeSelecionado);
     }//GEN-LAST:event_JCBAmigoActionPerformed
 
     private void JTFAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFAmigoActionPerformed
@@ -207,6 +209,10 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
     private void JTFDataDevMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFDataDevMouseClicked
         // TODO add your handling code here:
+        if (countData == true){
+            JTFDataDev.setText("");
+            countData = false;
+        }
     }//GEN-LAST:event_JTFDataDevMouseClicked
 
     private void JTFDataDevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFDataDevActionPerformed
@@ -215,6 +221,10 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
     private void JTFDataDevKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFDataDevKeyPressed
         // TODO add your handling code here:
+        if (countData == true){
+            JTFDataDev.setText("");
+            countData = false;
+        }
     }//GEN-LAST:event_JTFDataDevKeyPressed
 
     private void JBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarActionPerformed
@@ -248,7 +258,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 this.JTFDataDev.setText("");
 
             }
-            System.out.println(this.objEmprestimo.getListaFerramentas().toString());
+            //System.out.println(this.objEmprestimo.getListaFerramentas().toString());
         } catch (Mensagens erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } catch (TextFormat.ParseException ex) {
