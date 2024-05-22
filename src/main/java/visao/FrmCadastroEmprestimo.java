@@ -274,6 +274,10 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
     private void JTFDataDevMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFDataDevMouseClicked
         // TODO add your handling code here:
+        if (countData == true) {
+            JTFDataDev.setText("");
+            countData = false;
+        }
     }//GEN-LAST:event_JTFDataDevMouseClicked
 
     private void JTFDataDevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFDataDevActionPerformed
@@ -282,10 +286,61 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
     private void JTFDataDevKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFDataDevKeyPressed
         // TODO add your handling code here:
+        if (countData == true) {
+            JTFDataDev.setText("");
+            countData = false;
+        }
     }//GEN-LAST:event_JTFDataDevKeyPressed
 
     private void JBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarActionPerformed
         // TODO add your handling code here:
+           try {
+            String regex = "\\d{4}-\\d{2}-\\d{2}";
+            int idAmg = 0;
+            Date dataEmprestimo = Util.dataAtual();
+            boolean entregue = false;
+            Date dataDevolucao = null;
+
+            if ("".equals(this.JTFAmigo.getText())) {
+                throw new Mensagens("Primeiro selecione um Amigo.");
+            } else {
+                idAmg = AmigoDAO.getIdPeloNome(JTFAmigo.getText());
+            }
+
+            if (FerSelect.size() == 0) {
+                throw new Mensagens("""
+                    Primeiro selecione pelo menos uma Ferramenta
+                    """);
+                }
+
+                if (this.JTFDataDev.getText().matches(regex)) {
+                    dataDevolucao = Util.stringParaDateSQL(JTFDataDev.getText());
+
+                } else {
+                    throw new Mensagens("""
+                        Data de Devolução deve conter o seguite formato:
+                        yyyy-MM-dd
+                        """);
+                    }
+
+                    if (this.objEmprestimo.inserirEmprestimo(dataEmprestimo, dataDevolucao, entregue, idAmg)) {
+                        JOptionPane.showMessageDialog(rootPane, "Empréstimo Cadastrado com Sucesso!");
+                        this.JTFAmigo.setText("");
+                        this.JTFFerramenta.setText("");
+                        this.JTFDataDev.setText("");
+
+                    }
+
+                    alterarIdEmpFerramenta();
+                    //System.out.println(this.objEmprestimo.getListaFerramentas().toString());
+                } catch (Mensagens erro) {
+                    JOptionPane.showMessageDialog(null, erro.getMessage());
+                } catch (TextFormat.ParseException ex) {
+                    Logger.getLogger(FrmCadastroEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (java.text.ParseException ex) {
+                    Logger.getLogger(FrmCadastroEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                carregaTabelaFerramentas();
 
     }//GEN-LAST:event_JBCadastrarActionPerformed
 
