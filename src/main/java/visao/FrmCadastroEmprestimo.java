@@ -62,6 +62,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         JBCadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         JBCancelar.setText("Fechar");
         JBCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -189,7 +190,8 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 .addGap(40, 40, 40))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(422, 540));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
@@ -230,7 +232,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
     private void JBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarActionPerformed
         // TODO add your handling code here:
         try {
-            String regex = "d{4}-\\d{2}-\\d{2}";
+            String regex = "\\d{4}-\\d{2}-\\d{2}";
             int idAmg = 0;
             Date dataEmprestimo = Util.dataAtual();            
             boolean entregue = false;
