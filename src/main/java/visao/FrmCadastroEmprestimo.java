@@ -3,11 +3,13 @@ package visao;
 import com.google.protobuf.TextFormat;
 import dao.AmigoDAO;
 import dao.ConexaoDAO;
+import dao.EmprestimoDAO;
 import dao.FerramentaDAO;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -18,9 +20,11 @@ import modelo.Util;
 
 public class FrmCadastroEmprestimo extends javax.swing.JFrame {
     private FerramentaDAO dao = new FerramentaDAO();
+    private EmprestimoDAO daoEmp = new EmprestimoDAO();
     private boolean countData = true;
     private Emprestimo objEmprestimo;
     private ConexaoDAO connect;
+    public ArrayList<String> FerSelect = new ArrayList<>();
     
     public FrmCadastroEmprestimo() {
         initComponents();
@@ -54,6 +58,27 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
             modelo.addRow(new Object[]{
                 a.getId(),
                 a.getNome()});
+        }
+    }
+     public boolean alterarIdEmpFerramenta() {
+        String sql = "UPDATE tb_ferramentas SET id_emprestimo = ? WHERE id_ferramenta = ?";
+        try {
+            PreparedStatement stmt = connect.getConexao().prepareStatement(sql);
+
+            for (String id : FerSelect) {
+                stmt.setInt(1, daoEmp.maiorId());
+                stmt.setInt(2, Integer.parseInt(id));
+                stmt.execute();
+            }
+            FerSelect = null;
+
+            stmt.close();
+
+            return true;
+
+        } catch (SQLException erro) {
+            System.out.println("Erro: " + erro);
+            throw new RuntimeException(erro);
         }
     }
 
