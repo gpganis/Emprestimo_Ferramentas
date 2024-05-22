@@ -3,6 +3,7 @@ package visao;
 import com.google.protobuf.TextFormat;
 import dao.AmigoDAO;
 import dao.ConexaoDAO;
+import dao.FerramentaDAO;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,10 +11,13 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import modelo.Emprestimo;
+import modelo.Ferramenta;
 import modelo.Util;
 
 public class FrmCadastroEmprestimo extends javax.swing.JFrame {
+    private FerramentaDAO dao = new FerramentaDAO();
     private boolean countData = true;
     private Emprestimo objEmprestimo;
     private ConexaoDAO connect;
@@ -40,6 +44,16 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         } catch (SQLException ex) {
             System.out.println("Erro:" + ex);
             // Lidar com exceções adequadamente
+        }
+    }
+    
+    public void carregaTabelaFerramentas() {
+        DefaultTableModel modelo = (DefaultTableModel) this.jTable.getModel();
+        modelo.setNumRows(0);
+        for (Ferramenta a : dao.getFerramentasDisponiveis()) {
+            modelo.addRow(new Object[]{
+                a.getId(),
+                a.getNome()});
         }
     }
 
