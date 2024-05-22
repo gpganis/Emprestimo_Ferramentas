@@ -62,8 +62,8 @@ public class EmprestimoDAO {
 
             stmt.setInt(1, objeto.getId());
             stmt.setInt(2, objeto.getIdAmg());
-            stmt.setDate(3, objeto.getDataDevolucao());
-            stmt.setDate(4, objeto.getDataEmprestimo());
+            stmt.setDate(3, objeto.getDataEmprestimo());
+            stmt.setDate(4, objeto.getDataDevolucao());           
             stmt.setBoolean(5, objeto.isEntregue());
 
             stmt.execute();
