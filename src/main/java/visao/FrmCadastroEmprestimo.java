@@ -346,18 +346,35 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
     private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
         // TODO add your handling code here:
+         this.dispose();
     }//GEN-LAST:event_JBCancelarActionPerformed
 
     private void JBAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBAdicionarActionPerformed
         // TODO add your handling code here:
+         if (this.jTable.getSelectedRow() != -1) {
+            String id = this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString();
+            if (!FerSelect.contains(id)) { // Verifica se o número já está na lista
+                FerSelect.add(id);
+                System.out.println("Selecionados: " + FerSelect);
+                JOptionPane.showMessageDialog(null,"Ferramenta adicionada com sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(null,"Essa Ferramenta já foi adicionada!");
+            }
+        }
     }//GEN-LAST:event_JBAdicionarActionPerformed
 
     private void JTFAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFAmigoActionPerformed
         // TODO add your handling code here:
+        String nomeSelecionado = (String) JCBAmigo.getSelectedItem();
+        JTFAmigo.setText(nomeSelecionado);
     }//GEN-LAST:event_JTFAmigoActionPerformed
 
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
         // TODO add your handling code here:
+        if (this.jTable.getSelectedRow() != -1) {
+            String nome = this.jTable.getValueAt(this.jTable.getSelectedRow(), 1).toString();
+            this.JTFFerramenta.setText(nome);
+        }
     }//GEN-LAST:event_jTableMouseClicked
 
     public static void main(String args[]) {
