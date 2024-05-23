@@ -112,6 +112,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 "ID", "ID Emprestimo", "Nome", "Marca", "Custo Aquisição"
             }
         ));
+        jTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTable.setShowGrid(true);
         jTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

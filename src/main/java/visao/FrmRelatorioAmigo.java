@@ -88,6 +88,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                 "ID", "Nome", "Telefone"
             }
         ));
+        jTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTable.setShowGrid(true);
         jTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
