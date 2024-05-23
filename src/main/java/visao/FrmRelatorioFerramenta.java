@@ -1,6 +1,10 @@
 package visao;
 
+import dao.ConexaoDAO;
 import dao.FerramentaDAO;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Ferramenta;
@@ -13,6 +17,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
     public FrmRelatorioFerramenta() {
         initComponents();
         carregaTabelaFerramentas();
+        JTFValorTotal.setText("R$" + valorTotal());
     }
 
     public void carregaTabelaFerramentas() {
@@ -21,13 +26,30 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         for (Ferramenta a : dao.getMinhaLista()) {
             modelo.addRow(new Object[]{
                 a.getId(),
+                a.getIdEmp(),
                 a.getNome(),
                 a.getMarca(),
-                a.getCustoAquisicao(),
-                a.getIdEmp()});
+                a.getCustoAquisicao()});
         }
     }
+    
+    public String valorTotal() {
+        double soma = 0;
 
+        try {
+            String query = "SELECT SUM(custo_aquisicao) FROM tb_ferramentas";
+            PreparedStatement statement = ConexaoDAO.getConexao().prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                soma = resultSet.getDouble(1);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Erro:" + ex);
+        }
+        String format = String.format("%.2f", soma);
+        return format;
+    }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -43,6 +65,8 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         JTFCusto = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        JTFValorTotal = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Relatório de Ferramentas");
@@ -85,7 +109,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nome", "Marca", "Custo Aquisição", "ID Emprestimo"
+                "ID", "ID Emprestimo", "Nome", "Marca", "Custo Aquisição"
             }
         ));
         jTable.setShowGrid(true);
@@ -102,41 +126,61 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
 
         jLabel.setText("Marca:");
 
+        jLabel3.setText("Gasto Total:");
+
+        JTFValorTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFValorTotalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JTFCusto))
-                    .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JTFMarca)
-                            .addComponent(JTFNome))))
-                .addGap(20, 20, 20))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(JBCancelar)
-                .addGap(40, 40, 40)
-                .addComponent(JBAlterar)
-                .addGap(40, 40, 40)
-                .addComponent(JBApagar)
-                .addGap(91, 91, 91))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(JBCancelar)
+                                .addGap(40, 40, 40)
+                                .addComponent(JBAlterar)
+                                .addGap(40, 40, 40)
+                                .addComponent(JBApagar)
+                                .addGap(71, 71, 71))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JTFValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JTFCusto))
+                            .addComponent(jScrollPane1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JTFMarca)
+                                    .addComponent(JTFNome))))))
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(JTFValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -154,10 +198,10 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                     .addComponent(JBApagar)
                     .addComponent(JBAlterar)
                     .addComponent(JBCancelar))
-                .addGap(20, 20, 20))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(512, 369));
+        setSize(new java.awt.Dimension(512, 421));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -217,6 +261,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Informe um número válido.");
         } finally {
             carregaTabelaFerramentas();
+            JTFValorTotal.setText("R$" + valorTotal());
         }
 
     }//GEN-LAST:event_JBAlterarActionPerformed
@@ -267,6 +312,10 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTableMouseClicked
 
+    private void JTFValorTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFValorTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFValorTotalActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -283,9 +332,11 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
     private javax.swing.JTextField JTFCusto;
     private javax.swing.JTextField JTFMarca;
     private javax.swing.JTextField JTFNome;
+    private javax.swing.JTextField JTFValorTotal;
     private javax.swing.JLabel jLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;
     // End of variables declaration//GEN-END:variables

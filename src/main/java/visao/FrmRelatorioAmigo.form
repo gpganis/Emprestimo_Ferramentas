@@ -33,7 +33,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="jLabel" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="JTFTelefone" min="-2" pref="402" max="-2" attributes="0"/>
+                      <Component id="JTFTelefone" min="-2" pref="396" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane1" alignment="1" min="-2" pref="463" max="-2" attributes="0"/>
                   <Component id="JTFNome" alignment="1" min="-2" pref="420" max="-2" attributes="0"/>
