@@ -272,6 +272,8 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
     private void JCBAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBAmigoActionPerformed
         // TODO add your handling code here
+        String nomeSelecionado = (String) JCBAmigo.getSelectedItem();
+        JTFAmigo.setText(nomeSelecionado);
     }//GEN-LAST:event_JCBAmigoActionPerformed
 
     private void JTFDataDevMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFDataDevMouseClicked
@@ -367,8 +369,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
     private void JTFAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFAmigoActionPerformed
         // TODO add your handling code here:
-        String nomeSelecionado = (String) JCBAmigo.getSelectedItem();
-        JTFAmigo.setText(nomeSelecionado);
     }//GEN-LAST:event_JTFAmigoActionPerformed
 
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
