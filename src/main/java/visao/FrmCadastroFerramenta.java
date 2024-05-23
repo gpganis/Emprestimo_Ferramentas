@@ -228,8 +228,8 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
                 marca = this.JTFFerramentaMarca.getText();
             }
 
-            if (this.JTFFerramentaCusto.getText().length() <= 0) {
-                throw new Mensagens("Custo da Aquisicao deve ser maior que zero.");
+            if (Double.parseDouble(this.JTFFerramentaCusto.getText()) <= 0) {
+                throw new Mensagens("Custo da Aquisição deve ser maior que zero.");
             } else {
                 custoAquisicao = Double.parseDouble(this.JTFFerramentaCusto.getText());
             }
