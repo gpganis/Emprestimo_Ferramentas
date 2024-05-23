@@ -175,8 +175,17 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         try {
             int id = 0;
             String nome, marca = "";
-            double custo = 0.0;
-
+            double custoAquisicao = 0.0;
+            
+            if (this.jTable.getSelectedRow() == -1) {
+                throw new Mensagens(
+                        "Primeiro Selecione uma Ferramenta para ALTERAR");
+            } else {
+                id = Integer.parseInt(this.jTable.
+                        getValueAt(this.jTable.getSelectedRow(), 0).
+                        toString());
+            }
+            
             if (this.JTFNome.getText().length() < 2) {
                 throw new Mensagens("Nome deve conter ao menos 2 caracteres.");
             } else {
@@ -189,18 +198,13 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 marca = this.JTFMarca.getText();
             }
 
-            if (this.JTFCusto.getText().length() <= 0) {
-                throw new Mensagens("Custo da Aquisicao deve ser maior que zero.");
+            if (Double.parseDouble(this.JTFCusto.getText()) <= 0) {
+                throw new Mensagens("Custo da Aquisição deve ser maior que zero.");
             } else {
-                custo = Double.parseDouble(this.JTFCusto.getText());
+                custoAquisicao = Double.parseDouble(this.JTFCusto.getText());
             }
 
-            if (this.jTable.getSelectedRow() == -1) {
-                throw new Mensagens("Primeiro Selecione uma Ferramenta para Alterar");
-            } else {
-                id = Integer.parseInt(this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString());
-            }
-            if (this.objFerramenta.alterarFerramenta(id, nome, marca, custo)) {
+            if (this.objFerramenta.alterarFerramenta(id, nome, marca, custoAquisicao)) {
                 this.JTFNome.setText("");
                 this.JTFMarca.setText("");
                 this.JTFCusto.setText("");

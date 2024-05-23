@@ -161,27 +161,28 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             int id = 0;
-            String regex = "^\\d{2} 9\\d{4} \\d{4}$";
             String nome, telefone = "";
-
+            
+            if (this.jTable.getSelectedRow() == -1) {
+                throw new Mensagens(
+                        "Primeiro Selecione um Amigo para ALTERAR");
+            } else {
+                id = Integer.parseInt(this.jTable.
+                        getValueAt(this.jTable.getSelectedRow(), 0).
+                        toString());
+            }
+            
             if (this.JTFNome.getText().length() < 2) {
                 throw new Mensagens("Nome deve conter ao menos 2 caracteres.");
             } else {
                 nome = this.JTFNome.getText();
             }
-            if (this.JTFTelefone.getText().matches(regex)) {
+            if (this.JTFTelefone.getText().length() == 11 && Long.parseLong(this.JTFTelefone.getText()) > 0) {
                 telefone = this.JTFTelefone.getText();
-            } else {
-                throw new Mensagens("""
-                                    Telefone deve conter o seguite formato: 
-                                               XX 9XXXX XXXX
-                                    """);
+            } else {             
+                throw new Mensagens("Telefone deve conter somente 11 números");
             }
-            if (this.jTable.getSelectedRow() == -1) {
-                throw new Mensagens("Primeiro Selecione um Amigo para Alterar");
-            } else {
-                id = Integer.parseInt(this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString());
-            }
+
             if (this.objAmigo.alterarAmigo(id, nome, telefone)) {
                 this.JTFNome.setText("");
                 this.JTFTelefone.setText("");
@@ -201,6 +202,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             int id = 0;
+            
             if (this.jTable.getSelectedRow() == -1) {
                 throw new Mensagens(
                         "Primeiro Selecione um Amigo para APAGAR");
@@ -209,6 +211,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                         getValueAt(this.jTable.getSelectedRow(), 0).
                         toString());
             }
+            
             int respostaUsuario = JOptionPane.showConfirmDialog(null,"Tem certeza que deseja apagar este Amigo?");
             
             if (respostaUsuario == 0) {

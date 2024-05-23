@@ -214,7 +214,6 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
         try {
             String nome, marca = "";
             double custoAquisicao = 0.0;
-            int id = 0;
 
             if (this.JTFFerramentaNome.getText().length() < 2) {
                 throw new Mensagens("Nome deve conter ao menos 2 caracteres.");

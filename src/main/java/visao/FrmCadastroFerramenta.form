@@ -27,25 +27,29 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="JTFFerramentaCusto" alignment="0" max="32767" attributes="0"/>
-                  <Component id="JLNome" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
-                  <Component id="JTFFerramentaNome" alignment="0" max="32767" attributes="0"/>
-                  <Component id="JLMarca" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
-                  <Component id="JTFFerramentaMarca" alignment="0" max="32767" attributes="0"/>
-                  <Component id="JLTitulo" alignment="0" pref="320" max="32767" attributes="0"/>
-                  <Component id="JLCustoAquisicao" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="JTFFerramentaCusto" alignment="0" max="32767" attributes="0"/>
+                          <Component id="JLNome" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="JTFFerramentaNome" alignment="0" max="32767" attributes="0"/>
+                          <Component id="JLMarca" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
+                          <Component id="JTFFerramentaMarca" alignment="0" max="32767" attributes="0"/>
+                          <Component id="JLTitulo" alignment="0" pref="320" max="32767" attributes="0"/>
+                          <Component id="JLCustoAquisicao" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="JBCancelar" min="-2" pref="84" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="JBCadastrar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-              <Component id="JBCancelar" min="-2" pref="84" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-              <Component id="JBCadastrar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
