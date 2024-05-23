@@ -33,6 +33,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         connect = new ConexaoDAO();
         String data = Util.dataAtual().toString();
         JTFDataEmp.setText(data);
+        this.carregaTabelaFerramentas();
     }
     private void preencherComboBox() {
         try {
