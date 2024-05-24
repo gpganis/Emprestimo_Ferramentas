@@ -12,6 +12,8 @@ public class EmprestimoDAO {
 
     public static ArrayList<Emprestimo> ListaEmprestimos = new ArrayList<>();
     
+    public ArrayList<Emprestimo> ListaEmprestimosAtivos = new ArrayList<>();
+    
     private ConexaoDAO connect;
 
     public ArrayList<Emprestimo> getMinhaLista() {
@@ -90,15 +92,13 @@ public class EmprestimoDAO {
     }
 
     public boolean alterarEmprestimoBD(Emprestimo objeto) {
-        String sql = "UPDATE tb_emprestimos set id_amigo = ?, data_emprestimo = ?, data_devolucao = ?, entregue = ? WHERE id_emprestimo = ?";
+        String sql = "UPDATE tb_emprestimos set data_devolucao = ?, entregue = ? WHERE id_emprestimo = ?";
         try {
             PreparedStatement stmt = connect.getConexao().prepareStatement(sql);
 
-            stmt.setInt(1, objeto.getIdAmg());           
-            stmt.setDate(2, objeto.getDataEmprestimo());
-            stmt.setDate(3, objeto.getDataDevolucao());
-            stmt.setBoolean(4, objeto.isEntregue());
-            stmt.setInt(5, objeto.getId());
+            stmt.setDate(1, objeto.getDataDevolucao());
+            stmt.setBoolean(2, objeto.isEntregue());
+            stmt.setInt(3, objeto.getId());
 
             stmt.execute();
             stmt.close();
@@ -130,5 +130,32 @@ public class EmprestimoDAO {
             System.out.println("Erro:" + erro);
         }
         return objeto;
+    }
+    
+    public ArrayList<Emprestimo> getEmprestimosAtivos() {
+
+        ListaEmprestimosAtivos.clear();
+
+        try {
+            Statement stmt = connect.getConexao().createStatement();
+            ResultSet res = stmt.executeQuery("SELECT * FROM tb_emprestimos WHERE entregue is false");
+            while (res.next()) {
+
+                int id = res.getInt("id_emprestimo");
+                Date data_emp = res.getDate("data_emprestimo");
+                Date data_dev = res.getDate("data_devolucao");
+                boolean entregue = res.getBoolean("entregue");
+                int idEmp = res.getInt("id_amigo");
+
+                Emprestimo objeto = new Emprestimo(data_emp, data_dev, entregue, id, idEmp);
+
+                ListaEmprestimosAtivos.add(objeto);
+            }
+            stmt.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Erro:" + ex);
+        }
+        return ListaEmprestimosAtivos;
     }
 }

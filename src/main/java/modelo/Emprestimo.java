@@ -81,7 +81,7 @@ public class Emprestimo {
         return true;
     }
 
-    public boolean alterarEmprestimo(Date dataEmprestimo, Date dataDevolucao, boolean entregue, int id, int idAmg) {
+    public boolean alterarEmprestimo(Date dataDevolucao, boolean entregue, int id) {
         Emprestimo objeto = new Emprestimo(dataEmprestimo, dataDevolucao, entregue, id, idAmg);
         dao.alterarEmprestimoBD(objeto);
         return true;

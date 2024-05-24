@@ -19,13 +19,14 @@ import modelo.Ferramenta;
 import modelo.Util;
 
 public class FrmCadastroEmprestimo extends javax.swing.JFrame {
+
     private FerramentaDAO dao = new FerramentaDAO();
     private EmprestimoDAO daoEmp = new EmprestimoDAO();
     private boolean countData = true;
     private Emprestimo objEmprestimo;
     private ConexaoDAO connect;
     public ArrayList<String> FerSelect = new ArrayList<>();
-    
+
     public FrmCadastroEmprestimo() {
         initComponents();
         preencherComboBox();
@@ -35,6 +36,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         JTFDataEmp.setText(data);
         this.carregaTabelaFerramentas();
     }
+
     private void preencherComboBox() {
         try {
             String query = "SELECT nome FROM tb_amigos";
@@ -51,7 +53,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
             // Lidar com exceções adequadamente
         }
     }
-    
+
     public void carregaTabelaFerramentas() {
         DefaultTableModel modelo = (DefaultTableModel) this.jTable.getModel();
         modelo.setNumRows(0);
@@ -61,7 +63,8 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 a.getNome()});
         }
     }
-     public boolean alterarIdEmpFerramenta() {
+
+    public boolean alterarIdEmpFerramenta() {
         String sql = "UPDATE tb_ferramentas SET id_emprestimo = ? WHERE id_ferramenta = ?";
         try {
             PreparedStatement stmt = connect.getConexao().prepareStatement(sql);
@@ -71,7 +74,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 stmt.setInt(2, Integer.parseInt(id));
                 stmt.execute();
             }
-            FerSelect = null;
+            FerSelect.clear();
 
             stmt.close();
 
@@ -298,7 +301,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
     private void JBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarActionPerformed
         // TODO add your handling code here:
-           try {
+        try {
             String regex = "\\d{4}-\\d{2}-\\d{2}";
             int idAmg = 0;
             Date dataEmprestimo = Util.dataAtual();
@@ -315,54 +318,70 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 throw new Mensagens("""
                     Primeiro selecione pelo menos uma Ferramenta
                     """);
-                }
+            }
 
-                if (this.JTFDataDev.getText().matches(regex)) {
-                    dataDevolucao = Util.stringParaDateSQL(JTFDataDev.getText());
-
-                } else {
+            if (this.JTFDataDev.getText().matches(regex)) {
+                dataDevolucao = Util.stringParaDateSQL(JTFDataDev.getText());
+                if (dataDevolucao.before(dataEmprestimo)) {
+                    dataDevolucao = null;
                     throw new Mensagens("""
+                        Data de Devolução não pode ser antes da Data do Empréstimo
+                        """);
+                    
+                } else if (dataDevolucao.after(dataEmprestimo)) {
+                    dataDevolucao = Util.stringParaDateSQL(JTFDataDev.getText());
+                } else {
+                    dataDevolucao = null;
+                    throw new Mensagens("""
+                        Data de Devolução não pode ser igual a da Data do Empréstimo
+                        """);
+                }
+            } else {
+                throw new Mensagens("""
                         Data de Devolução deve conter o seguite formato:
                         yyyy-MM-dd
                         """);
-                    }
+            }
 
-                    if (this.objEmprestimo.inserirEmprestimo(dataEmprestimo, dataDevolucao, entregue, idAmg)) {
-                        JOptionPane.showMessageDialog(rootPane, "Empréstimo Cadastrado com Sucesso!");
-                        this.JTFAmigo.setText("");
-                        this.JTFFerramenta.setText("");
-                        this.JTFDataDev.setText("");
+            
 
-                    }
+            if (this.objEmprestimo.inserirEmprestimo(dataEmprestimo, dataDevolucao, entregue, idAmg)) {
+                JOptionPane.showMessageDialog(rootPane, "Empréstimo Cadastrado com Sucesso!");
+                this.JTFAmigo.setText("");
+                this.JTFFerramenta.setText("");
+                this.JTFDataDev.setText("");
 
-                    alterarIdEmpFerramenta();
-                    //System.out.println(this.objEmprestimo.getListaFerramentas().toString());
-                } catch (Mensagens erro) {
-                    JOptionPane.showMessageDialog(null, erro.getMessage());
-                } catch (TextFormat.ParseException ex) {
-                    Logger.getLogger(FrmCadastroEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (java.text.ParseException ex) {
-                    Logger.getLogger(FrmCadastroEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                carregaTabelaFerramentas();
+            }
+
+            alterarIdEmpFerramenta();
+            //System.out.println(this.objEmprestimo.getListaFerramentas().toString());
+        } catch (Mensagens erro) {
+            JOptionPane.showMessageDialog(null, erro.getMessage());
+        } catch (TextFormat.ParseException ex) {
+            Logger.getLogger(FrmCadastroEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (java.text.ParseException ex) {
+            Logger.getLogger(FrmCadastroEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+        carregaTabelaFerramentas();
+        }
 
     }//GEN-LAST:event_JBCadastrarActionPerformed
 
     private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
         // TODO add your handling code here:
-         this.dispose();
+        this.dispose();
     }//GEN-LAST:event_JBCancelarActionPerformed
 
     private void JBAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBAdicionarActionPerformed
         // TODO add your handling code here:
-         if (this.jTable.getSelectedRow() != -1) {
+        if (this.jTable.getSelectedRow() != -1) {
             String id = this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString();
             if (!FerSelect.contains(id)) { // Verifica se o número já está na lista
                 FerSelect.add(id);
                 System.out.println("Selecionados: " + FerSelect);
-                JOptionPane.showMessageDialog(null,"Ferramenta adicionada com sucesso!");
+                JOptionPane.showMessageDialog(null, "Ferramenta adicionada com sucesso!");
             } else {
-                JOptionPane.showMessageDialog(null,"Essa Ferramenta já foi adicionada!");
+                JOptionPane.showMessageDialog(null, "Essa Ferramenta já foi adicionada!");
             }
         }
     }//GEN-LAST:event_JBAdicionarActionPerformed
