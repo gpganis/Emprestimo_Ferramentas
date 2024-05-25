@@ -296,9 +296,9 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
         // TODO add your handling code here: 
         if (this.jTable.getSelectedRow() != -1) {
-            String nome = this.jTable.getValueAt(this.jTable.getSelectedRow(), 1).toString();
-            String marca = this.jTable.getValueAt(this.jTable.getSelectedRow(), 2).toString();
-            String custoAquisicao = this.jTable.getValueAt(this.jTable.getSelectedRow(), 3).toString();
+            String nome = this.jTable.getValueAt(this.jTable.getSelectedRow(), 2).toString();
+            String marca = this.jTable.getValueAt(this.jTable.getSelectedRow(), 3).toString();
+            String custoAquisicao = this.jTable.getValueAt(this.jTable.getSelectedRow(), 4).toString();
 
             this.JTFNome.setText(nome);
             this.JTFMarca.setText(marca);
