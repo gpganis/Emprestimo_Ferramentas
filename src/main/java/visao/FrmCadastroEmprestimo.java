@@ -123,7 +123,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         JTFDataEmp.setBorder(null);
         getContentPane().add(JTFDataEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 280, 20));
 
-        JCBAmigo.setBackground(new java.awt.Color(255, 255, 255));
         JCBAmigo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         JCBAmigo.setForeground(new java.awt.Color(255, 19, 19));
         JCBAmigo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar" }));
@@ -160,7 +159,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         });
         getContentPane().add(JTFDataDev, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, 280, 20));
 
-        JBCadastrar.setBackground(new java.awt.Color(255, 255, 255));
         JBCadastrar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         JBCadastrar.setForeground(new java.awt.Color(255, 49, 49));
         JBCadastrar.setText("Cadastrar");
@@ -189,6 +187,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
         JTFFerramenta.setEditable(false);
         JTFFerramenta.setBackground(new java.awt.Color(166, 166, 166));
+        JTFFerramenta.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         JTFFerramenta.setForeground(new java.awt.Color(255, 255, 255));
         JTFFerramenta.setBorder(null);
         JTFFerramenta.addActionListener(new java.awt.event.ActionListener() {
@@ -221,6 +220,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
         JTFAmigo.setEditable(false);
         JTFAmigo.setBackground(new java.awt.Color(166, 166, 166));
+        JTFAmigo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         JTFAmigo.setForeground(new java.awt.Color(255, 255, 255));
         JTFAmigo.setBorder(null);
         JTFAmigo.addActionListener(new java.awt.event.ActionListener() {
@@ -228,7 +228,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 JTFAmigoActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFAmigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 300, 30));
+        getContentPane().add(JTFAmigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 300, 20));
 
         jScrollPane3.setBorder(null);
 
@@ -360,16 +360,22 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
     private void JBAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBAdicionarActionPerformed
         // TODO add your handling code here:
-        if (this.jTable.getSelectedRow() != -1) {
-            String id = this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString();
-            if (!FerSelect.contains(id)) { // Verifica se o número já está na lista
-                FerSelect.add(id);
-                System.out.println("Selecionados: " + FerSelect);
-                JOptionPane.showMessageDialog(null, "Ferramenta adicionada com sucesso!");
-            } else {
-                JOptionPane.showMessageDialog(null, "Essa Ferramenta já foi adicionada!");
+        if (this.jTable.getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(null, "Primeiro Selecione uma Ferramenta");
+        } else {
+            if (this.jTable.getSelectedRow() != -1) {
+                String id = this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString();
+                if (!FerSelect.contains(id)) { // Verifica se o número já está na lista
+                    FerSelect.add(id);
+                    System.out.println("Selecionados: " + FerSelect);
+                    JOptionPane.showMessageDialog(null, "Ferramenta adicionada com sucesso!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Essa Ferramenta já foi adicionada!");
+                }
             }
         }
+
+
     }//GEN-LAST:event_JBAdicionarActionPerformed
 
     private void JTFAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFAmigoActionPerformed

@@ -63,7 +63,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Amigo", "Data Empréstimo", "Data Devolução", "Entregue"
+                "ID", "ID_Amigo", "Data Empréstimo", "Data Devolução", "Entregue"
             }
         ));
         jTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

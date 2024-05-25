@@ -188,7 +188,7 @@
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="5" rowCount="15">
                 <Column editable="true" title="ID" type="java.lang.Object"/>
-                <Column editable="true" title="Amigo" type="java.lang.Object"/>
+                <Column editable="true" title="ID_Amigo" type="java.lang.Object"/>
                 <Column editable="true" title="Data Empr&#xe9;stimo" type="java.lang.Object"/>
                 <Column editable="true" title="Data Devolu&#xe7;&#xe3;o" type="java.lang.Object"/>
                 <Column editable="true" title="Entregue" type="java.lang.Object"/>
