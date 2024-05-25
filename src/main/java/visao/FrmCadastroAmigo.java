@@ -18,12 +18,11 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
 
         JLTelefone = new javax.swing.JLabel();
         JTFAmigoTelefone = new javax.swing.JTextField();
-        JLTitulo = new javax.swing.JLabel();
         JBCancelar = new javax.swing.JButton();
         JBCadastrar = new javax.swing.JButton();
         JLNome = new javax.swing.JLabel();
         JTFAmigoNome = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Amigos");
@@ -32,9 +31,9 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
 
         JLTelefone.setForeground(new java.awt.Color(255, 255, 255));
         JLTelefone.setText("Telefone:");
-        getContentPane().add(JLTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 59, 30));
+        getContentPane().add(JLTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 59, 40));
 
-        JTFAmigoTelefone.setBackground(new java.awt.Color(255, 255, 255));
+        JTFAmigoTelefone.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         JTFAmigoTelefone.setForeground(new java.awt.Color(255, 49, 49));
         JTFAmigoTelefone.setText("Digite o Telefone do Amigo");
         JTFAmigoTelefone.setBorder(null);
@@ -58,13 +57,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
                 JTFAmigoTelefoneKeyPressed(evt);
             }
         });
-        getContentPane().add(JTFAmigoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 300, -1));
-
-        JLTitulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        JLTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        JLTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLTitulo.setText("Cadastro de Amigos");
-        getContentPane().add(JLTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 340, -1));
+        getContentPane().add(JTFAmigoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 300, 20));
 
         JBCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
@@ -77,7 +70,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
                 JBCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 140, 30));
+        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 140, 40));
 
         JBCadastrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         JBCadastrar.setForeground(new java.awt.Color(255, 49, 49));
@@ -90,13 +83,13 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
                 JBCadastrarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 140, 30));
+        getContentPane().add(JBCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 140, 40));
 
         JLNome.setForeground(new java.awt.Color(255, 255, 255));
         JLNome.setText("Nome:");
-        getContentPane().add(JLNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 37, 30));
+        getContentPane().add(JLNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 37, 20));
 
-        JTFAmigoNome.setBackground(new java.awt.Color(255, 255, 255));
+        JTFAmigoNome.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         JTFAmigoNome.setForeground(new java.awt.Color(255, 49, 49));
         JTFAmigoNome.setText("Digite o Nome do Amigo");
         JTFAmigoNome.setBorder(null);
@@ -120,12 +113,12 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
                 JTFAmigoNomeKeyPressed(evt);
             }
         });
-        getContentPane().add(JTFAmigoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 300, 20));
+        getContentPane().add(JTFAmigoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 300, 20));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Cadastro_Amigo.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 400));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Cadastro_Amigo.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
-        setSize(new java.awt.Dimension(414, 407));
+        setSize(new java.awt.Dimension(414, 337));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -162,6 +155,10 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String nome, telefone = "";
+            
+            if ( "Digite o Nome do Amigo".equals(JTFAmigoNome.getText())){
+                throw new Mensagens("Primeiro escreva o nome do Amigo.");
+            }
             
             if (this.JTFAmigoNome.getText().length() < 2) {
                 throw new Mensagens("Nome deve conter ao menos 2 caracteres.");
@@ -226,9 +223,8 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
     private javax.swing.JButton JBCancelar;
     private javax.swing.JLabel JLNome;
     private javax.swing.JLabel JLTelefone;
-    private javax.swing.JLabel JLTitulo;
     private javax.swing.JTextField JTFAmigoNome;
     private javax.swing.JTextField JTFAmigoTelefone;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

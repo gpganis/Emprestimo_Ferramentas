@@ -67,40 +67,78 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         jLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         JTFValorTotal = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Relatório de Ferramentas");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        JTFNome.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JTFNome.setForeground(new java.awt.Color(255, 49, 49));
+        JTFNome.setBorder(null);
+        getContentPane().add(JTFNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 336, 310, 20));
+
+        JTFMarca.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JTFMarca.setForeground(new java.awt.Color(255, 49, 49));
+        JTFMarca.setBorder(null);
         JTFMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFMarcaActionPerformed(evt);
             }
         });
+        getContentPane().add(JTFMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 383, 310, 20));
 
+        JBCancelar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
         JBCancelar.setText("Fechar");
+        JBCancelar.setBorder(null);
+        JBCancelar.setContentAreaFilled(false);
+        JBCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBCancelarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 490, 100, 30));
 
+        JBAlterar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBAlterar.setForeground(new java.awt.Color(255, 49, 49));
         JBAlterar.setText("Alterar");
+        JBAlterar.setBorder(null);
+        JBAlterar.setContentAreaFilled(false);
+        JBAlterar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBAlterarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 490, 100, 30));
 
+        JBApagar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBApagar.setForeground(new java.awt.Color(255, 49, 49));
         JBApagar.setText("Apagar");
+        JBApagar.setBorder(null);
+        JBApagar.setContentAreaFilled(false);
+        JBApagar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBApagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBApagarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, 100, 30));
 
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -121,88 +159,45 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable);
 
-        jLabel2.setText("Custo Aquisição:");
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, 240));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Custo:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 40, 20));
+
+        JTFCusto.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JTFCusto.setForeground(new java.awt.Color(255, 49, 49));
+        JTFCusto.setBorder(null);
+        getContentPane().add(JTFCusto, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 429, 310, 20));
+
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nome:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 336, 50, 20));
 
+        jLabel.setForeground(new java.awt.Color(255, 255, 255));
         jLabel.setText("Marca:");
+        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 384, 50, -1));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Gasto Total:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, 20));
 
+        JTFValorTotal.setEditable(false);
+        JTFValorTotal.setBackground(new java.awt.Color(166, 166, 166));
+        JTFValorTotal.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        JTFValorTotal.setForeground(new java.awt.Color(255, 255, 255));
+        JTFValorTotal.setBorder(null);
         JTFValorTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFValorTotalActionPerformed(evt);
             }
         });
+        getContentPane().add(JTFValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 80, 20));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(JBCancelar)
-                                .addGap(40, 40, 40)
-                                .addComponent(JBAlterar)
-                                .addGap(40, 40, 40)
-                                .addComponent(JBApagar)
-                                .addGap(71, 71, 71))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JTFValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JTFCusto))
-                            .addComponent(jScrollPane1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JTFMarca)
-                                    .addComponent(JTFNome))))))
-                .addGap(20, 20, 20))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(JTFValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(JTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel)
-                    .addComponent(JTFMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(JTFCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBApagar)
-                    .addComponent(JBAlterar)
-                    .addComponent(JBCancelar))
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Ferramenta.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 600));
 
-        setSize(new java.awt.Dimension(512, 421));
+        setSize(new java.awt.Dimension(514, 607));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -338,6 +333,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;
     // End of variables declaration//GEN-END:variables

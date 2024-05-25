@@ -137,10 +137,10 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 477, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(514, 460));
+        setSize(new java.awt.Dimension(514, 507));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

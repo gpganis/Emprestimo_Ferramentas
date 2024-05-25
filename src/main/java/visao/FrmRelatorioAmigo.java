@@ -38,44 +38,83 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
         JBApagar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Relatório de Amigos");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nome:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 270, 40, 30));
 
+        jLabel.setForeground(new java.awt.Color(255, 255, 255));
         jLabel.setText("Telefone:");
+        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 320, 60, 30));
 
+        JTFNome.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JTFNome.setForeground(new java.awt.Color(255, 49, 49));
+        JTFNome.setBorder(null);
+        getContentPane().add(JTFNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 279, 310, 20));
+
+        JTFTelefone.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JTFTelefone.setForeground(new java.awt.Color(255, 49, 49));
+        JTFTelefone.setAlignmentY(0.25F);
+        JTFTelefone.setBorder(null);
         JTFTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFTelefoneActionPerformed(evt);
             }
         });
+        getContentPane().add(JTFTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 326, 310, -1));
 
+        JBCancelar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
         JBCancelar.setText("Fechar");
+        JBCancelar.setBorder(null);
+        JBCancelar.setContentAreaFilled(false);
+        JBCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBCancelarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 387, 90, 30));
 
+        JBAlterar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBAlterar.setForeground(new java.awt.Color(255, 49, 49));
         JBAlterar.setText("Alterar");
+        JBAlterar.setBorder(null);
+        JBAlterar.setContentAreaFilled(false);
+        JBAlterar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBAlterarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 387, 100, 30));
 
+        JBApagar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBApagar.setForeground(new java.awt.Color(255, 49, 49));
         JBApagar.setText("Apagar");
+        JBApagar.setBorder(null);
+        JBApagar.setContentAreaFilled(false);
+        JBApagar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBApagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBApagarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 387, 100, 30));
 
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
                 {null, null, null},
                 {null, null, null},
                 {null, null, null},
@@ -97,55 +136,12 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(JTFTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(107, 107, 107)
-                .addComponent(JBCancelar)
-                .addGap(40, 40, 40)
-                .addComponent(JBAlterar)
-                .addGap(40, 40, 40)
-                .addComponent(JBApagar)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(JTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel)
-                    .addComponent(JTFTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBApagar)
-                    .addComponent(JBAlterar)
-                    .addComponent(JBCancelar))
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, 210));
 
-        setSize(new java.awt.Dimension(517, 331));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Amigo.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
+
+        setSize(new java.awt.Dimension(514, 507));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -258,6 +254,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
     private javax.swing.JTextField JTFTelefone;
     private javax.swing.JLabel jLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;
     // End of variables declaration//GEN-END:variables

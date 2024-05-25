@@ -61,7 +61,6 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
     private void initComponents() {
 
         JCBEntregue = new javax.swing.JCheckBox();
-        jLabel2 = new javax.swing.JLabel();
         JTFDataEmp = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         JTFDataDev = new javax.swing.JTextField();
@@ -72,45 +71,87 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
         jTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        JCBEntregue.setBorder(null);
+        JCBEntregue.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JCBEntregue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JCBEntregueActionPerformed(evt);
             }
         });
-
-        jLabel2.setText("Entregue");
+        getContentPane().add(JCBEntregue, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, -1, -1));
 
         JTFDataEmp.setEditable(false);
+        JTFDataEmp.setBackground(new java.awt.Color(166, 166, 166));
+        JTFDataEmp.setForeground(new java.awt.Color(255, 255, 255));
+        JTFDataEmp.setBorder(null);
+        getContentPane().add(JTFDataEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 265, 310, 20));
 
-        jLabel4.setText("Data do Empréstimo:");
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Empréstimo:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 70, 30));
 
+        JTFDataDev.setForeground(new java.awt.Color(255, 49, 49));
+        JTFDataDev.setBorder(null);
+        getContentPane().add(JTFDataDev, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 310, 20));
+
+        JBCancelar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
         JBCancelar.setText("Fechar");
+        JBCancelar.setBorder(null);
+        JBCancelar.setContentAreaFilled(false);
+        JBCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBCancelarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 90, 30));
 
+        JBAlterar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBAlterar.setForeground(new java.awt.Color(255, 49, 49));
         JBAlterar.setText("Alterar");
+        JBAlterar.setBorder(null);
+        JBAlterar.setContentAreaFilled(false);
+        JBAlterar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBAlterarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 90, 30));
 
+        JBApagar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBApagar.setForeground(new java.awt.Color(255, 49, 49));
         JBApagar.setText("Apagar");
+        JBApagar.setBorder(null);
+        JBApagar.setContentAreaFilled(false);
+        JBApagar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        JBApagar.setDefaultCapable(false);
         JBApagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBApagarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 90, 30));
 
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -131,70 +172,24 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable);
 
-        jLabel1.setText("Data de Devolução:");
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, 210));
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Devolução:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 70, 20));
+
+        jLabel.setForeground(new java.awt.Color(255, 255, 255));
         jLabel.setText("Confirmar Entrega:");
+        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 120, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(JCBEntregue)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(JTFDataEmp)
-                            .addComponent(JTFDataDev))))
-                .addGap(20, 20, 20))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(JBCancelar)
-                .addGap(40, 40, 40)
-                .addComponent(JBAlterar)
-                .addGap(40, 40, 40)
-                .addComponent(JBApagar)
-                .addGap(100, 100, 100))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(JTFDataEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(JTFDataDev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel)
-                        .addComponent(JCBEntregue))
-                    .addComponent(jLabel2))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBApagar)
-                    .addComponent(JBAlterar)
-                    .addComponent(JBCancelar))
-                .addContainerGap(65, Short.MAX_VALUE))
-        );
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Clique Aqui Para Confimar Entrega");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 355, 210, 20));
 
-        setSize(new java.awt.Dimension(530, 405));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Emprestimo.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
+
+        setSize(new java.awt.Dimension(514, 537));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -335,6 +330,7 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;

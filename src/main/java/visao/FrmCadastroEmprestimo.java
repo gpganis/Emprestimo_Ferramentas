@@ -101,7 +101,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         JBAdicionar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        JLTitulo = new javax.swing.JLabel();
         JTFAmigo = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
@@ -114,30 +113,32 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Data do Empréstimo:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 466, -1, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, 30));
 
         JTFDataEmp.setEditable(false);
         JTFDataEmp.setBackground(new java.awt.Color(166, 166, 166));
+        JTFDataEmp.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         JTFDataEmp.setForeground(new java.awt.Color(255, 255, 255));
         JTFDataEmp.setBorder(null);
-        getContentPane().add(JTFDataEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 300, -1));
+        getContentPane().add(JTFDataEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 280, 20));
 
-        JCBAmigo.setBackground(new java.awt.Color(166, 166, 166));
-        JCBAmigo.setForeground(new java.awt.Color(255, 255, 255));
+        JCBAmigo.setBackground(new java.awt.Color(255, 255, 255));
+        JCBAmigo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JCBAmigo.setForeground(new java.awt.Color(255, 19, 19));
         JCBAmigo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar" }));
-        JCBAmigo.setBorder(null);
+        JCBAmigo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JCBAmigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JCBAmigoActionPerformed(evt);
             }
         });
-        getContentPane().add(JCBAmigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 270, 40));
+        getContentPane().add(JCBAmigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 270, 30));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Data de Devolução:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, -1, 20));
 
-        JTFDataDev.setBackground(new java.awt.Color(255, 255, 255));
+        JTFDataDev.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         JTFDataDev.setForeground(new java.awt.Color(255, 49, 49));
         JTFDataDev.setText("yyyy-MM-dd");
         JTFDataDev.setBorder(null);
@@ -156,9 +157,10 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 JTFDataDevKeyPressed(evt);
             }
         });
-        getContentPane().add(JTFDataDev, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 570, 300, -1));
+        getContentPane().add(JTFDataDev, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, 280, 20));
 
         JBCadastrar.setBackground(new java.awt.Color(255, 255, 255));
+        JBCadastrar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         JBCadastrar.setForeground(new java.awt.Color(255, 49, 49));
         JBCadastrar.setText("Cadastrar");
         JBCadastrar.setBorder(null);
@@ -169,8 +171,9 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 JBCadastrarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 630, 150, 30));
+        getContentPane().add(JBCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 580, 130, 30));
 
+        JBCancelar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
         JBCancelar.setText("Fechar");
         JBCancelar.setBorder(null);
@@ -181,18 +184,24 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 JBCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 630, 160, 30));
+        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 140, 30));
 
         JTFFerramenta.setEditable(false);
         JTFFerramenta.setBackground(new java.awt.Color(166, 166, 166));
         JTFFerramenta.setForeground(new java.awt.Color(255, 255, 255));
         JTFFerramenta.setBorder(null);
-        getContentPane().add(JTFFerramenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 170, 20));
+        JTFFerramenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFFerramentaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JTFFerramenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 170, 20));
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ferramentas:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, 20));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 20));
 
+        JBAdicionar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         JBAdicionar.setForeground(new java.awt.Color(255, 49, 49));
         JBAdicionar.setText("Adicionar");
         JBAdicionar.setBorder(null);
@@ -203,17 +212,11 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 JBAdicionarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 427, 120, 30));
+        getContentPane().add(JBAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 110, 40));
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Amigo:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, 40));
-
-        JLTitulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        JLTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        JLTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JLTitulo.setText("Cadastro de Empréstimos");
-        getContentPane().add(JLTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 360, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, 30));
 
         JTFAmigo.setEditable(false);
         JTFAmigo.setBackground(new java.awt.Color(166, 166, 166));
@@ -224,12 +227,14 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 JTFAmigoActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFAmigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 224, 300, 20));
+        getContentPane().add(JTFAmigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 300, 30));
 
         jScrollPane3.setBorder(null);
 
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null},
+                {null, null},
                 {null, null},
                 {null, null},
                 {null, null},
@@ -247,12 +252,12 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(jTable);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 340, 120));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 340, 120));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Cadastro_Emprestimo.png"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 750));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 700));
 
-        setSize(new java.awt.Dimension(414, 757));
+        setSize(new java.awt.Dimension(414, 697));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -381,6 +386,10 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTableMouseClicked
 
+    private void JTFFerramentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFFerramentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFFerramentaActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -395,7 +404,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
     private javax.swing.JButton JBCadastrar;
     private javax.swing.JButton JBCancelar;
     private javax.swing.JComboBox<String> JCBAmigo;
-    private javax.swing.JLabel JLTitulo;
     private javax.swing.JTextField JTFAmigo;
     private javax.swing.JTextField JTFDataDev;
     private javax.swing.JTextField JTFDataEmp;
