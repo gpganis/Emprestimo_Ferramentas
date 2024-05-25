@@ -23,14 +23,21 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
         JBCadastrar = new javax.swing.JButton();
         JLNome = new javax.swing.JLabel();
         JTFAmigoNome = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Amigos");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        JLTelefone.setForeground(new java.awt.Color(255, 255, 255));
         JLTelefone.setText("Telefone:");
+        getContentPane().add(JLTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 59, 30));
 
+        JTFAmigoTelefone.setBackground(new java.awt.Color(255, 255, 255));
+        JTFAmigoTelefone.setForeground(new java.awt.Color(255, 49, 49));
         JTFAmigoTelefone.setText("Digite o Telefone do Amigo");
+        JTFAmigoTelefone.setBorder(null);
         JTFAmigoTelefone.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFAmigoTelefoneFocusGained(evt);
@@ -51,28 +58,48 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
                 JTFAmigoTelefoneKeyPressed(evt);
             }
         });
+        getContentPane().add(JTFAmigoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 300, -1));
 
         JLTitulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        JLTitulo.setForeground(new java.awt.Color(255, 255, 255));
         JLTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLTitulo.setText("Cadastro de Amigos");
+        getContentPane().add(JLTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 340, -1));
 
+        JBCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
         JBCancelar.setText("Fechar");
+        JBCancelar.setBorder(null);
+        JBCancelar.setContentAreaFilled(false);
+        JBCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBCancelarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 140, 30));
 
+        JBCadastrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        JBCadastrar.setForeground(new java.awt.Color(255, 49, 49));
         JBCadastrar.setText("Cadastrar");
+        JBCadastrar.setBorder(null);
+        JBCadastrar.setContentAreaFilled(false);
+        JBCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBCadastrarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 140, 30));
 
+        JLNome.setForeground(new java.awt.Color(255, 255, 255));
         JLNome.setText("Nome:");
+        getContentPane().add(JLNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 37, 30));
 
+        JTFAmigoNome.setBackground(new java.awt.Color(255, 255, 255));
+        JTFAmigoNome.setForeground(new java.awt.Color(255, 49, 49));
         JTFAmigoNome.setText("Digite o Nome do Amigo");
+        JTFAmigoNome.setBorder(null);
         JTFAmigoNome.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 JTFAmigoNomeFocusGained(evt);
@@ -93,50 +120,12 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
                 JTFAmigoNomeKeyPressed(evt);
             }
         });
+        getContentPane().add(JTFAmigoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 300, 20));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(JBCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(JBCadastrar)
-                        .addGap(80, 80, 80))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(JLNome, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JTFAmigoNome)
-                            .addComponent(JLTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JTFAmigoTelefone)
-                            .addComponent(JLTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addComponent(JLTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(JLNome)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JTFAmigoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(JLTelefone)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JTFAmigoTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBCadastrar)
-                    .addComponent(JBCancelar))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Cadastro_Amigo.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 400));
 
-        setSize(new java.awt.Dimension(376, 283));
+        setSize(new java.awt.Dimension(414, 407));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -240,5 +229,6 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
     private javax.swing.JLabel JLTitulo;
     private javax.swing.JTextField JTFAmigoNome;
     private javax.swing.JTextField JTFAmigoTelefone;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

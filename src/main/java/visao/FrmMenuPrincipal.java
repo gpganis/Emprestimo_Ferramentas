@@ -140,7 +140,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setSize(new java.awt.Dimension(514, 459));
+        setSize(new java.awt.Dimension(514, 460));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

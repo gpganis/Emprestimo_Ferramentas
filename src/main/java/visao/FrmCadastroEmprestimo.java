@@ -105,25 +105,42 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         JTFAmigo = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Empréstimos");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Data do Empréstimo:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 466, -1, 30));
 
         JTFDataEmp.setEditable(false);
+        JTFDataEmp.setBackground(new java.awt.Color(166, 166, 166));
+        JTFDataEmp.setForeground(new java.awt.Color(255, 255, 255));
+        JTFDataEmp.setBorder(null);
+        getContentPane().add(JTFDataEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 300, -1));
 
+        JCBAmigo.setBackground(new java.awt.Color(166, 166, 166));
+        JCBAmigo.setForeground(new java.awt.Color(255, 255, 255));
         JCBAmigo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar" }));
+        JCBAmigo.setBorder(null);
         JCBAmigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JCBAmigoActionPerformed(evt);
             }
         });
+        getContentPane().add(JCBAmigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 270, 40));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Data de Devolução:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, -1, -1));
 
+        JTFDataDev.setBackground(new java.awt.Color(255, 255, 255));
+        JTFDataDev.setForeground(new java.awt.Color(255, 49, 49));
         JTFDataDev.setText("yyyy-MM-dd");
+        JTFDataDev.setBorder(null);
         JTFDataDev.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JTFDataDevMouseClicked(evt);
@@ -139,44 +156,77 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 JTFDataDevKeyPressed(evt);
             }
         });
+        getContentPane().add(JTFDataDev, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 570, 300, -1));
 
+        JBCadastrar.setBackground(new java.awt.Color(255, 255, 255));
+        JBCadastrar.setForeground(new java.awt.Color(255, 49, 49));
         JBCadastrar.setText("Cadastrar");
+        JBCadastrar.setBorder(null);
+        JBCadastrar.setContentAreaFilled(false);
+        JBCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBCadastrarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 630, 150, 30));
 
+        JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
         JBCancelar.setText("Fechar");
+        JBCancelar.setBorder(null);
+        JBCancelar.setContentAreaFilled(false);
+        JBCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBCancelarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 630, 160, 30));
 
         JTFFerramenta.setEditable(false);
+        JTFFerramenta.setBackground(new java.awt.Color(166, 166, 166));
+        JTFFerramenta.setForeground(new java.awt.Color(255, 255, 255));
+        JTFFerramenta.setBorder(null);
+        getContentPane().add(JTFFerramenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 170, 20));
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ferramentas:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, 20));
 
+        JBAdicionar.setForeground(new java.awt.Color(255, 49, 49));
         JBAdicionar.setText("Adicionar");
+        JBAdicionar.setBorder(null);
+        JBAdicionar.setContentAreaFilled(false);
+        JBAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBAdicionarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 427, 120, 30));
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Amigo:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, 40));
 
         JLTitulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        JLTitulo.setForeground(new java.awt.Color(255, 255, 255));
         JLTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLTitulo.setText("Cadastro de Empréstimos");
+        getContentPane().add(JLTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 360, -1));
 
         JTFAmigo.setEditable(false);
+        JTFAmigo.setBackground(new java.awt.Color(166, 166, 166));
+        JTFAmigo.setForeground(new java.awt.Color(255, 255, 255));
+        JTFAmigo.setBorder(null);
         JTFAmigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFAmigoActionPerformed(evt);
             }
         });
+        getContentPane().add(JTFAmigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 224, 300, 20));
+
+        jScrollPane3.setBorder(null);
 
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -197,79 +247,12 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(jTable);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(JTFFerramenta, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JBAdicionar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(JLTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(JTFDataEmp)
-                            .addComponent(JTFAmigo)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JCBAmigo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(JTFDataDev)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap(20, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(JBCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(JBCadastrar)
-                .addGap(0, 0, 0))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(JLTitulo)
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(JCBAmigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JTFAmigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTFFerramenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JBAdicionar))
-                .addGap(20, 20, 20)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JTFDataEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JTFDataDev, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBCancelar)
-                    .addComponent(JBCadastrar))
-                .addContainerGap(42, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 340, 120));
 
-        setSize(new java.awt.Dimension(388, 556));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Cadastro_Emprestimo.png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 750));
+
+        setSize(new java.awt.Dimension(414, 757));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -421,6 +404,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable;
     // End of variables declaration//GEN-END:variables

@@ -26,12 +26,17 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
         JLNome = new javax.swing.JLabel();
         JTFFerramentaNome = new javax.swing.JTextField();
         JLMarca = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Ferramentas");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        JTFFerramentaMarca.setBackground(new java.awt.Color(255, 255, 255));
+        JTFFerramentaMarca.setForeground(new java.awt.Color(255, 49, 49));
         JTFFerramentaMarca.setText("Digite o Nome da Marca");
+        JTFFerramentaMarca.setBorder(null);
         JTFFerramentaMarca.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JTFFerramentaMarcaMouseClicked(evt);
@@ -47,14 +52,22 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
                 JTFFerramentaMarcaKeyPressed(evt);
             }
         });
+        getContentPane().add(JTFFerramentaMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 206, 300, 20));
 
         JLTitulo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        JLTitulo.setForeground(new java.awt.Color(255, 255, 255));
         JLTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLTitulo.setText("Cadastro de Ferramentas");
+        getContentPane().add(JLTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 320, -1));
 
+        JLCustoAquisicao.setForeground(new java.awt.Color(255, 255, 255));
         JLCustoAquisicao.setText("Custo da Aquisição:");
+        getContentPane().add(JLCustoAquisicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 115, -1));
 
+        JTFFerramentaCusto.setBackground(new java.awt.Color(255, 255, 255));
+        JTFFerramentaCusto.setForeground(new java.awt.Color(255, 49, 49));
         JTFFerramentaCusto.setText("Digite o Preço da Ferramenta");
+        JTFFerramentaCusto.setBorder(null);
         JTFFerramentaCusto.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 JTFFerramentaCustoFocusLost(evt);
@@ -75,24 +88,42 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
                 JTFFerramentaCustoKeyPressed(evt);
             }
         });
+        getContentPane().add(JTFFerramentaCusto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 290, 30));
 
+        JBCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
         JBCancelar.setText("Fechar");
+        JBCancelar.setBorder(null);
+        JBCancelar.setContentAreaFilled(false);
+        JBCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBCancelarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 140, 40));
 
+        JBCadastrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        JBCadastrar.setForeground(new java.awt.Color(255, 49, 49));
         JBCadastrar.setText("Cadastrar");
+        JBCadastrar.setBorder(null);
+        JBCadastrar.setContentAreaFilled(false);
+        JBCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         JBCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBCadastrarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 140, 40));
 
+        JLNome.setForeground(new java.awt.Color(255, 255, 255));
         JLNome.setText("Nome:");
+        getContentPane().add(JLNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 50, 30));
 
+        JTFFerramentaNome.setBackground(new java.awt.Color(255, 255, 255));
+        JTFFerramentaNome.setForeground(new java.awt.Color(255, 49, 49));
         JTFFerramentaNome.setText("Digite o Nome da Ferramenta");
+        JTFFerramentaNome.setBorder(null);
         JTFFerramentaNome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JTFFerramentaNomeMouseClicked(evt);
@@ -108,56 +139,16 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
                 JTFFerramentaNomeKeyPressed(evt);
             }
         });
+        getContentPane().add(JTFFerramentaNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 300, -1));
 
+        JLMarca.setForeground(new java.awt.Color(255, 255, 255));
         JLMarca.setText("Marca:");
+        getContentPane().add(JLMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 176, 59, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(JTFFerramentaCusto)
-                    .addComponent(JLNome, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTFFerramentaNome)
-                    .addComponent(JLMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTFFerramentaMarca)
-                    .addComponent(JLTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
-                    .addComponent(JLCustoAquisicao, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(JBCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(JBCadastrar)
-                .addGap(80, 80, 80))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addComponent(JLTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(JLNome)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JTFFerramentaNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(JLMarca)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JTFFerramentaMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(JLCustoAquisicao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(JTFFerramentaCusto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JBCancelar)
-                    .addComponent(JBCadastrar))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Cadastro_Ferramentas.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        setSize(new java.awt.Dimension(376, 351));
+        setSize(new java.awt.Dimension(414, 440));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -287,5 +278,6 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
     private javax.swing.JTextField JTFFerramentaCusto;
     private javax.swing.JTextField JTFFerramentaMarca;
     private javax.swing.JTextField JTFFerramentaNome;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
