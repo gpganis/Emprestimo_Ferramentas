@@ -224,23 +224,16 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
                 dataDevolucao = Util.stringParaDateSQL(JTFDataDev.getText());
                 if (dataDevolucao.before(dataEmprestimo)) {
                     dataDevolucao = null;
-                    throw new Mensagens("""
-                        Data de Devolução não pode ser antes da Data do Empréstimo
-                        """);
+                    throw new Mensagens("Data de Devolução não pode ser antes da Data do Empréstimo");
 
                 } else if (dataDevolucao.after(dataEmprestimo)) {
                     dataDevolucao = Util.stringParaDateSQL(JTFDataDev.getText());
                 } else {
                     dataDevolucao = null;
-                    throw new Mensagens("""
-                            Data de Devolução não pode ser igual a da Data do Empréstimo
-                            """);
+                    throw new Mensagens("Data de Devolução não pode ser igual a da Data do Empréstimo");
                 }
             } else {
-                throw new Mensagens("""
-                            Data de Devolução deve conter o seguite formato:
-                            yyyy-MM-dd
-                            """);
+                throw new Mensagens("Data de Devolução deve conter o seguite formato:\nyyyy-MM-dd");
             }
             if (JCBEntregue.isSelected()){
                 int respostaUsuario = JOptionPane.showConfirmDialog(null, "Tem certeza que este Empréstimo foi finalizado?");
