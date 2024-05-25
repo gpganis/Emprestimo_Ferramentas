@@ -52,3 +52,27 @@ CREATE TABLE IF NOT EXISTS `tb_ferramentas` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
+
+-- adicionando dados de exemplo na tabela de Amigos
+INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES (1, 'Gabriel' ,'12345678924');
+INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES (2, 'Mathues', '98752654321');
+INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES (3, 'Pedro', '66918273645');
+INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES (4, 'Rennan' , '42283748228');
+INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES (5, 'Rafael' , '14232523634');
+
+-- adicionando dados de exemplo na tabela de Emprestimos
+INSERT INTO tb_emprestimos(id_emprestimo,id_amigo,data_emprestimo, data_devolucao,entregue) VALUES (1,5,'2024-06-07','2024-07-30',0);
+INSERT INTO tb_emprestimos(id_emprestimo,id_amigo,data_emprestimo, data_devolucao,entregue) VALUES (2,1,'2024-06-07','2024-08-25',0);
+INSERT INTO tb_emprestimos(id_emprestimo,id_amigo,data_emprestimo, data_devolucao,entregue) VALUES (3,3,'2024-06-07','2024-09-10',0);
+
+-- adicionando dados de exemplo na tabela de Ferramentas
+INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao,id_emprestimo) VALUES (1,'Martelo','Bosch', 23.50,1);
+INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao,id_emprestimo) VALUES (2,'Enxada','Tramontina', 45.25,1);
+INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao,id_emprestimo) VALUES (3,'Furadeira','Stanley', 267.00,3);
+INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao,id_emprestimo) VALUES (4,'Pá','Tramontina', 34.67,3);
+INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao,id_emprestimo) VALUES (5,'Trena','Stanley', 56.78,2);
+
+-- Inicia as tabelas
+SELECT * FROM tb_amigos;
+SELECT * FROM tb_emprestimos;
+SELECT * FROM tb_ferramentas;
