@@ -20,6 +20,7 @@ import modelo.Util;
 
 public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
+    private AmigoDAO daoAmg = new AmigoDAO();
     private FerramentaDAO dao = new FerramentaDAO();
     private EmprestimoDAO daoEmp = new EmprestimoDAO();
     private boolean countData = true;
@@ -300,6 +301,14 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 throw new Mensagens("Primeiro selecione um Amigo.");
             } else {
                 idAmg = AmigoDAO.getIdPeloNome(JTFAmigo.getText());
+                boolean Ver = daoAmg.verificarPendencia(idAmg);
+                if (Ver == true) {
+                    int respostaUsuario = JOptionPane.showConfirmDialog(null, "Esse amigo tem empréstimos pendentes deseja continuar?");
+
+                    if (respostaUsuario != 0) {
+                        return;
+                    }
+                }
             }
 
             if (FerSelect.size() == 0) {
@@ -311,7 +320,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 if (dataDevolucao.before(dataEmprestimo)) {
                     dataDevolucao = null;
                     throw new Mensagens("Data de Devolução não pode ser antes da Data do Empréstimo");
-                    
+
                 } else if (dataDevolucao.after(dataEmprestimo)) {
                     dataDevolucao = Util.stringParaDateSQL(JTFDataDev.getText());
                 } else {
@@ -321,8 +330,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
             } else {
                 throw new Mensagens("Data de Devolução deve conter o seguite formato:\nyyyy-MM-dd");
             }
-
-            
 
             if (this.objEmprestimo.inserirEmprestimo(dataEmprestimo, dataDevolucao, entregue, idAmg)) {
                 JOptionPane.showMessageDialog(rootPane, "Empréstimo Cadastrado com Sucesso!");
@@ -341,7 +348,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             Logger.getLogger(FrmCadastroEmprestimo.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-        carregaTabelaFerramentas();
+            carregaTabelaFerramentas();
         }
 
     }//GEN-LAST:event_JBCadastrarActionPerformed

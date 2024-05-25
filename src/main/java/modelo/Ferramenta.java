@@ -11,7 +11,7 @@ public class Ferramenta {
     private FerramentaDAO dao;
 
     public Ferramenta() {
-        this("","",0,0,0);
+        this("", "", 0, 0, 0);
     }
 
     public Ferramenta(String nome, String marca, double custoAquisicao, int id, int idEmp) {
@@ -62,7 +62,7 @@ public class Ferramenta {
     public void setIdEmp(int idEmp) {
         this.idEmp = idEmp;
     }
-    
+
     public ArrayList<Ferramenta> getListaFerramentas() {
         return dao.getMinhaLista();
     }

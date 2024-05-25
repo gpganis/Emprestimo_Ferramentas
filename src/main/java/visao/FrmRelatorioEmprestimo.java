@@ -7,19 +7,19 @@ import modelo.Emprestimo;
 public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
 
     private EmprestimoDAO dao = new EmprestimoDAO();
-    
+
     public FrmRelatorioEmprestimo() {
         initComponents();
         carregaTabelaEmprestimos();
     }
-    
+
     public void carregaTabelaEmprestimos() {
         DefaultTableModel modelo = (DefaultTableModel) this.jTable.getModel();
         modelo.setNumRows(0);
         for (Emprestimo a : dao.getMinhaLista()) {
             modelo.addRow(new Object[]{
                 a.getId(),
-                a.getIdAmg(),               
+                a.getIdAmg(),
                 a.getDataEmprestimo(),
                 a.getDataDevolucao(),
                 a.isEntregue()});

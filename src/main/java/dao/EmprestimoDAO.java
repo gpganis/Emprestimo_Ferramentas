@@ -11,9 +11,9 @@ import modelo.Emprestimo;
 public class EmprestimoDAO {
 
     public static ArrayList<Emprestimo> ListaEmprestimos = new ArrayList<>();
-    
+
     public ArrayList<Emprestimo> ListaEmprestimosAtivos = new ArrayList<>();
-    
+
     private ConexaoDAO connect;
 
     public ArrayList<Emprestimo> getMinhaLista() {
@@ -56,7 +56,7 @@ public class EmprestimoDAO {
         }
         return maiorId;
     }
-    
+
     public boolean inserirEmprestimoBD(Emprestimo objeto) {
         String sql = "INSERT INTO tb_emprestimos(id_emprestimo,id_amigo,data_emprestimo, data_devolucao, entregue) VALUES(?,?,?,?,?)";
         try {
@@ -65,7 +65,7 @@ public class EmprestimoDAO {
             stmt.setInt(1, objeto.getId());
             stmt.setInt(2, objeto.getIdAmg());
             stmt.setDate(3, objeto.getDataEmprestimo());
-            stmt.setDate(4, objeto.getDataDevolucao());           
+            stmt.setDate(4, objeto.getDataDevolucao());
             stmt.setBoolean(5, objeto.isEntregue());
 
             stmt.execute();
@@ -131,7 +131,7 @@ public class EmprestimoDAO {
         }
         return objeto;
     }
-    
+
     public ArrayList<Emprestimo> getEmprestimosAtivos() {
 
         ListaEmprestimosAtivos.clear();

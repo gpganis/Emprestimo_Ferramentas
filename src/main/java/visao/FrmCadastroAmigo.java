@@ -4,9 +4,10 @@ import javax.swing.JOptionPane;
 import modelo.Amigo;
 
 public class FrmCadastroAmigo extends javax.swing.JFrame {
+
     private boolean countNome = true, countTelefone = true;
     private Amigo objAmigos;
-    
+
     public FrmCadastroAmigo() {
         initComponents();
         this.objAmigos = new Amigo();
@@ -128,7 +129,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
 
     private void JTFAmigoTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFAmigoTelefoneMouseClicked
         // TODO add your handling code here:
-        if (countTelefone == true){
+        if (countTelefone == true) {
             JTFAmigoTelefone.setText("");
             countTelefone = false;
         }
@@ -140,7 +141,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
 
     private void JTFAmigoTelefoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFAmigoTelefoneKeyPressed
         // TODO add your handling code here:
-        if (countTelefone == true){
+        if (countTelefone == true) {
             JTFAmigoTelefone.setText("");
             countTelefone = false;
         }
@@ -155,11 +156,11 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String nome, telefone = "";
-            
-            if ( "Digite o Nome do Amigo".equals(JTFAmigoNome.getText())){
+
+            if ("Digite o Nome do Amigo".equals(JTFAmigoNome.getText())) {
                 throw new Mensagens("Primeiro escreva o nome do Amigo.");
             }
-            
+
             if (this.JTFAmigoNome.getText().length() < 2) {
                 throw new Mensagens("Nome deve conter ao menos 2 caracteres.");
             } else {
@@ -167,7 +168,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
             }
             if (this.JTFAmigoTelefone.getText().length() == 11 && Long.parseLong(this.JTFAmigoTelefone.getText()) > 0) {
                 telefone = this.JTFAmigoTelefone.getText();
-            } else {             
+            } else {
                 throw new Mensagens("Telefone deve conter somente 11 números");
             }
 
@@ -191,7 +192,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
 
     private void JTFAmigoNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFAmigoNomeMouseClicked
         // TODO add your handling code here:
-        if (countNome == true){
+        if (countNome == true) {
             JTFAmigoNome.setText("");
             countNome = false;
         }
@@ -203,14 +204,14 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
 
     private void JTFAmigoNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFAmigoNomeKeyPressed
         // TODO add your handling code here:
-        if (countNome == true){
+        if (countNome == true) {
             JTFAmigoNome.setText("");
             countNome = false;
         }
     }//GEN-LAST:event_JTFAmigoNomeKeyPressed
 
     public static void main(String args[]) {
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FrmCadastroAmigo().setVisible(true);

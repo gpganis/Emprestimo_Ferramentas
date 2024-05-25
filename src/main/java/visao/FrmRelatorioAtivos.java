@@ -212,13 +212,11 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
             } else {
                 id = Integer.parseInt(this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString());
             }
-            
+
             String regex = "\\d{4}-\\d{2}-\\d{2}";
             Date dataDevolucao = null;
             Date dataEmprestimo = Util.stringParaDateSQL(JTFDataEmp.getText());
             boolean Entregue = false;
-            
-            
 
             if (this.JTFDataDev.getText().matches(regex)) {
                 dataDevolucao = Util.stringParaDateSQL(JTFDataDev.getText());
@@ -235,19 +233,20 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
             } else {
                 throw new Mensagens("Data de Devolução deve conter o seguite formato:\nyyyy-MM-dd");
             }
-            if (JCBEntregue.isSelected()){
+            if (JCBEntregue.isSelected()) {
                 int respostaUsuario = JOptionPane.showConfirmDialog(null, "Tem certeza que este Empréstimo foi finalizado?");
 
                 if (respostaUsuario == 0) {
                     if (JCBEntregue.isSelected()) {
                         Entregue = true;
+                        alterarIdEmpFerramenta(id);
                     }
 
                 } else {
                     return;
                 }
             }
-                
+
             if (this.objEmprestimo.alterarEmprestimo(dataDevolucao, Entregue, id)) {
                 this.JTFDataDev.setText("");
                 this.JCBEntregue.setSelected(false);

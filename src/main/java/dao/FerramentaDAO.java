@@ -12,7 +12,7 @@ public class FerramentaDAO {
     public ArrayList<Ferramenta> ListaFerramentas = new ArrayList<>();
 
     public ArrayList<Ferramenta> ListaFerramentasDisponiveis = new ArrayList<>();
-    
+
     private ConexaoDAO connect;
 
     public ArrayList<Ferramenta> getMinhaLista() {

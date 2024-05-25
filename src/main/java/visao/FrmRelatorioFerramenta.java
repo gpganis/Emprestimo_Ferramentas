@@ -32,7 +32,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 a.getCustoAquisicao()});
         }
     }
-    
+
     public String valorTotal() {
         double soma = 0;
 
@@ -216,7 +216,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
             int id = 0;
             String nome, marca = "";
             double custoAquisicao = 0.0;
-            
+
             if (this.jTable.getSelectedRow() == -1) {
                 throw new Mensagens(
                         "Primeiro Selecione uma Ferramenta para ALTERAR");
@@ -225,7 +225,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                         getValueAt(this.jTable.getSelectedRow(), 0).
                         toString());
             }
-            
+
             if (this.JTFNome.getText().length() < 2) {
                 throw new Mensagens("Nome deve conter ao menos 2 caracteres.");
             } else {
