@@ -167,8 +167,8 @@ public class FerramentaDAO {
 
                 int idEmp = res.getInt("id_emprestimo");
 
-                if (idEmp == 0 ) {
-                    return false;
+                if (idEmp > 0 ) {
+                    return true;
                 }
             }
             stmt.close();
@@ -176,6 +176,6 @@ public class FerramentaDAO {
         } catch (SQLException ex) {
             System.out.println("Erro:" + ex);
         }
-        return true;
+        return false;
     }
 }

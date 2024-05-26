@@ -153,13 +153,19 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
                         "Primeiro Selecione um Empréstimo para APAGAR");
             } else {
                 id = Integer.parseInt(this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString());
-            }
 
-            int respostaUsuario = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja apagar este Empréstimo?");
+                boolean Ver = dao.verificarPendencia(id);
+                if (Ver == true) {
+                    JOptionPane.showMessageDialog(null, "Esse Empréstimo está pendente "
+                                                    + "\n   e não pode ser excluido");
+                } else {
+                    int respostaUsuario = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja apagar este Empréstimo?");
 
-            if (respostaUsuario == 0) {
-                if (alterarIdEmpFerramenta(id) && this.objEmprestimo.apagarEmprestimo(id)) {
-                    JOptionPane.showMessageDialog(rootPane, "Empréstimo Apagado com Sucesso!");
+                    if (respostaUsuario == 0) {
+                        if (alterarIdEmpFerramenta(id) && this.objEmprestimo.apagarEmprestimo(id)) {
+                            JOptionPane.showMessageDialog(rootPane, "Empréstimo Apagado com Sucesso!");
+                        }
+                    }
                 }
             }
             System.out.println(this.dao.getMinhaLista().toString());

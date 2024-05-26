@@ -158,4 +158,25 @@ public class EmprestimoDAO {
         }
         return ListaEmprestimosAtivos;
     }
+    
+    public boolean verificarPendencia(int id) {
+
+        try {
+            Statement stmt = connect.getConexao().createStatement();
+            ResultSet res = stmt.executeQuery("select entregue from tb_emprestimos;");
+            while (res.next()) {
+
+                boolean  entregue = res.getBoolean("entregue");
+
+                if (entregue == false ) {
+                    return true;
+                }
+            }
+            stmt.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Erro:" + ex);
+        }
+        return false;
+    }
 }
