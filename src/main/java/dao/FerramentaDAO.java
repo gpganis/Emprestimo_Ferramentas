@@ -157,4 +157,25 @@ public class FerramentaDAO {
         }
         return ListaFerramentasDisponiveis;
     }
+    
+    public boolean verificarPendencia(int id) {
+
+        try {
+            Statement stmt = connect.getConexao().createStatement();
+            ResultSet res = stmt.executeQuery("select id_emprestimo from tb_ferramentas;");
+            while (res.next()) {
+
+                int idEmp = res.getInt("id_emprestimo");
+
+                if (idEmp == 0 ) {
+                    return false;
+                }
+            }
+            stmt.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Erro:" + ex);
+        }
+        return true;
+    }
 }

@@ -201,7 +201,15 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
         try {
             String nome, marca = "";
             double custoAquisicao = 0.0;
+            
+            if ("Digite o Nome da Ferramenta".equals(JTFFerramentaNome.getText())) {
+                throw new Mensagens("Primeiro escreva o nome da Ferramenta.");
+            }
 
+            if ("Digite o Nome da Marca".equals(JTFFerramentaMarca.getText())) {
+                throw new Mensagens("Primeiro escreva o nome da Marca.");
+            }
+            
             if (this.JTFFerramentaNome.getText().length() < 2) {
                 throw new Mensagens("Nome deve conter ao menos 2 caracteres.");
             } else {
@@ -231,7 +239,7 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
         } catch (Mensagens erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } catch (NumberFormatException erro2) {
-            JOptionPane.showMessageDialog(null, "Informe um número válido.");
+            JOptionPane.showMessageDialog(null, "Informe um número válido para o custo da Ferramenta.");
         }
     }//GEN-LAST:event_JBCadastrarActionPerformed
 

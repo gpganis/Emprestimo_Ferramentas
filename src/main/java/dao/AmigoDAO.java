@@ -161,7 +161,7 @@ public class AmigoDAO {
 
         } catch (SQLException ex) {
             System.out.println("Erro:" + ex);
-        } 
+        }
         return false;
     }
 }

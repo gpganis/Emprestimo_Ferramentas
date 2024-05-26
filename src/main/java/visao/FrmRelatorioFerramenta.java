@@ -186,6 +186,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         JTFValorTotal.setBackground(new java.awt.Color(166, 166, 166));
         JTFValorTotal.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         JTFValorTotal.setForeground(new java.awt.Color(255, 255, 255));
+        JTFValorTotal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         JTFValorTotal.setBorder(null);
         JTFValorTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -270,20 +271,26 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 throw new Mensagens(
                         "Primeiro Selecione uma Ferramenta para APAGAR");
             } else {
-                id = Integer.parseInt(this.jTable.
-                        getValueAt(this.jTable.getSelectedRow(), 0).
-                        toString());
-            }
-            int respostaUsuario = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja apagar esta Ferramenta?");
+                id = Integer.parseInt(this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString());
 
-            if (respostaUsuario == 0) {
-                if (this.objFerramenta.apagarFerramenta(id)) {
-                    this.JTFNome.setText("");
-                    this.JTFMarca.setText("");
-                    this.JTFCusto.setText("");
-                    JOptionPane.showMessageDialog(rootPane, "Ferramenta Apagada com Sucesso!");
+                boolean Ver = dao.verificarPendencia(id);
+                if (Ver == true) {
+                        JOptionPane.showMessageDialog(null, "Essa Ferramenta está sendo emprestada "
+                                                        + "\n     e não pode ser excluida");
+                } else {
+                    int respostaUsuario = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja apagar esta Ferramenta?");
+
+                    if (respostaUsuario == 0) {
+                        if (this.objFerramenta.apagarFerramenta(id)) {
+                            this.JTFNome.setText("");
+                            this.JTFMarca.setText("");
+                            this.JTFCusto.setText("");
+                            JOptionPane.showMessageDialog(rootPane, "Ferramenta Apagada com Sucesso!");
+                        }
+                    }
                 }
             }
+
             // System.out.println(this.dao.getMinhaLista().toString());
         } catch (Mensagens erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());

@@ -1,12 +1,18 @@
 package visao;
 
+import dao.ConexaoDAO;
 import dao.EmprestimoDAO;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Emprestimo;
 
 public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
 
+    private ConexaoDAO connect;
     private EmprestimoDAO dao = new EmprestimoDAO();
+    private Emprestimo objEmprestimo = new Emprestimo();
 
     public FrmRelatorioEmprestimo() {
         initComponents();
@@ -26,6 +32,24 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         }
     }
 
+    public boolean alterarIdEmpFerramenta(int id) {
+        String sql = "UPDATE tb_ferramentas SET id_emprestimo = null WHERE id_emprestimo = ?";
+        try {
+            PreparedStatement stmt = connect.getConexao().prepareStatement(sql);
+
+            stmt.setInt(1, id);
+            stmt.execute();
+
+            stmt.close();
+
+            return true;
+
+        } catch (SQLException erro) {
+            System.out.println("Erro: " + erro);
+            throw new RuntimeException(erro);
+        }
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -33,19 +57,32 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         JBCancelar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
+        JBApagar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Ralatório de Empréstimos");
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        JBCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        JBCancelar.setForeground(new java.awt.Color(255, 19, 19));
         JBCancelar.setText("Fechar");
+        JBCancelar.setContentAreaFilled(false);
         JBCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBCancelarActionPerformed(evt);
             }
         });
+        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 150, 30));
 
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -75,30 +112,26 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
-                .addGap(20, 20, 20))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(207, 207, 207)
-                .addComponent(JBCancelar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
-                .addComponent(JBCancelar)
-                .addGap(34, 34, 34))
-        );
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, 350));
 
-        setSize(new java.awt.Dimension(512, 407));
+        JBApagar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBApagar.setForeground(new java.awt.Color(255, 49, 49));
+        JBApagar.setText("Apagar");
+        JBApagar.setBorder(null);
+        JBApagar.setContentAreaFilled(false);
+        JBApagar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        JBApagar.setDefaultCapable(false);
+        JBApagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBApagarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JBApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 150, 30));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Emprestimo_Totais.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
+
+        setSize(new java.awt.Dimension(514, 537));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -111,6 +144,32 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTableMouseClicked
 
+    private void JBApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBApagarActionPerformed
+        // TODO add your handling code here:
+        try {
+            int id = 0;
+            if (this.jTable.getSelectedRow() == -1) {
+                throw new Mensagens(
+                        "Primeiro Selecione um Empréstimo para APAGAR");
+            } else {
+                id = Integer.parseInt(this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString());
+            }
+
+            int respostaUsuario = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja apagar este Empréstimo?");
+
+            if (respostaUsuario == 0) {
+                if (alterarIdEmpFerramenta(id) && this.objEmprestimo.apagarEmprestimo(id)) {
+                    JOptionPane.showMessageDialog(rootPane, "Empréstimo Apagado com Sucesso!");
+                }
+            }
+            System.out.println(this.dao.getMinhaLista().toString());
+        } catch (Mensagens erro) {
+            JOptionPane.showMessageDialog(null, erro.getMessage());
+        } finally {
+            carregaTabelaEmprestimos();
+        }
+    }//GEN-LAST:event_JBApagarActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -121,7 +180,9 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JBApagar;
     private javax.swing.JButton JBCancelar;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;
     // End of variables declaration//GEN-END:variables

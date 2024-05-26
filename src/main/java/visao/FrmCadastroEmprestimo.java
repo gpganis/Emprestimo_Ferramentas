@@ -375,7 +375,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
             }
         }
 
-
     }//GEN-LAST:event_JBAdicionarActionPerformed
 
     private void JTFAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFAmigoActionPerformed

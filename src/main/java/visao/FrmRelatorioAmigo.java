@@ -178,7 +178,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
             if (this.JTFTelefone.getText().length() == 11 && Long.parseLong(this.JTFTelefone.getText()) > 0) {
                 telefone = this.JTFTelefone.getText();
             } else {
-                throw new Mensagens("Telefone deve conter somente 11 números");
+                throw new Mensagens("Telefone deve conter exatamente 11 digitos numéricos");
             }
 
             if (this.objAmigo.alterarAmigo(id, nome, telefone)) {
@@ -205,18 +205,23 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                 throw new Mensagens(
                         "Primeiro Selecione um Amigo para APAGAR");
             } else {
-                id = Integer.parseInt(this.jTable.
-                        getValueAt(this.jTable.getSelectedRow(), 0).
-                        toString());
-            }
+                id = Integer.parseInt(this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString());
 
-            int respostaUsuario = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja apagar este Amigo?");
+                boolean Ver = dao.verificarPendencia(id);
+                if (Ver == true) {
+                    JOptionPane.showMessageDialog(null, "Primeiro exclua os empréstimos "
+                                                    + "\n  cadastrado para esse amigo");
+                    return;
+                } else {
+                    int respostaUsuario = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja apagar este Amigo?");
 
-            if (respostaUsuario == 0) {
-                if (this.objAmigo.apagarAmigo(id)) {
-                    this.JTFNome.setText("");
-                    this.JTFTelefone.setText("");
-                    JOptionPane.showMessageDialog(rootPane, "Amigo Apagado com Sucesso!");
+                    if (respostaUsuario == 0) {
+                        if (this.objAmigo.apagarAmigo(id)) {
+                            this.JTFNome.setText("");
+                            this.JTFTelefone.setText("");
+                            JOptionPane.showMessageDialog(rootPane, "Amigo Apagado com Sucesso!");
+                        }
+                    }
                 }
             }
             System.out.println(this.dao.getMinhaLista().toString());
