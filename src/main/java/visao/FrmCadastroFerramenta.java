@@ -35,7 +35,7 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JTFFerramentaMarca.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JTFFerramentaMarca.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         JTFFerramentaMarca.setForeground(new java.awt.Color(255, 49, 49));
         JTFFerramentaMarca.setText("Digite o Nome da Marca");
         JTFFerramentaMarca.setBorder(null);
@@ -54,13 +54,13 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
                 JTFFerramentaMarcaKeyPressed(evt);
             }
         });
-        getContentPane().add(JTFFerramentaMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 300, 30));
+        getContentPane().add(JTFFerramentaMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 280, 30));
 
         JLCustoAquisicao.setForeground(new java.awt.Color(255, 255, 255));
         JLCustoAquisicao.setText("Custo:");
-        getContentPane().add(JLCustoAquisicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 115, -1));
+        getContentPane().add(JLCustoAquisicao, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 206, 115, 20));
 
-        JTFFerramentaCusto.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JTFFerramentaCusto.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         JTFFerramentaCusto.setForeground(new java.awt.Color(255, 49, 49));
         JTFFerramentaCusto.setText("Digite o Preço da Ferramenta");
         JTFFerramentaCusto.setBorder(null);
@@ -84,7 +84,7 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
                 JTFFerramentaCustoKeyPressed(evt);
             }
         });
-        getContentPane().add(JTFFerramentaCusto, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 300, 30));
+        getContentPane().add(JTFFerramentaCusto, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 280, 30));
 
         JBCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
@@ -116,7 +116,7 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
         JLNome.setText("Nome:");
         getContentPane().add(JLNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 50, 30));
 
-        JTFFerramentaNome.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JTFFerramentaNome.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         JTFFerramentaNome.setForeground(new java.awt.Color(255, 49, 49));
         JTFFerramentaNome.setText("Digite o Nome da Ferramenta");
         JTFFerramentaNome.setBorder(null);
@@ -135,7 +135,7 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
                 JTFFerramentaNomeKeyPressed(evt);
             }
         });
-        getContentPane().add(JTFFerramentaNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 300, 20));
+        getContentPane().add(JTFFerramentaNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 280, 30));
 
         JLMarca.setForeground(new java.awt.Color(255, 255, 255));
         JLMarca.setText("Marca:");

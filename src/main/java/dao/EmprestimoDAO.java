@@ -163,13 +163,14 @@ public class EmprestimoDAO {
 
         try {
             Statement stmt = connect.getConexao().createStatement();
-            ResultSet res = stmt.executeQuery("select entregue from tb_emprestimos;");
+            ResultSet res = stmt.executeQuery("select id_emprestimo, entregue from tb_emprestimos;");
             while (res.next()) {
-
+                
+                int idEmp = res.getInt("id_emprestimo");
                 boolean  entregue = res.getBoolean("entregue");
 
-                if (entregue == false ) {
-                    return true;
+                if (idEmp == id && entregue == false ) {
+                    return true; // retorna que o emprestimo ainda está ativo
                 }
             }
             stmt.close();

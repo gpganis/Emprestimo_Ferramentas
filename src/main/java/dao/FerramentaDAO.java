@@ -162,13 +162,14 @@ public class FerramentaDAO {
 
         try {
             Statement stmt = connect.getConexao().createStatement();
-            ResultSet res = stmt.executeQuery("select id_emprestimo from tb_ferramentas;");
+            ResultSet res = stmt.executeQuery("select id_ferramenta, id_emprestimo from tb_ferramentas;");
             while (res.next()) {
-
+                
+                int idFer = res.getInt("id_ferramenta");
                 int idEmp = res.getInt("id_emprestimo");
 
-                if (idEmp > 0 ) {
-                    return true;
+                if (idFer == id && idEmp != 0 ) {
+                    return true; // retorna que a ferramenta está emprestada
                 }
             }
             stmt.close();

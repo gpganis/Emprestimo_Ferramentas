@@ -154,7 +154,7 @@ public class AmigoDAO {
                 boolean entregue = res.getBoolean("entregue");
 
                 if (idAmg == id && entregue == false) {
-                    return true;
+                    return true; // retorna que o amigo tem empréstimos pendentes
                 }
             }
             stmt.close();

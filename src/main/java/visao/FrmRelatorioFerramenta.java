@@ -251,7 +251,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 this.JTFCusto.setText("");
                 JOptionPane.showMessageDialog(rootPane, "Ferramenta Alterada com Sucesso!");
             }
-            // System.out.println(this.dao.getMinhaLista().toString());
+            System.out.println(this.dao.getMinhaLista().toString());
         } catch (Mensagens erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } catch (NumberFormatException erro2) {
@@ -273,8 +273,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
             } else {
                 id = Integer.parseInt(this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString());
 
-                boolean Ver = dao.verificarPendencia(id);
-                if (Ver == true) {
+                if (dao.verificarPendencia(id) == true) {
                         JOptionPane.showMessageDialog(null, "Essa Ferramenta está sendo emprestada "
                                                         + "\n     e não pode ser excluida");
                 } else {

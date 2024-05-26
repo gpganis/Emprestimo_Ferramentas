@@ -34,7 +34,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
         JLTelefone.setText("Telefone:");
         getContentPane().add(JLTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 59, 40));
 
-        JTFAmigoTelefone.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JTFAmigoTelefone.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         JTFAmigoTelefone.setForeground(new java.awt.Color(255, 49, 49));
         JTFAmigoTelefone.setText("Digite o Telefone do Amigo");
         JTFAmigoTelefone.setBorder(null);
@@ -58,7 +58,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
                 JTFAmigoTelefoneKeyPressed(evt);
             }
         });
-        getContentPane().add(JTFAmigoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 300, 20));
+        getContentPane().add(JTFAmigoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 280, 20));
 
         JBCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
@@ -90,7 +90,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
         JLNome.setText("Nome:");
         getContentPane().add(JLNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 37, 20));
 
-        JTFAmigoNome.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JTFAmigoNome.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         JTFAmigoNome.setForeground(new java.awt.Color(255, 49, 49));
         JTFAmigoNome.setText("Digite o Nome do Amigo");
         JTFAmigoNome.setBorder(null);
@@ -114,7 +114,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
                 JTFAmigoNomeKeyPressed(evt);
             }
         });
-        getContentPane().add(JTFAmigoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 300, 20));
+        getContentPane().add(JTFAmigoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 280, 20));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Cadastro_Amigo.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
@@ -169,7 +169,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
             if (this.JTFAmigoTelefone.getText().length() == 11 && Long.parseLong(this.JTFAmigoTelefone.getText()) > 0) {
                 telefone = this.JTFAmigoTelefone.getText();
             } else {
-                throw new Mensagens("Telefone deve conter somente 11 números");
+                throw new Mensagens("Telefone deve conter exatamente 11 digitos numéricos");
             }
 
             if (this.objAmigos.inserirAmigo(nome, telefone)) {

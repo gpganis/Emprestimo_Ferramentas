@@ -61,7 +61,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Ralatório de Empréstimos");
+        setTitle("Registro Geral de Empréstimos");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -129,7 +129,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         getContentPane().add(JBApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 150, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Emprestimo_Totais.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
 
         setSize(new java.awt.Dimension(514, 537));
         setLocationRelativeTo(null);
