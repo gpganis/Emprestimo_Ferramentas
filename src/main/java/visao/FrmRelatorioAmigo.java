@@ -24,6 +24,9 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                 a.getNome(),
                 a.getTelefone(),});
         }
+        jTable.getColumn("ID").setPreferredWidth(37);
+        jTable.getColumn("Nome").setPreferredWidth(200);
+        jTable.getColumn("Telefone").setPreferredWidth(200);
     }
 
     @SuppressWarnings("unchecked")
@@ -39,27 +42,29 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
         JBApagar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Relatório de Amigos");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Nome:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 270, 40, 30));
+        jLabel1.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 19, 19));
+        jLabel1.setText("    Nome:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 60, 20));
 
-        jLabel.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        jLabel.setForeground(new java.awt.Color(255, 19, 19));
         jLabel.setText("Telefone:");
-        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 320, 60, 30));
+        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 60, 30));
 
-        JTFNome.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JTFNome.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFNome.setForeground(new java.awt.Color(255, 49, 49));
         JTFNome.setBorder(null);
-        getContentPane().add(JTFNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 279, 310, 20));
+        getContentPane().add(JTFNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 300, 20));
 
-        JTFTelefone.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JTFTelefone.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFTelefone.setForeground(new java.awt.Color(255, 49, 49));
         JTFTelefone.setAlignmentY(0.25F);
         JTFTelefone.setBorder(null);
@@ -68,9 +73,9 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                 JTFTelefoneActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 326, 310, -1));
+        getContentPane().add(JTFTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 310, -1));
 
-        JBCancelar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBCancelar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
         JBCancelar.setText("Fechar");
         JBCancelar.setBorder(null);
@@ -81,9 +86,9 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                 JBCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 387, 90, 30));
+        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 387, 100, 40));
 
-        JBAlterar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBAlterar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBAlterar.setForeground(new java.awt.Color(255, 49, 49));
         JBAlterar.setText("Alterar");
         JBAlterar.setBorder(null);
@@ -94,9 +99,9 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                 JBAlterarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 387, 100, 30));
+        getContentPane().add(JBAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 387, 100, 40));
 
-        JBApagar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBApagar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBApagar.setForeground(new java.awt.Color(255, 49, 49));
         JBApagar.setText("Apagar");
         JBApagar.setBorder(null);
@@ -107,8 +112,9 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                 JBApagarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 387, 100, 30));
+        getContentPane().add(JBApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 387, 100, 40));
 
+        jTable.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -128,6 +134,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                 "ID", "Nome", "Telefone"
             }
         ));
+        jTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         jTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTable.setShowGrid(true);
         jTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -139,8 +146,8 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, 210));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Amigo.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Amigo.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
 
         setSize(new java.awt.Dimension(514, 507));
         setLocationRelativeTo(null);
@@ -260,7 +267,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
     private javax.swing.JTextField JTFTelefone;
     private javax.swing.JLabel jLabel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;
     // End of variables declaration//GEN-END:variables

@@ -35,6 +35,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         JMEmprestimo.setBorder(null);
         JMEmprestimo.setForeground(new java.awt.Color(255, 49, 49));
         JMEmprestimo.setText("Cadastros");
+        JMEmprestimo.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JMEmprestimo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JMEmprestimoActionPerformed(evt);
@@ -42,6 +43,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
 
         CadastroAmigo.setBackground(new java.awt.Color(255, 255, 255));
+        CadastroAmigo.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         CadastroAmigo.setForeground(new java.awt.Color(255, 49, 49));
         CadastroAmigo.setText("Amigo");
         CadastroAmigo.setBorder(null);
@@ -53,6 +55,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         JMEmprestimo.add(CadastroAmigo);
 
         CadastroFerramenta.setBackground(new java.awt.Color(255, 255, 255));
+        CadastroFerramenta.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         CadastroFerramenta.setForeground(new java.awt.Color(255, 49, 49));
         CadastroFerramenta.setText("Ferramenta");
         CadastroFerramenta.setBorder(null);
@@ -64,6 +67,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         JMEmprestimo.add(CadastroFerramenta);
 
         jMenuItem1.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuItem1.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jMenuItem1.setForeground(new java.awt.Color(255, 49, 49));
         jMenuItem1.setText("Empréstimo");
         jMenuItem1.setBorder(null);
@@ -78,8 +82,10 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
         jMenu2.setForeground(new java.awt.Color(255, 49, 49));
         jMenu2.setText("Relatórios");
+        jMenu2.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
 
         RelatorioAmigos.setBackground(new java.awt.Color(255, 255, 255));
+        RelatorioAmigos.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         RelatorioAmigos.setForeground(new java.awt.Color(255, 49, 49));
         RelatorioAmigos.setText("Amigos");
         RelatorioAmigos.addActionListener(new java.awt.event.ActionListener() {
@@ -90,6 +96,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu2.add(RelatorioAmigos);
 
         RelatorioFerramentas.setBackground(new java.awt.Color(255, 255, 255));
+        RelatorioFerramentas.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         RelatorioFerramentas.setForeground(new java.awt.Color(255, 49, 49));
         RelatorioFerramentas.setText("Ferramentas");
         RelatorioFerramentas.addActionListener(new java.awt.event.ActionListener() {
@@ -102,8 +109,10 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu1.setBackground(new java.awt.Color(255, 255, 255));
         jMenu1.setForeground(new java.awt.Color(255, 49, 49));
         jMenu1.setText("Empréstimos");
+        jMenu1.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
 
         jMenuItem3.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuItem3.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jMenuItem3.setForeground(new java.awt.Color(255, 49, 49));
         jMenuItem3.setText("Todos");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -114,6 +123,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem3);
 
         jMenuItem2.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuItem2.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jMenuItem2.setForeground(new java.awt.Color(255, 49, 49));
         jMenuItem2.setText("Ativos");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {

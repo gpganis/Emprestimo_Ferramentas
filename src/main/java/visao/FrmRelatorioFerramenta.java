@@ -31,6 +31,11 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 a.getMarca(),
                 a.getCustoAquisicao()});
         }
+        jTable.getColumn("ID").setPreferredWidth(50);
+        jTable.getColumn("ID_Emp").setPreferredWidth(50);
+        jTable.getColumn("Nome").setPreferredWidth(140);
+        jTable.getColumn("Marca").setPreferredWidth(140);
+        jTable.getColumn("Custo").setPreferredWidth(57);
     }
 
     public String valorTotal() {
@@ -67,19 +72,20 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         jLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         JTFValorTotal = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Relatório de Ferramentas");
+        setBackground(new java.awt.Color(255, 19, 19));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JTFNome.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JTFNome.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFNome.setForeground(new java.awt.Color(255, 49, 49));
         JTFNome.setBorder(null);
         getContentPane().add(JTFNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 336, 310, 20));
 
-        JTFMarca.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JTFMarca.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFMarca.setForeground(new java.awt.Color(255, 49, 49));
         JTFMarca.setBorder(null);
         JTFMarca.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +95,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         });
         getContentPane().add(JTFMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 383, 310, 20));
 
-        JBCancelar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBCancelar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
         JBCancelar.setText("Fechar");
         JBCancelar.setBorder(null);
@@ -102,7 +108,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         });
         getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 490, 100, 30));
 
-        JBAlterar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBAlterar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBAlterar.setForeground(new java.awt.Color(255, 49, 49));
         JBAlterar.setText("Alterar");
         JBAlterar.setBorder(null);
@@ -115,7 +121,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         });
         getContentPane().add(JBAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 490, 100, 30));
 
-        JBApagar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBApagar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBApagar.setForeground(new java.awt.Color(255, 49, 49));
         JBApagar.setText("Apagar");
         JBApagar.setBorder(null);
@@ -128,6 +134,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         });
         getContentPane().add(JBApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, 100, 30));
 
+        jTable.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -147,9 +154,10 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID", "ID Emprestimo", "Nome", "Marca", "Custo Aquisição"
+                "ID", "ID_Emp", "Nome", "Marca", "Custo"
             }
         ));
+        jTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         jTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTable.setShowGrid(true);
         jTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -161,30 +169,34 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, 240));
 
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 19, 19));
         jLabel2.setText("Custo:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 40, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 40, 30));
 
-        JTFCusto.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        JTFCusto.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFCusto.setForeground(new java.awt.Color(255, 49, 49));
         JTFCusto.setBorder(null);
         getContentPane().add(JTFCusto, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 429, 310, 20));
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 19, 19));
         jLabel1.setText("Nome:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 336, 50, 20));
 
-        jLabel.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        jLabel.setForeground(new java.awt.Color(255, 19, 19));
         jLabel.setText("Marca:");
         getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 384, 50, -1));
 
+        jLabel3.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Gasto Total:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, 20));
 
         JTFValorTotal.setEditable(false);
         JTFValorTotal.setBackground(new java.awt.Color(166, 166, 166));
-        JTFValorTotal.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        JTFValorTotal.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFValorTotal.setForeground(new java.awt.Color(255, 255, 255));
         JTFValorTotal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         JTFValorTotal.setBorder(null);
@@ -195,10 +207,10 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         });
         getContentPane().add(JTFValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 80, 20));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Ferramenta.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 600));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Ferramenta.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 540));
 
-        setSize(new java.awt.Dimension(514, 607));
+        setSize(new java.awt.Dimension(514, 575));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -339,7 +351,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;
     // End of variables declaration//GEN-END:variables

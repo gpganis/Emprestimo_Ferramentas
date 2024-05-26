@@ -36,6 +36,11 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
                 a.getDataDevolucao(),
                 a.isEntregue()});
         }
+        jTable.getColumn("ID").setPreferredWidth(50);
+        jTable.getColumn("ID_Amg").setPreferredWidth(50);
+        jTable.getColumn("Data_Empréstimo").setPreferredWidth(140);
+        jTable.getColumn("Data_Devolução").setPreferredWidth(140);
+        jTable.getColumn("Entregue").setPreferredWidth(57);
     }
 
     public boolean alterarIdEmpFerramenta(int id) {
@@ -69,9 +74,8 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Relatório de Empréstimos Ativos");
@@ -85,23 +89,26 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
                 JCBEntregueActionPerformed(evt);
             }
         });
-        getContentPane().add(JCBEntregue, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, -1, -1));
+        getContentPane().add(JCBEntregue, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, -1, -1));
 
         JTFDataEmp.setEditable(false);
         JTFDataEmp.setBackground(new java.awt.Color(166, 166, 166));
+        JTFDataEmp.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFDataEmp.setForeground(new java.awt.Color(255, 255, 255));
         JTFDataEmp.setBorder(null);
         getContentPane().add(JTFDataEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 290, -1));
 
+        jLabel4.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Empréstimo:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 70, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 80, -1));
 
+        JTFDataDev.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFDataDev.setForeground(new java.awt.Color(255, 49, 49));
         JTFDataDev.setBorder(null);
         getContentPane().add(JTFDataDev, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 290, 10));
 
-        JBCancelar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBCancelar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
         JBCancelar.setText("Fechar");
         JBCancelar.setBorder(null);
@@ -114,7 +121,7 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
         });
         getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 120, 30));
 
-        JBAlterar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBAlterar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBAlterar.setForeground(new java.awt.Color(255, 49, 49));
         JBAlterar.setText("Alterar");
         JBAlterar.setBorder(null);
@@ -127,6 +134,7 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
         });
         getContentPane().add(JBAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 410, 120, 30));
 
+        jTable.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -146,9 +154,10 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID", "ID_Amigo", "Data Empréstimo", "Data Devolução", "Entregue"
+                "ID", "ID_Amg", "Data_Empréstimo", "Data_Devolução", "Entregue"
             }
         ));
+        jTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         jTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTable.setShowGrid(true);
         jTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -160,20 +169,18 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, 210));
 
+        jLabel1.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 19, 19));
         jLabel1.setText("Devolução:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 80, 10));
 
-        jLabel.setForeground(new java.awt.Color(255, 19, 19));
-        jLabel.setText("Entregue:");
-        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 364, 70, -1));
-
+        jLabel2.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Clique Aqui Para Confimar Entrega");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 210, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 210, 30));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Ativos.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 490));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Ativos.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 490));
 
         setSize(new java.awt.Dimension(514, 527));
         setLocationRelativeTo(null);
@@ -276,11 +283,10 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
     private javax.swing.JCheckBox JCBEntregue;
     private javax.swing.JTextField JTFDataDev;
     private javax.swing.JTextField JTFDataEmp;
-    private javax.swing.JLabel jLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;
     // End of variables declaration//GEN-END:variables

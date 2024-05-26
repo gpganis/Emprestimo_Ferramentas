@@ -110,18 +110,19 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Data do Empréstimo:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, 20));
 
         JTFDataEmp.setEditable(false);
         JTFDataEmp.setBackground(new java.awt.Color(166, 166, 166));
-        JTFDataEmp.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        JTFDataEmp.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFDataEmp.setForeground(new java.awt.Color(255, 255, 255));
         JTFDataEmp.setBorder(null);
         getContentPane().add(JTFDataEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 280, 20));
 
-        JCBAmigo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JCBAmigo.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JCBAmigo.setForeground(new java.awt.Color(255, 19, 19));
         JCBAmigo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar" }));
         JCBAmigo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -132,11 +133,12 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         });
         getContentPane().add(JCBAmigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 270, 30));
 
+        jLabel3.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Data de Devolução:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, -1, 20));
 
-        JTFDataDev.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        JTFDataDev.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFDataDev.setForeground(new java.awt.Color(255, 49, 49));
         JTFDataDev.setText("yyyy-MM-dd");
         JTFDataDev.setBorder(null);
@@ -157,7 +159,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         });
         getContentPane().add(JTFDataDev, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, 280, 20));
 
-        JBCadastrar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBCadastrar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBCadastrar.setForeground(new java.awt.Color(255, 49, 49));
         JBCadastrar.setText("Cadastrar");
         JBCadastrar.setBorder(null);
@@ -170,7 +172,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         });
         getContentPane().add(JBCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 580, 130, 30));
 
-        JBCancelar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBCancelar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
         JBCancelar.setText("Fechar");
         JBCancelar.setBorder(null);
@@ -185,6 +187,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
         JTFFerramenta.setEditable(false);
         JTFFerramenta.setBackground(new java.awt.Color(166, 166, 166));
+        JTFFerramenta.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFFerramenta.setForeground(new java.awt.Color(255, 255, 255));
         JTFFerramenta.setBorder(null);
         JTFFerramenta.addActionListener(new java.awt.event.ActionListener() {
@@ -194,7 +197,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         });
         getContentPane().add(JTFFerramenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 150, 20));
 
-        JBAdicionar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBAdicionar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBAdicionar.setForeground(new java.awt.Color(255, 49, 49));
         JBAdicionar.setText("Adicionar");
         JBAdicionar.setBorder(null);
@@ -205,14 +208,16 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 JBAdicionarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 110, 40));
+        getContentPane().add(JBAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 100, 40));
 
+        jLabel1.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Amigo:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 50, 30));
 
         JTFAmigo.setEditable(false);
         JTFAmigo.setBackground(new java.awt.Color(166, 166, 166));
+        JTFAmigo.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFAmigo.setForeground(new java.awt.Color(255, 255, 255));
         JTFAmigo.setBorder(null);
         JTFAmigo.addActionListener(new java.awt.event.ActionListener() {
@@ -222,6 +227,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         });
         getContentPane().add(JTFAmigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 114, 280, -1));
 
+        jTable.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},

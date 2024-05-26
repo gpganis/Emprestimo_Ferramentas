@@ -30,6 +30,11 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
                 a.getDataDevolucao(),
                 a.isEntregue()});
         }
+        jTable.getColumn("ID").setPreferredWidth(50);
+        jTable.getColumn("ID_Amg").setPreferredWidth(50);
+        jTable.getColumn("Data_Empréstimo").setPreferredWidth(140);
+        jTable.getColumn("Data_Devolução").setPreferredWidth(140);
+        jTable.getColumn("Entregue").setPreferredWidth(57);
     }
 
     public boolean alterarIdEmpFerramenta(int id) {
@@ -65,9 +70,10 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JBCancelar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        JBCancelar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBCancelar.setForeground(new java.awt.Color(255, 19, 19));
         JBCancelar.setText("Fechar");
+        JBCancelar.setBorder(null);
         JBCancelar.setContentAreaFilled(false);
         JBCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,6 +82,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         });
         getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 150, 30));
 
+        jTable.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -100,9 +107,10 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID", "ID_Amigo", "Data Empréstimo", "Data Devolução", "Entregue"
+                "ID", "ID_Amg", "Data_Empréstimo", "Data_Devolução", "Entregue"
             }
         ));
+        jTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         jTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTable.setShowGrid(true);
         jTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -114,7 +122,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, 350));
 
-        JBApagar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        JBApagar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBApagar.setForeground(new java.awt.Color(255, 49, 49));
         JBApagar.setText("Apagar");
         JBApagar.setBorder(null);
