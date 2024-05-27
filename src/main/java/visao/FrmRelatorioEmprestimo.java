@@ -139,7 +139,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Registro_Emprestimo.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
 
-        setSize(new java.awt.Dimension(516, 539));
+        setSize(new java.awt.Dimension(514, 505));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

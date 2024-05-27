@@ -210,7 +210,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Ferramenta.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 540));
 
-        setSize(new java.awt.Dimension(516, 579));
+        setSize(new java.awt.Dimension(514, 547));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
