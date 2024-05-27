@@ -80,7 +80,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
                 JBCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 150, 30));
+        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 419, 150, 30));
 
         jTable.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -134,7 +134,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
                 JBApagarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 150, 30));
+        getContentPane().add(JBApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 419, 150, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Registro_Emprestimo.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));

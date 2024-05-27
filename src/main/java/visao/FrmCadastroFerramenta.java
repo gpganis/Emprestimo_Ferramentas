@@ -54,7 +54,7 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
                 JTFFerramentaMarcaKeyPressed(evt);
             }
         });
-        getContentPane().add(JTFFerramentaMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 280, 30));
+        getContentPane().add(JTFFerramentaMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 141, 280, 30));
 
         JLCustoAquisicao.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JLCustoAquisicao.setForeground(new java.awt.Color(255, 255, 255));
@@ -98,7 +98,7 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
                 JBCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 140, 30));
+        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 318, 140, 30));
 
         JBCadastrar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBCadastrar.setForeground(new java.awt.Color(255, 49, 49));
@@ -111,7 +111,7 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
                 JBCadastrarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 130, 30));
+        getContentPane().add(JBCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 318, 130, 30));
 
         JLNome.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JLNome.setForeground(new java.awt.Color(255, 255, 255));
@@ -137,7 +137,7 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
                 JTFFerramentaNomeKeyPressed(evt);
             }
         });
-        getContentPane().add(JTFFerramentaNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 280, 20));
+        getContentPane().add(JTFFerramentaNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 58, 280, 20));
 
         JLMarca.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JLMarca.setForeground(new java.awt.Color(255, 255, 255));

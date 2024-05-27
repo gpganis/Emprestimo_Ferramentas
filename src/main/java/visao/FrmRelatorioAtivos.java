@@ -119,7 +119,7 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
                 JBCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 120, 30));
+        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 410, 120, 30));
 
         JBAlterar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBAlterar.setForeground(new java.awt.Color(255, 49, 49));
@@ -132,7 +132,7 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
                 JBAlterarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 410, 120, 30));
+        getContentPane().add(JBAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 410, 120, 30));
 
         jTable.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jTable.setModel(new javax.swing.table.DefaultTableModel(

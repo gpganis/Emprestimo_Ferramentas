@@ -83,7 +83,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         JTFNome.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFNome.setForeground(new java.awt.Color(255, 49, 49));
         JTFNome.setBorder(null);
-        getContentPane().add(JTFNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 336, 310, 20));
+        getContentPane().add(JTFNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 335, 310, 20));
 
         JTFMarca.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFMarca.setForeground(new java.awt.Color(255, 49, 49));
@@ -93,7 +93,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 JTFMarcaActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 383, 310, 20));
+        getContentPane().add(JTFMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 382, 310, 20));
 
         JBCancelar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
@@ -172,27 +172,27 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 19, 19));
         jLabel2.setText("Custo:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 50, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 421, 50, 30));
 
         JTFCusto.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFCusto.setForeground(new java.awt.Color(255, 49, 49));
         JTFCusto.setBorder(null);
-        getContentPane().add(JTFCusto, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 429, 310, 20));
+        getContentPane().add(JTFCusto, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 427, 310, 20));
 
         jLabel1.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 19, 19));
         jLabel1.setText("Nome:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 336, 50, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 334, 50, 20));
 
         jLabel.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel.setForeground(new java.awt.Color(255, 19, 19));
         jLabel.setText("Marca:");
-        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 384, 50, -1));
+        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 382, 50, -1));
 
         jLabel3.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Gasto Total:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, 20));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 288, -1, 20));
 
         JTFValorTotal.setEditable(false);
         JTFValorTotal.setBackground(new java.awt.Color(166, 166, 166));
@@ -205,7 +205,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 JTFValorTotalActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 80, 20));
+        getContentPane().add(JTFValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 289, 80, 20));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Ferramenta.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 540));

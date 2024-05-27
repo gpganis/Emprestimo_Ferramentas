@@ -33,7 +33,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
         JLTelefone.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JLTelefone.setForeground(new java.awt.Color(255, 255, 255));
         JLTelefone.setText("Telefone:");
-        getContentPane().add(JLTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 59, 40));
+        getContentPane().add(JLTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 70, 40));
 
         JTFAmigoTelefone.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFAmigoTelefone.setForeground(new java.awt.Color(255, 49, 49));
@@ -59,7 +59,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
                 JTFAmigoTelefoneKeyPressed(evt);
             }
         });
-        getContentPane().add(JTFAmigoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 280, 20));
+        getContentPane().add(JTFAmigoTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 141, 280, 20));
 
         JBCancelar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
@@ -72,7 +72,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
                 JBCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 140, 40));
+        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 218, 140, 40));
 
         JBCadastrar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBCadastrar.setForeground(new java.awt.Color(255, 49, 49));
@@ -85,7 +85,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
                 JBCadastrarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 130, 40));
+        getContentPane().add(JBCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 218, 130, 40));
 
         JLNome.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JLNome.setForeground(new java.awt.Color(255, 255, 255));
@@ -116,7 +116,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
                 JTFAmigoNomeKeyPressed(evt);
             }
         });
-        getContentPane().add(JTFAmigoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 280, 20));
+        getContentPane().add(JTFAmigoNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 52, 280, 20));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Cadastro_Amigo.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));

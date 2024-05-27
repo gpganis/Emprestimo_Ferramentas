@@ -52,17 +52,17 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 19, 19));
         jLabel1.setText("    Nome:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 60, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 281, 60, 20));
 
         jLabel.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel.setForeground(new java.awt.Color(255, 19, 19));
         jLabel.setText("Telefone:");
-        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 60, 30));
+        getContentPane().add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 322, 60, 30));
 
         JTFNome.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFNome.setForeground(new java.awt.Color(255, 49, 49));
         JTFNome.setBorder(null);
-        getContentPane().add(JTFNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 300, 20));
+        getContentPane().add(JTFNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 283, 300, 20));
 
         JTFTelefone.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFTelefone.setForeground(new java.awt.Color(255, 49, 49));
@@ -73,7 +73,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                 JTFTelefoneActionPerformed(evt);
             }
         });
-        getContentPane().add(JTFTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 310, -1));
+        getContentPane().add(JTFTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 328, 300, -1));
 
         JBCancelar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBCancelar.setForeground(new java.awt.Color(255, 49, 49));
@@ -86,7 +86,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                 JBCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 387, 100, 40));
+        getContentPane().add(JBCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 385, 100, 40));
 
         JBAlterar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBAlterar.setForeground(new java.awt.Color(255, 49, 49));
@@ -99,7 +99,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                 JBAlterarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 387, 100, 40));
+        getContentPane().add(JBAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 385, 100, 40));
 
         JBApagar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBApagar.setForeground(new java.awt.Color(255, 49, 49));
@@ -112,7 +112,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
                 JBApagarActionPerformed(evt);
             }
         });
-        getContentPane().add(JBApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 387, 100, 40));
+        getContentPane().add(JBApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 385, 100, 40));
 
         jTable.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jTable.setModel(new javax.swing.table.DefaultTableModel(
