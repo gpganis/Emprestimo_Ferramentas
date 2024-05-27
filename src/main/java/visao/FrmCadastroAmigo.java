@@ -2,6 +2,7 @@ package visao;
 
 import javax.swing.JOptionPane;
 import modelo.Amigo;
+import modelo.Util;
 
 public class FrmCadastroAmigo extends javax.swing.JFrame {
 
@@ -169,7 +170,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
                 nome = this.JTFAmigoNome.getText();
             }
             if (this.JTFAmigoTelefone.getText().length() == 11 && Long.parseLong(this.JTFAmigoTelefone.getText()) > 0) {
-                telefone = this.JTFAmigoTelefone.getText();
+                telefone = Util.formatarNumero(this.JTFAmigoTelefone.getText());
             } else {
                 throw new Mensagens("Telefone deve conter exatamente 11 digitos numéricos");
             }
