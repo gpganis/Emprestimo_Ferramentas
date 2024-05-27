@@ -54,11 +54,11 @@ CREATE TABLE IF NOT EXISTS `tb_ferramentas` (
 ) ENGINE = InnoDB;
 
 -- adicionando dados de exemplo na tabela de Amigos
-INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES (1, 'Gabriel' ,'12345678924');
-INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES (2, 'Mathues', '98752654321');
-INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES (3, 'Pedro', '66918273645');
-INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES (4, 'Rennan' , '42283748228');
-INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES (5, 'Rafael' , '14232523634');
+INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES (1, 'Gabriel' ,'(12)34567-8924');
+INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES (2, 'Mathues', '(98)75265-4321');
+INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES (3, 'Pedro', '(66)91827-3645');
+INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES (4, 'Rennan' , '(42)28374-8228');
+INSERT INTO tb_amigos(id_amigo,nome,telefone) VALUES (5, 'Rafael' , '(14)23252-3634');
 
 -- adicionando dados de exemplo na tabela de Emprestimos
 INSERT INTO tb_emprestimos(id_emprestimo,id_amigo,data_emprestimo, data_devolucao,entregue) VALUES (1,5,'2024-06-07','2024-07-30',0);
