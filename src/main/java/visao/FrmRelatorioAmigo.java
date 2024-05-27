@@ -167,7 +167,8 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
         try {
             int id = 0;
             String nome, telefone = "";
-
+            String regex = "\\(\\d{2}\\)\\d{5}-\\d{4}";
+            
             if (this.jTable.getSelectedRow() == -1) {
                 throw new Mensagens(
                         "Primeiro Selecione um Amigo para ALTERAR");
@@ -182,10 +183,12 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
             } else {
                 nome = this.JTFNome.getText();
             }
-            if (this.JTFTelefone.getText().length() == 11 && Long.parseLong(this.JTFTelefone.getText()) > 0) {
+                     
+            if (this.JTFTelefone.getText().matches(regex)) {
                 telefone = this.JTFTelefone.getText();
             } else {
-                throw new Mensagens("Telefone deve conter exatamente 11 digitos numéricos");
+                throw new Mensagens("Telefone deve conter o seguinte formato: "
+                                + "\n             (XX)XXXXX-XXXX");
             }
 
             if (this.objAmigo.alterarAmigo(id, nome, telefone)) {
