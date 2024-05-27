@@ -31,11 +31,11 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 a.getMarca(),
                 a.getCustoAquisicao()});
         }
-        jTable.getColumn("ID").setPreferredWidth(50);
+        jTable.getColumn("ID").setPreferredWidth(42);
         jTable.getColumn("ID_Emp").setPreferredWidth(50);
         jTable.getColumn("Nome").setPreferredWidth(140);
         jTable.getColumn("Marca").setPreferredWidth(140);
-        jTable.getColumn("Custo").setPreferredWidth(57);
+        jTable.getColumn("Custo").setPreferredWidth(50);
     }
 
     public String valorTotal() {
@@ -172,7 +172,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 19, 19));
         jLabel2.setText("Custo:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 40, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 50, 30));
 
         JTFCusto.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFCusto.setForeground(new java.awt.Color(255, 49, 49));
@@ -210,7 +210,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Ferramenta.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 540));
 
-        setSize(new java.awt.Dimension(514, 575));
+        setSize(new java.awt.Dimension(516, 579));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

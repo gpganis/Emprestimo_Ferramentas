@@ -93,17 +93,17 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
 
         JTFDataEmp.setEditable(false);
         JTFDataEmp.setBackground(new java.awt.Color(166, 166, 166));
-        JTFDataEmp.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        JTFDataEmp.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         JTFDataEmp.setForeground(new java.awt.Color(255, 255, 255));
         JTFDataEmp.setBorder(null);
         getContentPane().add(JTFDataEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 290, -1));
 
-        jLabel4.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Empréstimo:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 80, -1));
 
-        JTFDataDev.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        JTFDataDev.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         JTFDataDev.setForeground(new java.awt.Color(255, 49, 49));
         JTFDataDev.setBorder(null);
         getContentPane().add(JTFDataDev, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 290, 10));
@@ -169,15 +169,15 @@ public class FrmRelatorioAtivos extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, 210));
 
-        jLabel1.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 19, 19));
         jLabel1.setText("Devolução:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 80, 10));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 80, 30));
 
         jLabel2.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Clique Aqui Para Confimar Entrega");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 210, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 240, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Ativos.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 490));

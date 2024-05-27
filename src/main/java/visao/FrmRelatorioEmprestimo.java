@@ -63,7 +63,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
         JBApagar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Registro Geral de Empréstimos");
@@ -136,10 +136,10 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         });
         getContentPane().add(JBApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 150, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Emprestimo_Totais.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Registro_Emprestimo.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
 
-        setSize(new java.awt.Dimension(514, 537));
+        setSize(new java.awt.Dimension(516, 539));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -196,7 +196,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBApagar;
     private javax.swing.JButton JBCancelar;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;
     // End of variables declaration//GEN-END:variables
