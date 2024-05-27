@@ -31,11 +31,11 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 a.getMarca(),
                 a.getCustoAquisicao()});
         }
-        jTable.getColumn("ID").setPreferredWidth(42);
+        jTable.getColumn("ID").setPreferredWidth(40);
         jTable.getColumn("ID_Emp").setPreferredWidth(50);
         jTable.getColumn("Nome").setPreferredWidth(140);
         jTable.getColumn("Marca").setPreferredWidth(140);
-        jTable.getColumn("Custo").setPreferredWidth(50);
+        jTable.getColumn("Custo").setPreferredWidth(67);
     }
 
     public String valorTotal() {
