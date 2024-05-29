@@ -20,22 +20,26 @@ import modelo.Util;
 
 public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
-    private AmigoDAO daoAmg = new AmigoDAO();
-    private FerramentaDAO dao = new FerramentaDAO();
-    private EmprestimoDAO daoEmp = new EmprestimoDAO();
+    private AmigoDAO daoAmg;
+    private FerramentaDAO dao;
+    private EmprestimoDAO daoEmp;
     private boolean countData = true;
     private Emprestimo objEmprestimo;
     private ConexaoDAO connect;
-    public ArrayList<String> FerSelect = new ArrayList<>();
+    public ArrayList<String> FerSelect;
 
     public FrmCadastroEmprestimo() {
         initComponents();
         preencherComboBox();
-        this.objEmprestimo = new Emprestimo();
-        connect = new ConexaoDAO();
+        carregaTabelaFerramentas();
         String data = Util.dataAtual().toString();
         JTFDataEmp.setText(data);
-        this.carregaTabelaFerramentas();
+        connect = new ConexaoDAO();
+        this.objEmprestimo = new Emprestimo();
+        this.daoAmg = new AmigoDAO();
+        this.dao = new FerramentaDAO();
+        this.daoEmp = new EmprestimoDAO(); 
+        this.FerSelect = new ArrayList<>();
     }
 
     private void preencherComboBox() {

@@ -11,12 +11,14 @@ import modelo.Emprestimo;
 public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
 
     private ConexaoDAO connect;
-    private EmprestimoDAO dao = new EmprestimoDAO();
-    private Emprestimo objEmprestimo = new Emprestimo();
+    private EmprestimoDAO dao;
+    private Emprestimo objEmprestimo;
 
     public FrmRelatorioEmprestimo() {
         initComponents();
         carregaTabelaEmprestimos();
+        this.dao = new EmprestimoDAO();
+        this.objEmprestimo = new Emprestimo();
     }
 
     public void carregaTabelaEmprestimos() {

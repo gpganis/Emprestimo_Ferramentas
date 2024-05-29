@@ -7,12 +7,14 @@ import modelo.Amigo;
 
 public class FrmRelatorioAmigo extends javax.swing.JFrame {
 
-    private AmigoDAO dao = new AmigoDAO();
-    private Amigo objAmigo = new Amigo();
+    private AmigoDAO dao;
+    private Amigo objAmigo;
 
     public FrmRelatorioAmigo() {
         initComponents();
         carregaTabelaAmigos();
+        this.dao = new AmigoDAO();
+        this.objAmigo = new Amigo();
     }
 
     public void carregaTabelaAmigos() {

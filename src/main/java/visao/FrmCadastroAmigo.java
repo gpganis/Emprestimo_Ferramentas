@@ -6,7 +6,8 @@ import modelo.Util;
 
 public class FrmCadastroAmigo extends javax.swing.JFrame {
 
-    private boolean countNome = true, countTelefone = true;
+    private boolean countNome = true;
+    private boolean countTelefone = true;
     private Amigo objAmigos;
 
     public FrmCadastroAmigo() {

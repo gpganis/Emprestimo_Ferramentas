@@ -5,7 +5,9 @@ import modelo.Ferramenta;
 
 public class FrmCadastroFerramenta extends javax.swing.JFrame {
 
-    private boolean countNome = true, countMarca = true, countCusto = true;
+    private boolean countNome = true;
+    private boolean countMarca = true;
+    private boolean countCusto = true;
     private Ferramenta objFerramenta;
 
     public FrmCadastroFerramenta() {

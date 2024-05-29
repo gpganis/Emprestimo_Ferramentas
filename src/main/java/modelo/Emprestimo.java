@@ -10,10 +10,11 @@ public class Emprestimo {
     private Date dataDevolucao;
     private boolean entregue;
     private int id, idAmg;
-    private EmprestimoDAO dao = new EmprestimoDAO();
+    private EmprestimoDAO dao;
 
     public Emprestimo() {
         this(null, null, false, 0, 0);
+        this.dao = new EmprestimoDAO();
     }
 
     public Emprestimo(Date dataEmprestimo, Date dataDevolucao, boolean entregue, int id, int idAmg) {
