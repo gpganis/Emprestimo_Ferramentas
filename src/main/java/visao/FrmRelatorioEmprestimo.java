@@ -157,7 +157,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         try {
             int id = 0;
             if (this.jTable.getSelectedRow() == -1) {
-                throw new Mensagens(
+                throw new Mensagem(
                         "Primeiro Selecione um Empréstimo para APAGAR");
             } else {
                 id = Integer.parseInt(this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString());
@@ -177,7 +177,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
                 }
             }
             System.out.println(this.dao.getMinhaLista().toString());
-        } catch (Mensagens erro) {
+        } catch (Mensagem erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } finally {
             carregaTabelaEmprestimos();

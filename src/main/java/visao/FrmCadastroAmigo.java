@@ -161,18 +161,18 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
             String nome, telefone = "";
 
             if ("Digite o Nome do Amigo".equals(JTFAmigoNome.getText())) {
-                throw new Mensagens("Primeiro escreva o nome do Amigo.");
+                throw new Mensagem("Primeiro escreva o nome do Amigo.");
             }
 
             if (this.JTFAmigoNome.getText().length() < 2) {
-                throw new Mensagens("Nome deve conter ao menos 2 caracteres.");
+                throw new Mensagem("Nome deve conter ao menos 2 caracteres.");
             } else {
                 nome = this.JTFAmigoNome.getText();
             }
             if (this.JTFAmigoTelefone.getText().length() == 11 && Long.parseLong(this.JTFAmigoTelefone.getText()) > 0) {
                 telefone = Util.formatarNumero(this.JTFAmigoTelefone.getText());
             } else {
-                throw new Mensagens("Telefone deve conter exatamente 11 digitos numéricos");
+                throw new Mensagem("Telefone deve conter exatamente 11 digitos numéricos");
             }
 
             if (this.objAmigos.inserirAmigo(nome, telefone)) {
@@ -182,7 +182,7 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
 
             }
             System.out.println(this.objAmigos.getListaAmigos().toString());
-        } catch (Mensagens erro) {
+        } catch (Mensagem erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } catch (NumberFormatException erro2) {
             JOptionPane.showMessageDialog(null, "Informe um número válido.");

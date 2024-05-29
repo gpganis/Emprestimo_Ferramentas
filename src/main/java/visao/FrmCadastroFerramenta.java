@@ -206,27 +206,27 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
             double custoAquisicao = 0.0;
             
             if ("Digite o Nome da Ferramenta".equals(JTFFerramentaNome.getText())) {
-                throw new Mensagens("Primeiro escreva o nome da Ferramenta.");
+                throw new Mensagem("Primeiro escreva o nome da Ferramenta.");
             }
 
             if ("Digite o Nome da Marca".equals(JTFFerramentaMarca.getText())) {
-                throw new Mensagens("Primeiro escreva o nome da Marca.");
+                throw new Mensagem("Primeiro escreva o nome da Marca.");
             }
             
             if (this.JTFFerramentaNome.getText().length() < 2) {
-                throw new Mensagens("Nome deve conter ao menos 2 caracteres.");
+                throw new Mensagem("Nome deve conter ao menos 2 caracteres.");
             } else {
                 nome = this.JTFFerramentaNome.getText();
             }
 
             if (this.JTFFerramentaMarca.getText().length() < 2) {
-                throw new Mensagens("Marca deve conter ao menos 2 caracteres.");
+                throw new Mensagem("Marca deve conter ao menos 2 caracteres.");
             } else {
                 marca = this.JTFFerramentaMarca.getText();
             }
 
             if (Double.parseDouble(this.JTFFerramentaCusto.getText()) <= 0) {
-                throw new Mensagens("Custo da Aquisição deve ser maior que zero.");
+                throw new Mensagem("Custo da Aquisição deve ser maior que zero.");
             } else {
                 custoAquisicao = Double.parseDouble(this.JTFFerramentaCusto.getText());
             }
@@ -239,7 +239,7 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
 
             }
             System.out.println(this.objFerramenta.getListaFerramentas().toString());
-        } catch (Mensagens erro) {
+        } catch (Mensagem erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } catch (NumberFormatException erro2) {
             JOptionPane.showMessageDialog(null, "Informe um número válido para o custo da Ferramenta.");

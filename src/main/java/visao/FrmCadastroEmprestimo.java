@@ -295,7 +295,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
             Date dataDevolucao = null;
 
             if ("".equals(this.JTFAmigo.getText())) {
-                throw new Mensagens("Primeiro selecione um Amigo.");
+                throw new Mensagem("Primeiro selecione um Amigo.");
             } else {
                 idAmg = AmigoDAO.getIdPeloNome(JTFAmigo.getText());
                 boolean Ver = daoAmg.verificarPendencia(idAmg);
@@ -309,23 +309,23 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
             }
 
             if (FerSelect.size() == 0) {
-                throw new Mensagens("Primeiro selecione pelo menos uma Ferramenta");
+                throw new Mensagem("Primeiro selecione pelo menos uma Ferramenta");
             }
 
             if (this.JTFDataDev.getText().matches(regex)) {
                 dataDevolucao = Util.stringParaDateSQL(JTFDataDev.getText());
                 if (dataDevolucao.before(dataEmprestimo)) {
                     dataDevolucao = null;
-                    throw new Mensagens("Data de Devolução não pode ser antes da Data do Empréstimo");
+                    throw new Mensagem("Data de Devolução não pode ser antes da Data do Empréstimo");
 
                 } else if (dataDevolucao.after(dataEmprestimo)) {
                     dataDevolucao = Util.stringParaDateSQL(JTFDataDev.getText());
                 } else {
                     dataDevolucao = null;
-                    throw new Mensagens("Data de Devolução não pode ser igual a da Data do Empréstimo");
+                    throw new Mensagem("Data de Devolução não pode ser igual a da Data do Empréstimo");
                 }
             } else {
-                throw new Mensagens("Data de Devolução deve conter o seguite formato:\nyyyy-MM-dd");
+                throw new Mensagem("Data de Devolução deve conter o seguite formato:\nyyyy-MM-dd");
             }
 
             if (this.objEmprestimo.inserirEmprestimo(dataEmprestimo, dataDevolucao, entregue, idAmg)) {
@@ -338,7 +338,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
             alterarIdEmpFerramenta();
             //System.out.println(this.objEmprestimo.getListaFerramentas().toString());
-        } catch (Mensagens erro) {
+        } catch (Mensagem erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } catch (TextFormat.ParseException ex) {
             Logger.getLogger(FrmCadastroEmprestimo.class.getName()).log(Level.SEVERE, null, ex);

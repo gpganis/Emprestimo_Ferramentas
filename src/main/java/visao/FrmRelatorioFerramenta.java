@@ -231,7 +231,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
             double custoAquisicao = 0.0;
 
             if (this.jTable.getSelectedRow() == -1) {
-                throw new Mensagens(
+                throw new Mensagem(
                         "Primeiro Selecione uma Ferramenta para ALTERAR");
             } else {
                 id = Integer.parseInt(this.jTable.
@@ -240,19 +240,19 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
             }
 
             if (this.JTFNome.getText().length() < 2) {
-                throw new Mensagens("Nome deve conter ao menos 2 caracteres.");
+                throw new Mensagem("Nome deve conter ao menos 2 caracteres.");
             } else {
                 nome = this.JTFNome.getText();
             }
 
             if (this.JTFMarca.getText().length() < 2) {
-                throw new Mensagens("Marca deve conter ao menos 2 caracteres.");
+                throw new Mensagem("Marca deve conter ao menos 2 caracteres.");
             } else {
                 marca = this.JTFMarca.getText();
             }
 
             if (Double.parseDouble(this.JTFCusto.getText()) <= 0) {
-                throw new Mensagens("Custo da Aquisição deve ser maior que zero.");
+                throw new Mensagem("Custo da Aquisição deve ser maior que zero.");
             } else {
                 custoAquisicao = Double.parseDouble(this.JTFCusto.getText());
             }
@@ -264,7 +264,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Ferramenta Alterada com Sucesso!");
             }
             System.out.println(this.dao.getMinhaLista().toString());
-        } catch (Mensagens erro) {
+        } catch (Mensagem erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } catch (NumberFormatException erro2) {
             JOptionPane.showMessageDialog(null, "Informe um número válido.");
@@ -280,7 +280,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         try {
             int id = 0;
             if (this.jTable.getSelectedRow() == -1) {
-                throw new Mensagens(
+                throw new Mensagem(
                         "Primeiro Selecione uma Ferramenta para APAGAR");
             } else {
                 id = Integer.parseInt(this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString());
@@ -303,7 +303,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
             }
 
             // System.out.println(this.dao.getMinhaLista().toString());
-        } catch (Mensagens erro) {
+        } catch (Mensagem erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } finally {
             carregaTabelaFerramentas();

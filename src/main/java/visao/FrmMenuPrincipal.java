@@ -197,7 +197,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        FrmRelatorioAtivos objTela = new FrmRelatorioAtivos();
+        FrmRelatorioAtivo objTela = new FrmRelatorioAtivo();
         objTela.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
