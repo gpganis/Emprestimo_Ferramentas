@@ -21,7 +21,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         this.objEmprestimo = new Emprestimo();
     }
 
-    public void carregaTabelaEmprestimos() {
+    private void carregaTabelaEmprestimos() {
         DefaultTableModel modelo = (DefaultTableModel) this.jTable.getModel();
         modelo.setNumRows(0);
         for (Emprestimo a : dao.getMinhaLista()) {

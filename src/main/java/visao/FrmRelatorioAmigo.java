@@ -17,7 +17,7 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
         this.objAmigo = new Amigo();
     }
 
-    public void carregaTabelaAmigos() {
+    private void carregaTabelaAmigos() {
         DefaultTableModel modelo = (DefaultTableModel) this.jTable.getModel();
         modelo.setNumRows(0);
         for (Amigo a : dao.getMinhaLista()) {

@@ -11,16 +11,18 @@ import modelo.Ferramenta;
 
 public class FrmRelatorioFerramenta extends javax.swing.JFrame {
 
-    private Ferramenta objFerramenta = new Ferramenta();
-    private FerramentaDAO dao = new FerramentaDAO();
+    private Ferramenta objFerramenta;
+    private FerramentaDAO dao;
 
     public FrmRelatorioFerramenta() {
         initComponents();
         carregaTabelaFerramentas();
         JTFValorTotal.setText("R$" + valorTotal());
+        this.objFerramenta = new Ferramenta();
+        this.dao = new FerramentaDAO();
     }
 
-    public void carregaTabelaFerramentas() {
+    private void carregaTabelaFerramentas() {
         DefaultTableModel modelo = (DefaultTableModel) this.jTable.getModel();
         modelo.setNumRows(0);
         for (Ferramenta a : dao.getMinhaLista()) {
@@ -38,7 +40,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         jTable.getColumn("Custo").setPreferredWidth(67);
     }
 
-    public String valorTotal() {
+    private String valorTotal() {
         double soma = 0;
 
         try {

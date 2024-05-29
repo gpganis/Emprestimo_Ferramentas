@@ -59,7 +59,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         }
     }
 
-    public void carregaTabelaFerramentas() {
+    private void carregaTabelaFerramentas() {
         DefaultTableModel modelo = (DefaultTableModel) this.jTable.getModel();
         modelo.setNumRows(0);
         for (Ferramenta a : dao.getFerramentasDisponiveis()) {

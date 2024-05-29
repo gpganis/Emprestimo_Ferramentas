@@ -27,7 +27,7 @@ public class FrmRelatorioAtivo extends javax.swing.JFrame {
         this.dao = new EmprestimoDAO();
     }
 
-    public void carregaTabelaEmprestimos() {
+    private void carregaTabelaEmprestimos() {
         DefaultTableModel modelo = (DefaultTableModel) this.jTable.getModel();
         modelo.setNumRows(0);
         for (Emprestimo a : dao.getEmprestimosAtivos()) {
