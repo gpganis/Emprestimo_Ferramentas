@@ -1,27 +1,31 @@
 package modelo;
 
-import dao.FerramentaDAO;
-import java.util.ArrayList;
+import dao.FerramentaDAO; // Importa a classe FerramentaDAO do pacote dao
+import java.util.ArrayList; // Importa a classe ArrayList do pacote java.util
 
 public class Ferramenta {
 
-    private String nome, marca;
-    private double custoAquisicao;
-    private int id, idEmp;
-    private FerramentaDAO dao;
+    private String nome, marca; // Nome e marca da ferramenta
+    private double custoAquisicao; // Custo de aquisição da ferramenta
+    private int id, idEmp; // Identificadores da ferramenta e do empréstimo relacionado
+    private FerramentaDAO dao; // Objeto para acessar os métodos da classe FerramentaDAO
 
+    // Construtor padrão da classe Ferramenta
     public Ferramenta() {
-        this("", "", 0, 0, 0);
+        this("", "", 0, 0, 0); // Chama o construtor sobrecarregado passando valores padrão
     }
 
+    // Construtor sobrecarregado da classe Ferramenta
     public Ferramenta(String nome, String marca, double custoAquisicao, int id, int idEmp) {
-        this.nome = nome;
-        this.marca = marca;
-        this.custoAquisicao = custoAquisicao;
-        this.id = id;
-        this.idEmp = idEmp;
-        dao = new FerramentaDAO();
+        this.nome = nome; // Inicializa o nome da ferramenta
+        this.marca = marca; // Inicializa a marca da ferramenta
+        this.custoAquisicao = custoAquisicao; // Inicializa o custo de aquisição da ferramenta
+        this.id = id; // Inicializa o ID da ferramenta
+        this.idEmp = idEmp; // Inicializa o ID do empréstimo relacionado
+        dao = new FerramentaDAO(); // Inicializa o objeto FerramentaDAO para interagir com o banco de dados
     }
+
+    // Métodos getters e setters para os atributos da classe Ferramenta
 
     public String getNome() {
         return nome;
@@ -63,29 +67,34 @@ public class Ferramenta {
         this.idEmp = idEmp;
     }
 
+    // Método para obter a lista de ferramentas do banco de dados
     public ArrayList<Ferramenta> getListaFerramentas() {
         return dao.getMinhaLista();
     }
 
+    // Método para inserir uma nova ferramenta no banco de dados
     public boolean inserirFerramenta(String nome, String marca, double custoAquisicao) {
-        id = dao.maiorId() + 1;
-        Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id, idEmp);
-        dao.inserirFerramentaBD(objeto);
-        return true;
+        id = dao.maiorId() + 1; // Obtém o próximo ID disponível
+        Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id, idEmp); // Cria um novo objeto Ferramenta
+        dao.inserirFerramentaBD(objeto); // Insere a ferramenta no banco de dados
+        return true; // Retorna true para indicar sucesso na inserção
     }
 
+    // Método para apagar uma ferramenta do banco de dados
     public boolean apagarFerramenta(int id) {
-        dao.apagarFerramentaBD(id);
-        return true;
+        dao.apagarFerramentaBD(id); // Apaga a ferramenta do banco de dados
+        return true; // Retorna true para indicar sucesso na exclusão
     }
 
+    // Método para alterar os dados de uma ferramenta no banco de dados
     public boolean alterarFerramenta(int id, String nome, String marca, double custoAquisicao) {
-        Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id, idEmp);
-        dao.alterarFerramentaBD(objeto);
-        return true;
+        Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id, idEmp); // Cria um novo objeto Ferramenta com os dados atualizados
+        dao.alterarFerramentaBD(objeto); // Altera os dados da ferramenta no banco de dados
+        return true; // Retorna true para indicar sucesso na alteração
     }
 
+    // Método para carregar os dados de uma ferramenta do banco de dados
     public Ferramenta carregarFerramenta(int id) {
-        return dao.carregarFerramenta(id);
+        return dao.carregarFerramenta(id); // Carrega os dados da ferramenta do banco de dados e retorna o objeto Ferramenta correspondente
     }
 }

@@ -20,6 +20,7 @@ import modelo.Util;
 
 public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
+    // Declaração de variáveis de controle e instâncias de DAOs e objetos
     private AmigoDAO daoAmg;
     private FerramentaDAO dao;
     private EmprestimoDAO daoEmp;
@@ -28,6 +29,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
     private ConexaoDAO connect;
     public ArrayList<String> FerSelect;
 
+    // Construtor da classe
     public FrmCadastroEmprestimo() {
         initComponents();
         preencherComboBox();
@@ -42,6 +44,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         this.FerSelect = new ArrayList<>();
     }
 
+    // Método para preencher o ComboBox com os nomes dos amigos
     private void preencherComboBox() {
         try {
             String query = "SELECT nome FROM tb_amigos";
@@ -59,6 +62,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         }
     }
 
+    // Método para carregar a tabela de ferramentas disponíveis
     private void carregaTabelaFerramentas() {
         DefaultTableModel modelo = (DefaultTableModel) this.jTable.getModel();
         modelo.setNumRows(0);
@@ -68,6 +72,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         }
     }
 
+    // Método para alterar o ID do empréstimo na tabela de ferramentas
     private boolean alterarIdEmpFerramenta() {
         String sql = "UPDATE tb_ferramentas SET id_emprestimo = ? WHERE nome = ?";
         try {
@@ -249,13 +254,11 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JCBAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBAmigoActionPerformed
-        // TODO add your handling code here
         String nomeSelecionado = (String) JCBAmigo.getSelectedItem();
         JTFAmigo.setText(nomeSelecionado);
     }//GEN-LAST:event_JCBAmigoActionPerformed
 
     private void JTFDataDevMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFDataDevMouseClicked
-        // TODO add your handling code here:
         if (countData == true) {
             JTFDataDev.setText("");
             countData = false;
@@ -263,7 +266,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFDataDevMouseClicked
 
     private void JTFDataDevKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFDataDevKeyPressed
-        // TODO add your handling code here:
         if (countData == true) {
             JTFDataDev.setText("");
             countData = false;
@@ -271,7 +273,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFDataDevKeyPressed
 
     private void JBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarActionPerformed
-        // TODO add your handling code here:
         try {
             String regex = "\\d{4}-\\d{2}-\\d{2}";
             int idAmg = 0;
@@ -336,12 +337,10 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
     }//GEN-LAST:event_JBCadastrarActionPerformed
 
     private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
-        // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_JBCancelarActionPerformed
 
     private void JBAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBAdicionarActionPerformed
-        // TODO add your handling code here:
         if (this.jTable.getSelectedRow() == -1) {
             JOptionPane.showMessageDialog(null, "Primeiro Selecione uma Ferramenta");
         } else {
@@ -360,7 +359,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
     }//GEN-LAST:event_JBAdicionarActionPerformed
 
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
-        // TODO add your handling code here:
         if (this.jTable.getSelectedRow() != -1) {
             String nome = this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString();
             this.JTFFerramenta.setText(nome);
