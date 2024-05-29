@@ -41,19 +41,9 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
         JTFAmigoTelefone.setForeground(new java.awt.Color(255, 49, 49));
         JTFAmigoTelefone.setText("Digite o Telefone do Amigo");
         JTFAmigoTelefone.setBorder(null);
-        JTFAmigoTelefone.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                JTFAmigoTelefoneFocusGained(evt);
-            }
-        });
         JTFAmigoTelefone.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JTFAmigoTelefoneMouseClicked(evt);
-            }
-        });
-        JTFAmigoTelefone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFAmigoTelefoneActionPerformed(evt);
             }
         });
         JTFAmigoTelefone.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -98,19 +88,9 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
         JTFAmigoNome.setForeground(new java.awt.Color(255, 49, 49));
         JTFAmigoNome.setText("Digite o Nome do Amigo");
         JTFAmigoNome.setBorder(null);
-        JTFAmigoNome.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                JTFAmigoNomeFocusGained(evt);
-            }
-        });
         JTFAmigoNome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JTFAmigoNomeMouseClicked(evt);
-            }
-        });
-        JTFAmigoNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFAmigoNomeActionPerformed(evt);
             }
         });
         JTFAmigoNome.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -127,10 +107,6 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JTFAmigoTelefoneFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFAmigoTelefoneFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFAmigoTelefoneFocusGained
-
     private void JTFAmigoTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFAmigoTelefoneMouseClicked
         // TODO add your handling code here:
         if (countTelefone == true) {
@@ -138,10 +114,6 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
             countTelefone = false;
         }
     }//GEN-LAST:event_JTFAmigoTelefoneMouseClicked
-
-    private void JTFAmigoTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFAmigoTelefoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFAmigoTelefoneActionPerformed
 
     private void JTFAmigoTelefoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFAmigoTelefoneKeyPressed
         // TODO add your handling code here:
@@ -190,10 +162,6 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_JBCadastrarActionPerformed
 
-    private void JTFAmigoNomeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFAmigoNomeFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFAmigoNomeFocusGained
-
     private void JTFAmigoNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFAmigoNomeMouseClicked
         // TODO add your handling code here:
         if (countNome == true) {
@@ -201,10 +169,6 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
             countNome = false;
         }
     }//GEN-LAST:event_JTFAmigoNomeMouseClicked
-
-    private void JTFAmigoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFAmigoNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFAmigoNomeActionPerformed
 
     private void JTFAmigoNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFAmigoNomeKeyPressed
         // TODO add your handling code here:

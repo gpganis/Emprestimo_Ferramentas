@@ -37,11 +37,6 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         JMEmprestimo.setForeground(new java.awt.Color(255, 49, 49));
         JMEmprestimo.setText("Cadastros");
         JMEmprestimo.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
-        JMEmprestimo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMEmprestimoActionPerformed(evt);
-            }
-        });
 
         CadastroAmigo.setBackground(new java.awt.Color(255, 255, 255));
         CadastroAmigo.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
@@ -160,10 +155,6 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         FrmCadastroAmigo objTela = new FrmCadastroAmigo();
         objTela.setVisible(true);
     }//GEN-LAST:event_CadastroAmigoActionPerformed
-
-    private void JMEmprestimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMEmprestimoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JMEmprestimoActionPerformed
 
     private void CadastroFerramentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroFerramentaActionPerformed
         // TODO add your handling code here:

@@ -90,11 +90,6 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         JTFMarca.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFMarca.setForeground(new java.awt.Color(255, 49, 49));
         JTFMarca.setBorder(null);
-        JTFMarca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFMarcaActionPerformed(evt);
-            }
-        });
         getContentPane().add(JTFMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 382, 310, 20));
 
         JBCancelar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
@@ -202,11 +197,6 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         JTFValorTotal.setForeground(new java.awt.Color(255, 255, 255));
         JTFValorTotal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         JTFValorTotal.setBorder(null);
-        JTFValorTotal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFValorTotalActionPerformed(evt);
-            }
-        });
         getContentPane().add(JTFValorTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 289, 80, 20));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Relatorio_Ferramenta.png"))); // NOI18N
@@ -215,10 +205,6 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(514, 577));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void JTFMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFMarcaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFMarcaActionPerformed
 
     private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
         // TODO add your handling code here:
@@ -327,10 +313,6 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jTableMouseClicked
-
-    private void JTFValorTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFValorTotalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFValorTotalActionPerformed
 
     public static void main(String args[]) {
 

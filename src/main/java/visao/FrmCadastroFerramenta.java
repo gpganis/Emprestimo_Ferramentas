@@ -46,11 +46,6 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
                 JTFFerramentaMarcaMouseClicked(evt);
             }
         });
-        JTFFerramentaMarca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFFerramentaMarcaActionPerformed(evt);
-            }
-        });
         JTFFerramentaMarca.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 JTFFerramentaMarcaKeyPressed(evt);
@@ -67,19 +62,9 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
         JTFFerramentaCusto.setForeground(new java.awt.Color(255, 49, 49));
         JTFFerramentaCusto.setText("Digite o Preço da Ferramenta");
         JTFFerramentaCusto.setBorder(null);
-        JTFFerramentaCusto.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                JTFFerramentaCustoFocusLost(evt);
-            }
-        });
         JTFFerramentaCusto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JTFFerramentaCustoMouseClicked(evt);
-            }
-        });
-        JTFFerramentaCusto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFFerramentaCustoActionPerformed(evt);
             }
         });
         JTFFerramentaCusto.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -129,11 +114,6 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
                 JTFFerramentaNomeMouseClicked(evt);
             }
         });
-        JTFFerramentaNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFFerramentaNomeActionPerformed(evt);
-            }
-        });
         JTFFerramentaNome.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 JTFFerramentaNomeKeyPressed(evt);
@@ -160,10 +140,6 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_JTFFerramentaMarcaMouseClicked
 
-    private void JTFFerramentaMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFFerramentaMarcaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFFerramentaMarcaActionPerformed
-
     private void JTFFerramentaMarcaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFFerramentaMarcaKeyPressed
         // TODO add your handling code here: 
         if (countMarca == true) {
@@ -172,10 +148,6 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_JTFFerramentaMarcaKeyPressed
 
-    private void JTFFerramentaCustoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTFFerramentaCustoFocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFFerramentaCustoFocusLost
-
     private void JTFFerramentaCustoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFFerramentaCustoMouseClicked
         // TODO add your handling code here:    
         if (countCusto == true) {
@@ -183,10 +155,6 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
             countCusto = false;
         }
     }//GEN-LAST:event_JTFFerramentaCustoMouseClicked
-
-    private void JTFFerramentaCustoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFFerramentaCustoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFFerramentaCustoActionPerformed
 
     private void JTFFerramentaCustoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFFerramentaCustoKeyPressed
         // TODO add your handling code here:    
@@ -255,10 +223,6 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
             countNome = false;
         }
     }//GEN-LAST:event_JTFFerramentaNomeMouseClicked
-
-    private void JTFFerramentaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFFerramentaNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFFerramentaNomeActionPerformed
 
     private void JTFFerramentaNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFFerramentaNomeKeyPressed
         // TODO add your handling code here:            

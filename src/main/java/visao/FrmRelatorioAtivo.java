@@ -45,7 +45,7 @@ public class FrmRelatorioAtivo extends javax.swing.JFrame {
         jTable.getColumn("Entregue").setPreferredWidth(57);
     }
 
-    public boolean alterarIdEmpFerramenta(int id) {
+    private boolean alterarIdEmpFerramenta(int id) {
         String sql = "UPDATE tb_ferramentas SET id_emprestimo = null WHERE id_emprestimo = ?";
         try {
             PreparedStatement stmt = connect.getConexao().prepareStatement(sql);
@@ -86,11 +86,6 @@ public class FrmRelatorioAtivo extends javax.swing.JFrame {
 
         JCBEntregue.setBorder(null);
         JCBEntregue.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        JCBEntregue.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JCBEntregueActionPerformed(evt);
-            }
-        });
         getContentPane().add(JCBEntregue, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, -1, -1));
 
         JTFDataEmp.setEditable(false);
@@ -187,10 +182,6 @@ public class FrmRelatorioAtivo extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(514, 527));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void JCBEntregueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCBEntregueActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JCBEntregueActionPerformed
 
     private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
         // TODO add your handling code here:

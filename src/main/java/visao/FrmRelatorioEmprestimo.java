@@ -39,7 +39,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         jTable.getColumn("Entregue").setPreferredWidth(57);
     }
 
-    public boolean alterarIdEmpFerramenta(int id) {
+    private boolean alterarIdEmpFerramenta(int id) {
         String sql = "UPDATE tb_ferramentas SET id_emprestimo = null WHERE id_emprestimo = ?";
         try {
             PreparedStatement stmt = connect.getConexao().prepareStatement(sql);
@@ -115,11 +115,6 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         jTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         jTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTable.setShowGrid(true);
-        jTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTableMouseClicked(evt);
-            }
-        });
         jScrollPane1.setViewportView(jTable);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, 350));
@@ -149,10 +144,6 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_JBCancelarActionPerformed
-
-    private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTableMouseClicked
 
     private void JBApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBApagarActionPerformed
         // TODO add your handling code here:

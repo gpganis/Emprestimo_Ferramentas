@@ -70,11 +70,6 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
         JTFTelefone.setForeground(new java.awt.Color(255, 49, 49));
         JTFTelefone.setAlignmentY(0.25F);
         JTFTelefone.setBorder(null);
-        JTFTelefone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFTelefoneActionPerformed(evt);
-            }
-        });
         getContentPane().add(JTFTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 328, 300, -1));
 
         JBCancelar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
@@ -154,10 +149,6 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(514, 507));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void JTFTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFTelefoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFTelefoneActionPerformed
 
     private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
         // TODO add your handling code here:

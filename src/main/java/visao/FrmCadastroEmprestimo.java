@@ -68,7 +68,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         }
     }
 
-    public boolean alterarIdEmpFerramenta() {
+    private boolean alterarIdEmpFerramenta() {
         String sql = "UPDATE tb_ferramentas SET id_emprestimo = ? WHERE nome = ?";
         try {
             PreparedStatement stmt = connect.getConexao().prepareStatement(sql);
@@ -151,11 +151,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 JTFDataDevMouseClicked(evt);
             }
         });
-        JTFDataDev.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFDataDevActionPerformed(evt);
-            }
-        });
         JTFDataDev.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 JTFDataDevKeyPressed(evt);
@@ -194,11 +189,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         JTFFerramenta.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFFerramenta.setForeground(new java.awt.Color(255, 255, 255));
         JTFFerramenta.setBorder(null);
-        JTFFerramenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFFerramentaActionPerformed(evt);
-            }
-        });
         getContentPane().add(JTFFerramenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 321, 150, 20));
 
         JBAdicionar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
@@ -224,11 +214,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         JTFAmigo.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JTFAmigo.setForeground(new java.awt.Color(255, 255, 255));
         JTFAmigo.setBorder(null);
-        JTFAmigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFAmigoActionPerformed(evt);
-            }
-        });
         getContentPane().add(JTFAmigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 113, 280, -1));
 
         jTable.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
@@ -276,10 +261,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
             countData = false;
         }
     }//GEN-LAST:event_JTFDataDevMouseClicked
-
-    private void JTFDataDevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFDataDevActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFDataDevActionPerformed
 
     private void JTFDataDevKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFDataDevKeyPressed
         // TODO add your handling code here:
@@ -378,10 +359,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
     }//GEN-LAST:event_JBAdicionarActionPerformed
 
-    private void JTFAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFAmigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFAmigoActionPerformed
-
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
         // TODO add your handling code here:
         if (this.jTable.getSelectedRow() != -1) {
@@ -389,10 +366,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
             this.JTFFerramenta.setText(nome);
         }
     }//GEN-LAST:event_jTableMouseClicked
-
-    private void JTFFerramentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFFerramentaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFFerramentaActionPerformed
 
     public static void main(String args[]) {
 
