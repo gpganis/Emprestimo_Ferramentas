@@ -71,8 +71,3 @@ INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao,id_emprestim
 INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao,id_emprestimo) VALUES (3,'Furadeira','Stanley', 267.00,3);
 INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao,id_emprestimo) VALUES (4,'Pá','Tramontina', 34.67,3);
 INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao,id_emprestimo) VALUES (5,'Trena','Stanley', 56.78,2);
-
--- Inicia as tabelas
-SELECT * FROM tb_amigos;
-SELECT * FROM tb_emprestimos;
-SELECT * FROM tb_ferramentas;
