@@ -2,9 +2,9 @@
 
 RF01 - Cadastro de Ferramentas: O software deve permitir o cadastro de ferramentas, com nome, marca e custo.
 
-RF02 - Cadastro de Amigos: O software deve permitir o cadastro de amigos, com nome, e-mail e telefone.
+RF02 - Cadastro de Amigos: O software deve permitir o cadastro de amigos, com nome e telefone.
 
-RF03 - Registro de Empréstimos: O software deve permitir o registro de empréstimos, com a ferramenta emprestada, o amigo, a data do empréstimo e a data prevista de devolução.
+RF03 - Registro de Empréstimos: O software deve permitir o registro de empréstimos, com a ferramenta emprestada, o amigo, a data do empréstimo e a data de devolução.
 
 RF04 - Aviso de Pendência de Empréstimos: O software deve alertar o usuário se o amigo possui ferramentas não devolvidas ao registrar um novo empréstimo.
 
