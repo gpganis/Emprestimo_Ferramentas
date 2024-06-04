@@ -151,43 +151,57 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CadastroAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroAmigoActionPerformed
-        // TODO add your handling code here:
+        /**
+         * TODO add your handling code here:
+         */
         FrmCadastroAmigo objTela = new FrmCadastroAmigo();
         objTela.setVisible(true);
     }//GEN-LAST:event_CadastroAmigoActionPerformed
 
     private void CadastroFerramentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroFerramentaActionPerformed
-        // TODO add your handling code here:
+        /**
+         * TODO add your handling code here:
+         */
         FrmCadastroFerramenta objTela = new FrmCadastroFerramenta();
         objTela.setVisible(true);
     }//GEN-LAST:event_CadastroFerramentaActionPerformed
 
     private void RelatorioAmigosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatorioAmigosActionPerformed
-        // TODO add your handling code here:
+        /**
+         * TODO add your handling code here:
+         */
         FrmRelatorioAmigo objTela = new FrmRelatorioAmigo();
         objTela.setVisible(true);
     }//GEN-LAST:event_RelatorioAmigosActionPerformed
 
     private void RelatorioFerramentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatorioFerramentasActionPerformed
-        // TODO add your handling code here:
+        /**
+         * TODO add your handling code here:
+         */
         FrmRelatorioFerramenta objTela = new FrmRelatorioFerramenta();
         objTela.setVisible(true);
     }//GEN-LAST:event_RelatorioFerramentasActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
+        /**
+         * TODO add your handling code here:
+         */
         FrmCadastroEmprestimo objTela = new FrmCadastroEmprestimo();
         objTela.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
+        /**
+         * TODO add your handling code here:
+         */
         FrmRelatorioEmprestimo objTela = new FrmRelatorioEmprestimo();
         objTela.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
+        /**
+         * TODO add your handling code here:
+         */
         FrmRelatorioAtivo objTela = new FrmRelatorioAtivo();
         objTela.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
