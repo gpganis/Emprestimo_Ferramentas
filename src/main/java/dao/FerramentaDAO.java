@@ -8,34 +8,53 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import modelo.Ferramenta;
 
-// Classe responsável por acessar e manipular dados relacionados a ferramentas no banco de dados
+/**
+ * Classe responsável por acessar e manipular dados relacionados a ferramentas no banco de dados
+ * @author Rennan
+ */
 public class FerramentaDAO {
 
-    // Lista de todas as ferramentas
+    /**
+     * Lista de todas as ferramentas
+     */
     public ArrayList<Ferramenta> ListaFerramentas = new ArrayList<>();
 
-    // Lista de ferramentas disponíveis (não emprestadas)
+    /**
+     * Lista de ferramentas disponíveis (não emprestadas)
+     */
     public ArrayList<Ferramenta> ListaFerramentasDisponiveis = new ArrayList<>();
 
-    // Conexão com o banco de dados
+    /**
+     * Conexão com o banco de dados
+     */
     private ConexaoDAO connect;
 
-    // Obtém a lista completa de ferramentas do banco de dados
+    /**
+     * Obtém a lista completa de ferramentas do banco de dados
+     * @return 
+     */
     public ArrayList<Ferramenta> getMinhaLista() {
-        ListaFerramentas.clear(); // Limpa a lista antes de preenchê-la novamente
+        ListaFerramentas.clear();
+        /**
+         * Limpa a lista antes de preenchê-la novamente
+         */
 
         try {
             Statement stmt = connect.getConexao().createStatement();
             ResultSet res = stmt.executeQuery("SELECT * FROM tb_ferramentas");
             while (res.next()) {
-                // Obtém os dados de cada ferramenta do resultado da consulta
+                /**
+                 * Obtém os dados de cada ferramenta do resultado da consulta
+                 */
                 int id = res.getInt("id_ferramenta");
                 String nome = res.getString("nome");
                 String marca = res.getString("marca");
                 double custoAquisicao = Double.parseDouble(res.getString("custo_aquisicao"));
                 int idEmp = res.getInt("id_emprestimo");
 
-                // Cria um objeto Ferramenta e o adiciona à lista
+                /**
+                 * Cria um objeto Ferramenta e o adiciona à lista
+                 */
                 Ferramenta objeto = new Ferramenta(nome, marca, custoAquisicao, id, idEmp);
                 ListaFerramentas.add(objeto);
             }
@@ -47,7 +66,10 @@ public class FerramentaDAO {
         return ListaFerramentas;
     }
 
-    // Retorna o maior ID de ferramenta no banco de dados
+    /**
+     * Retorna o maior ID de ferramenta no banco de dados
+     * @return 
+     */
     public int maiorId() {
         int maiorId = 0;
         try {
@@ -62,7 +84,11 @@ public class FerramentaDAO {
         return maiorId;
     }
 
-    // Insere uma nova ferramenta no banco de dados
+    /**
+     * Insere uma nova ferramenta no banco de dados
+     * @param objeto
+     * @return 
+     */
     public boolean inserirFerramentaBD(Ferramenta objeto) {
         String sql = "INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao) VALUES(?,?,?,?)";
         try {
@@ -83,7 +109,11 @@ public class FerramentaDAO {
         }
     }
 
-    // Apaga uma ferramenta do banco de dados com base no ID
+    /**
+     * Apaga uma ferramenta do banco de dados com base no ID
+     * @param id
+     * @return 
+     */
     public boolean apagarFerramentaBD(int id) {
         try {
             Statement stmt = connect.getConexao().createStatement();
@@ -97,7 +127,11 @@ public class FerramentaDAO {
         return true;
     }
 
-    // Altera os dados de uma ferramenta no banco de dados
+    /**
+     * Altera os dados de uma ferramenta no banco de dados
+     * @param objeto
+     * @return 
+     */
     public boolean alterarFerramentaBD(Ferramenta objeto) {
         String sql = "UPDATE tb_ferramentas set nome = ?, marca = ?, custo_aquisicao = ? WHERE id_ferramenta = ?";
         try {
@@ -119,7 +153,11 @@ public class FerramentaDAO {
         }
     }
 
-    // Carrega os dados de uma ferramenta do banco de dados com base no ID
+    /**
+     * Carrega os dados de uma ferramenta do banco de dados com base no ID
+     * @param id
+     * @return 
+     */
     public Ferramenta carregarFerramenta(int id) {
         Ferramenta objeto = new Ferramenta();
         objeto.setId(id);
@@ -141,7 +179,9 @@ public class FerramentaDAO {
         return objeto;
     }
 
-    // Obtém a lista de ferramentas disponíveis (não emprestadas)
+    /**
+     * Obtém a lista de ferramentas disponíveis (não emprestadas)
+     */
     public ArrayList<Ferramenta> getFerramentasDisponiveis() {
 
         ListaFerramentasDisponiveis.clear();
@@ -169,7 +209,11 @@ public class FerramentaDAO {
         return ListaFerramentasDisponiveis;
     }
     
-    // Verifica se uma ferramenta possui pendência de empréstimo com base no ID
+    /**
+     * Verifica se uma ferramenta possui pendência de empréstimo com base no ID
+     * @param id
+     * @return 
+     */
     public boolean verificarPendencia(int id) {
 
         try {
@@ -181,7 +225,10 @@ public class FerramentaDAO {
                 int idEmp = res.getInt("id_emprestimo");
 
                 if (idFer == id && idEmp != 0 ) {
-                    return true; // retorna que a ferramenta está emprestada
+                    return true; 
+                    /**
+                     * retorna que a ferramenta está emprestada
+                     */
                 }
             }
             stmt.close();
