@@ -4,8 +4,6 @@ import com.google.protobuf.TextFormat;
 import dao.ConexaoDAO;
 import dao.EmprestimoDAO;
 import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,7 +14,6 @@ import modelo.Util;
 
 public class FrmRelatorioAtivo extends javax.swing.JFrame {
 
-    private ConexaoDAO connect;
     private Emprestimo objEmprestimo;
     private EmprestimoDAO dao;
 
@@ -43,24 +40,6 @@ public class FrmRelatorioAtivo extends javax.swing.JFrame {
         jTable.getColumn("Data_Empréstimo").setPreferredWidth(140);
         jTable.getColumn("Data_Devolução").setPreferredWidth(140);
         jTable.getColumn("Entregue").setPreferredWidth(57);
-    }
-
-    private boolean alterarIdEmpFerramenta(int id) {
-        String sql = "UPDATE tb_ferramentas SET id_emprestimo = null WHERE id_emprestimo = ?";
-        try {
-            PreparedStatement stmt = connect.getConexao().prepareStatement(sql);
-
-            stmt.setInt(1, id);
-            stmt.execute();
-
-            stmt.close();
-
-            return true;
-
-        } catch (SQLException erro) {
-            System.out.println("Erro: " + erro);
-            throw new RuntimeException(erro);
-        }
     }
 
     @SuppressWarnings("unchecked")
@@ -229,7 +208,7 @@ public class FrmRelatorioAtivo extends javax.swing.JFrame {
                 if (respostaUsuario == 0) {
                     if (JCBEntregue.isSelected()) {
                         Entregue = true;
-                        alterarIdEmpFerramenta(id);
+                        dao.alterarIdEmpFerramentaPendente(id);
                     }
 
                 } else {

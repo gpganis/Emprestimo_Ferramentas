@@ -10,7 +10,8 @@ import java.util.ArrayList;
 import modelo.Emprestimo;
 
 public class EmprestimoDAO {
-
+    
+    public ArrayList<String> FerSelect;
     /**
      * Lista de todos os empréstimos
      */
@@ -325,5 +326,49 @@ public class EmprestimoDAO {
             System.out.println("Erro:" + ex);
         }
         return false;
+    }
+    
+        /**
+     * Método para alterar o ID do empréstimo na tabela de ferramentas
+     * @return 
+     */
+    public boolean alterarIdEmpFerramentaLivre() {
+        String sql = "UPDATE tb_ferramentas SET id_emprestimo = ? WHERE nome = ?";
+        try {
+            PreparedStatement stmt = connect.getConexao().prepareStatement(sql);
+
+            for (String nome : FerSelect) {
+                stmt.setInt(1, maiorId());
+                stmt.setString(2, nome);
+                stmt.execute();
+            }
+            FerSelect.clear();
+
+            stmt.close();
+
+            return true;
+
+        } catch (SQLException erro) {
+            System.out.println("Erro: " + erro);
+            throw new RuntimeException(erro);
+        }
+    }
+    
+    public boolean alterarIdEmpFerramentaPendente(int id) {
+        String sql = "UPDATE tb_ferramentas SET id_emprestimo = null WHERE id_emprestimo = ?";
+        try {
+            PreparedStatement stmt = connect.getConexao().prepareStatement(sql);
+
+            stmt.setInt(1, id);
+            stmt.execute();
+
+            stmt.close();
+
+            return true;
+
+        } catch (SQLException erro) {
+            System.out.println("Erro: " + erro);
+            throw new RuntimeException(erro);
+        }
     }
 }

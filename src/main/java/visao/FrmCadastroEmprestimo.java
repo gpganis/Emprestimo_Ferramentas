@@ -82,32 +82,6 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         }
     }
 
-    /**
-     * Método para alterar o ID do empréstimo na tabela de ferramentas
-     * @return 
-     */
-    private boolean alterarIdEmpFerramenta() {
-        String sql = "UPDATE tb_ferramentas SET id_emprestimo = ? WHERE nome = ?";
-        try {
-            PreparedStatement stmt = connect.getConexao().prepareStatement(sql);
-
-            for (String nome : FerSelect) {
-                stmt.setInt(1, daoEmp.maiorId());
-                stmt.setString(2, nome);
-                stmt.execute();
-            }
-            FerSelect.clear();
-
-            stmt.close();
-
-            return true;
-
-        } catch (SQLException erro) {
-            System.out.println("Erro: " + erro);
-            throw new RuntimeException(erro);
-        }
-    }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -335,7 +309,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
             }
 
-            alterarIdEmpFerramenta();
+            daoEmp.alterarIdEmpFerramentaLivre();
             /**
              * System.out.println(this.objEmprestimo.getListaFerramentas().toString());
              */

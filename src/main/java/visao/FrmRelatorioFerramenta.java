@@ -1,10 +1,6 @@
 package visao;
 
-import dao.ConexaoDAO;
 import dao.FerramentaDAO;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Ferramenta;
@@ -17,7 +13,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
     public FrmRelatorioFerramenta() {
         initComponents();
         carregaTabelaFerramentas();
-        JTFValorTotal.setText("R$" + valorTotal());
+        JTFValorTotal.setText("R$" + dao.valorTotal());
         this.objFerramenta = new Ferramenta();
         this.dao = new FerramentaDAO();
     }
@@ -38,24 +34,6 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
         jTable.getColumn("Nome").setPreferredWidth(140);
         jTable.getColumn("Marca").setPreferredWidth(140);
         jTable.getColumn("Custo").setPreferredWidth(67);
-    }
-
-    private String valorTotal() {
-        double soma = 0;
-
-        try {
-            String query = "SELECT SUM(custo_aquisicao) FROM tb_ferramentas";
-            PreparedStatement statement = ConexaoDAO.getConexao().prepareStatement(query);
-            ResultSet resultSet = statement.executeQuery();
-
-            if (resultSet.next()) {
-                soma = resultSet.getDouble(1);
-            }
-        } catch (SQLException ex) {
-            System.out.println("Erro:" + ex);
-        }
-        String format = String.format("%.2f", soma);
-        return format;
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -262,7 +240,7 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Informe um número válido.");
         } finally {
             carregaTabelaFerramentas();
-            JTFValorTotal.setText("R$" + valorTotal());
+            JTFValorTotal.setText("R$" + dao.valorTotal());
         }
 
     }//GEN-LAST:event_JBAlterarActionPerformed

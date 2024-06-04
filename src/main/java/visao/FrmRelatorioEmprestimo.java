@@ -2,15 +2,12 @@ package visao;
 
 import dao.ConexaoDAO;
 import dao.EmprestimoDAO;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Emprestimo;
 
 public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
 
-    private ConexaoDAO connect;
     private EmprestimoDAO dao;
     private Emprestimo objEmprestimo;
 
@@ -37,24 +34,6 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         jTable.getColumn("Data_Empréstimo").setPreferredWidth(140);
         jTable.getColumn("Data_Devolução").setPreferredWidth(140);
         jTable.getColumn("Entregue").setPreferredWidth(57);
-    }
-
-    private boolean alterarIdEmpFerramenta(int id) {
-        String sql = "UPDATE tb_ferramentas SET id_emprestimo = null WHERE id_emprestimo = ?";
-        try {
-            PreparedStatement stmt = connect.getConexao().prepareStatement(sql);
-
-            stmt.setInt(1, id);
-            stmt.execute();
-
-            stmt.close();
-
-            return true;
-
-        } catch (SQLException erro) {
-            System.out.println("Erro: " + erro);
-            throw new RuntimeException(erro);
-        }
     }
 
     @SuppressWarnings("unchecked")
@@ -167,7 +146,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
                     int respostaUsuario = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja apagar este Empréstimo?");
 
                     if (respostaUsuario == 0) {
-                        if (alterarIdEmpFerramenta(id) && this.objEmprestimo.apagarEmprestimo(id)) {
+                        if (dao.alterarIdEmpFerramentaPendente(id) && this.objEmprestimo.apagarEmprestimo(id)) {
                             JOptionPane.showMessageDialog(rootPane, "Empréstimo Apagado com Sucesso!");
                         }
                     }
