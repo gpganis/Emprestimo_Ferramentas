@@ -1,14 +1,7 @@
 package modelo;
 
 import dao.AmigoDAO;
-/**
- * Importa a classe AmigoDAO do pacote dao
- */
 import java.util.ArrayList;
-/**
- * Importa a classe ArrayList do pacote java.util
- * @author Rennan
- */
 
 public class Amigo {
 

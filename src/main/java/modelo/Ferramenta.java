@@ -1,14 +1,7 @@
 package modelo;
 
 import dao.FerramentaDAO;
-/**
- * Importa a classe FerramentaDAO do pacote dao
- */
 import java.util.ArrayList;
-/**
- * Importa a classe ArrayList do pacote java.util
- * @author Rennan
- */
 
 public class Ferramenta {
 

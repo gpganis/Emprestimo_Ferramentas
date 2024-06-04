@@ -1,30 +1,11 @@
 package modelo;
 
 import com.google.protobuf.TextFormat;
-/**
- * Importa a classe TextFormat do pacote com.google.protobuf
- */
 import java.sql.Date;
-/**
- * Importa a classe Date do pacote java.sql
- */
 import java.text.SimpleDateFormat;
-/**
- * Importa a classe SimpleDateFormat do pacote java.text
- */
 import java.time.LocalDate;
-/**
- * Importa a classe LocalDate do pacote java.time
- */
 import java.util.regex.Matcher;
-/**
- * Importa a classe Matcher do pacote java.util.regex
- */
 import java.util.regex.Pattern;
-/**
- * Importa a classe Pattern do pacote java.util.regex
- * @author Rennan
- */
 
 public class Util {
 

@@ -1,20 +1,8 @@
 package modelo;
 
 import dao.EmprestimoDAO;
-/**
- * Importa a classe EmprestimoDAO do pacote dao
- */
 import java.sql.Date;
-/**
- * Importa a classe Date do pacote java.sql
- */
 import java.util.ArrayList;
-
-/**
- * Importa a classe ArrayList do pacote java.util
- *
- * @author Rennan
- */
 
 public class Emprestimo {
 
