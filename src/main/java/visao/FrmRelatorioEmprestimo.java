@@ -141,12 +141,16 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
-        // TODO add your handling code here:
+        /**
+         * TODO add your handling code here:
+         */
         this.dispose();
     }//GEN-LAST:event_JBCancelarActionPerformed
 
     private void JBApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBApagarActionPerformed
-        // TODO add your handling code here:
+        /**
+         * TODO add your handling code here:
+         */
         try {
             int id = 0;
             if (this.jTable.getSelectedRow() == -1) {
