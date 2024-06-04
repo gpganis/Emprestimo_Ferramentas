@@ -5,14 +5,18 @@ import modelo.Amigo;
 import modelo.Util;
 
 public class FrmCadastroAmigo extends javax.swing.JFrame {
-    // Variáveis de controle para placeholders
+    /**
+     * Variáveis de controle para placeholders
+     */
     private boolean countNome = true;
     private boolean countTelefone = true;
     private Amigo objAmigos;
 
     public FrmCadastroAmigo() {
         initComponents();
-        // Inicialização do objeto Amigo
+        /**
+         * Inicialização do objeto Amigo
+         */
         this.objAmigos = new Amigo();
     }
 
@@ -109,7 +113,9 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JTFAmigoTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFAmigoTelefoneMouseClicked
-        // Se o placeholder ainda não foi substituído, limpa o campo
+        /**
+         * Se o placeholder ainda não foi substituído, limpa o campo
+         */
         if (countTelefone == true) {
             JTFAmigoTelefone.setText("");
             countTelefone = false;
@@ -117,7 +123,9 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFAmigoTelefoneMouseClicked
 
     private void JTFAmigoTelefoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFAmigoTelefoneKeyPressed
-        // Se o placeholder ainda não foi substituído, limpa o campo
+        /**
+         * Se o placeholder ainda não foi substituído, limpa o campo
+         */
         if (countTelefone == true) {
             JTFAmigoTelefone.setText("");
             countTelefone = false;
@@ -125,7 +133,9 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFAmigoTelefoneKeyPressed
 
     private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
-        // Fecha o formulário de cadastro
+        /**
+         * Fecha o formulário de cadastro
+         */
         this.dispose();
     }//GEN-LAST:event_JBCancelarActionPerformed
 
@@ -133,26 +143,34 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
         try {
             String nome, telefone = "";
 
-            // Verifica se o nome do amigo foi preenchido
+            /**
+             * Verifica se o nome do amigo foi preenchido
+             */
             if ("Digite o Nome do Amigo".equals(JTFAmigoNome.getText())) {
                 throw new Mensagem("Primeiro escreva o nome do Amigo.");
             }
 
-            // Verifica se o nome do amigo possui pelo menos 2 caracteres
+            /**
+             * Verifica se o nome do amigo possui pelo menos 2 caracteres
+             */
             if (this.JTFAmigoNome.getText().length() < 2) {
                 throw new Mensagem("Nome deve conter ao menos 2 caracteres.");
             } else {
                 nome = this.JTFAmigoNome.getText();
             }
 
-            // Verifica se o telefone do amigo foi preenchido corretamente
+            /**
+             * Verifica se o telefone do amigo foi preenchido corretamente
+             */
             if (this.JTFAmigoTelefone.getText().length() == 11 && Long.parseLong(this.JTFAmigoTelefone.getText()) > 0) {
                 telefone = Util.formatarNumero(this.JTFAmigoTelefone.getText());
             } else {
                 throw new Mensagem("Telefone deve conter exatamente 11 digitos numéricos");
             }
 
-            // Insere o amigo na lista de amigos
+            /**
+             * Insere o amigo na lista de amigos
+             */
             if (this.objAmigos.inserirAmigo(nome, telefone)) {
                 JOptionPane.showMessageDialog(rootPane, "Amigo Cadastrado com Sucesso!");
                 this.JTFAmigoNome.setText("");
@@ -168,7 +186,9 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
     }//GEN-LAST:event_JBCadastrarActionPerformed
 
     private void JTFAmigoNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFAmigoNomeMouseClicked
-        // Se o placeholder ainda não foi substituído, limpa o campo
+        /**
+         * Se o placeholder ainda não foi substituído, limpa o campo
+         */
         if (countNome == true) {
             JTFAmigoNome.setText("");
             countNome = false;
@@ -176,7 +196,9 @@ public class FrmCadastroAmigo extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFAmigoNomeMouseClicked
 
     private void JTFAmigoNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFAmigoNomeKeyPressed
-        // Se o placeholder ainda não foi substituído, limpa o campo
+        /**
+         * Se o placeholder ainda não foi substituído, limpa o campo
+         */
         if (countNome == true) {
             JTFAmigoNome.setText("");
             countNome = false;
