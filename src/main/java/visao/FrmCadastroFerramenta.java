@@ -141,7 +141,9 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFFerramentaMarcaMouseClicked
 
     private void JTFFerramentaMarcaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFFerramentaMarcaKeyPressed
-        // TODO add your handling code here: 
+        /**
+         * TODO add your handling code here: 
+         */
         if (countMarca == true) {
             JTFFerramentaMarca.setText("");
             countMarca = false;
@@ -149,7 +151,9 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFFerramentaMarcaKeyPressed
 
     private void JTFFerramentaCustoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFFerramentaCustoMouseClicked
-        // TODO add your handling code here:    
+        /**    
+         * TODO add your handling code here:
+         */
         if (countCusto == true) {
             JTFFerramentaCusto.setText("");
             countCusto = false;
@@ -157,7 +161,9 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFFerramentaCustoMouseClicked
 
     private void JTFFerramentaCustoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFFerramentaCustoKeyPressed
-        // TODO add your handling code here:    
+        /**
+         * TODO add your handling code here: 
+         */   
         if (countCusto == true) {
             JTFFerramentaCusto.setText("");
             countCusto = false;
@@ -165,12 +171,16 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFFerramentaCustoKeyPressed
 
     private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
-        // TODO add your handling code here:
+        /**
+         * TODO add your handling code here:
+         */
         this.dispose();
     }//GEN-LAST:event_JBCancelarActionPerformed
 
     private void JBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarActionPerformed
-        // TODO add your handling code here:
+        /**
+         * TODO add your handling code here:
+         */
         try {
             String nome, marca = "";
             double custoAquisicao = 0.0;
@@ -217,7 +227,9 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
     }//GEN-LAST:event_JBCadastrarActionPerformed
 
     private void JTFFerramentaNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTFFerramentaNomeMouseClicked
-        // TODO add your handling code here:
+        /**
+         * TODO add your handling code here:
+         */
         if (countNome == true) {
             JTFFerramentaNome.setText("");
             countNome = false;
@@ -225,7 +237,9 @@ public class FrmCadastroFerramenta extends javax.swing.JFrame {
     }//GEN-LAST:event_JTFFerramentaNomeMouseClicked
 
     private void JTFFerramentaNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JTFFerramentaNomeKeyPressed
-        // TODO add your handling code here:            
+        /**
+         * TODO add your handling code here:  
+         */          
         if (countNome == true) {
             JTFFerramentaNome.setText("");
             countNome = false;
