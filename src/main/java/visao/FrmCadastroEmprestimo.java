@@ -20,7 +20,9 @@ import modelo.Util;
 
 public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
-    // Declaração de variáveis de controle e instâncias de DAOs e objetos
+    /**
+     * Declaração de variáveis de controle e instâncias de DAOs e objetos
+     */
     private AmigoDAO daoAmg;
     private FerramentaDAO dao;
     private EmprestimoDAO daoEmp;
@@ -29,7 +31,9 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
     private ConexaoDAO connect;
     public ArrayList<String> FerSelect;
 
-    // Construtor da classe
+    /**
+     * Construtor da classe
+     */
     public FrmCadastroEmprestimo() {
         initComponents();
         preencherComboBox();
@@ -44,7 +48,9 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         this.FerSelect = new ArrayList<>();
     }
 
-    // Método para preencher o ComboBox com os nomes dos amigos
+    /**
+     * Método para preencher o ComboBox com os nomes dos amigos
+     */
     private void preencherComboBox() {
         try {
             String query = "SELECT nome FROM tb_amigos";
@@ -58,11 +64,15 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
             System.out.println("Erro:" + ex);
-            // Lidar com exceções adequadamente
+            /**
+             * Lidar com exceções adequadamente
+             */
         }
     }
 
-    // Método para carregar a tabela de ferramentas disponíveis
+    /**
+     * Método para carregar a tabela de ferramentas disponíveis
+     */
     private void carregaTabelaFerramentas() {
         DefaultTableModel modelo = (DefaultTableModel) this.jTable.getModel();
         modelo.setNumRows(0);
@@ -72,7 +82,10 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         }
     }
 
-    // Método para alterar o ID do empréstimo na tabela de ferramentas
+    /**
+     * Método para alterar o ID do empréstimo na tabela de ferramentas
+     * @return 
+     */
     private boolean alterarIdEmpFerramenta() {
         String sql = "UPDATE tb_ferramentas SET id_emprestimo = ? WHERE nome = ?";
         try {
@@ -323,7 +336,9 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
             }
 
             alterarIdEmpFerramenta();
-            //System.out.println(this.objEmprestimo.getListaFerramentas().toString());
+            /**
+             * System.out.println(this.objEmprestimo.getListaFerramentas().toString());
+             */
         } catch (Mensagem erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } catch (TextFormat.ParseException ex) {
@@ -346,7 +361,10 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         } else {
             if (this.jTable.getSelectedRow() != -1) {
                 String id = this.jTable.getValueAt(this.jTable.getSelectedRow(), 0).toString();
-                if (!FerSelect.contains(id)) { // Verifica se o número já está na lista
+                if (!FerSelect.contains(id)) {
+                    /**
+                     * Verifica se o número já está na lista
+                     */
                     FerSelect.add(id);
                     System.out.println("Selecionados: " + FerSelect);
                     JOptionPane.showMessageDialog(null, "Ferramenta adicionada com sucesso!");
