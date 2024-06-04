@@ -207,12 +207,16 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCancelarActionPerformed
-        // TODO add your handling code here:
+        /**
+         * TODO add your handling code here:
+         */
         this.dispose();
     }//GEN-LAST:event_JBCancelarActionPerformed
 
     private void JBAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBAlterarActionPerformed
-        // TODO add your handling code here: 
+        /**
+         * TODO add your handling code here: 
+         */
         try {
             int id = 0;
             String nome, marca = "";
@@ -264,7 +268,9 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
     }//GEN-LAST:event_JBAlterarActionPerformed
 
     private void JBApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBApagarActionPerformed
-        // TODO add your handling code here: 
+        /**
+         * TODO add your handling code here: 
+         */
         try {
             int id = 0;
             if (this.jTable.getSelectedRow() == -1) {
@@ -290,7 +296,9 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
                 }
             }
 
-            // System.out.println(this.dao.getMinhaLista().toString());
+            /**
+             * System.out.println(this.dao.getMinhaLista().toString());
+             */
         } catch (Mensagem erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } finally {
@@ -300,7 +308,9 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
     }//GEN-LAST:event_JBApagarActionPerformed
 
     private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
-        // TODO add your handling code here: 
+        /**
+         * TODO add your handling code here:
+         */ 
         if (this.jTable.getSelectedRow() != -1) {
             String nome = this.jTable.getValueAt(this.jTable.getSelectedRow(), 2).toString();
             String marca = this.jTable.getValueAt(this.jTable.getSelectedRow(), 3).toString();
