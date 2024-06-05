@@ -12,10 +12,10 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
     private Emprestimo objEmprestimo;
 
     public FrmRelatorioEmprestimo() {
-        initComponents();
-        carregaTabelaEmprestimos();
+        initComponents();    
         this.dao = new EmprestimoDAO();
         this.objEmprestimo = new Emprestimo();
+        carregaTabelaEmprestimos();
     }
 
     private void carregaTabelaEmprestimos() {

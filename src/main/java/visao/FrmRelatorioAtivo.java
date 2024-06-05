@@ -18,10 +18,10 @@ public class FrmRelatorioAtivo extends javax.swing.JFrame {
     private EmprestimoDAO dao;
 
     public FrmRelatorioAtivo() {
-        initComponents();
-        carregaTabelaEmprestimos();
+        initComponents();      
         this.objEmprestimo = new Emprestimo();
         this.dao = new EmprestimoDAO();
+        carregaTabelaEmprestimos();
     }
 
     private void carregaTabelaEmprestimos() {

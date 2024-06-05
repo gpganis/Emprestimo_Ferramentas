@@ -11,11 +11,11 @@ public class FrmRelatorioFerramenta extends javax.swing.JFrame {
     private FerramentaDAO dao;
 
     public FrmRelatorioFerramenta() {
-        initComponents();
-        carregaTabelaFerramentas();
-        JTFValorTotal.setText("R$" + dao.valorTotal());
+        initComponents();      
         this.objFerramenta = new Ferramenta();
         this.dao = new FerramentaDAO();
+        carregaTabelaFerramentas();
+        JTFValorTotal.setText("R$" + dao.valorTotal());
     }
 
     private void carregaTabelaFerramentas() {

@@ -35,9 +35,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
      * Construtor da classe
      */
     public FrmCadastroEmprestimo() {
-        initComponents();
-        preencherComboBox();
-        carregaTabelaFerramentas();
+        initComponents();      
         String data = Util.dataAtual().toString();
         JTFDataEmp.setText(data);
         connect = new ConexaoDAO();
@@ -46,8 +44,10 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
         this.dao = new FerramentaDAO();
         this.daoEmp = new EmprestimoDAO(); 
         this.FerSelect = new ArrayList<>();
+        preencherComboBox();
+        carregaTabelaFerramentas();
     }
-
+        
     /**
      * Método para preencher o ComboBox com os nomes dos amigos
      */

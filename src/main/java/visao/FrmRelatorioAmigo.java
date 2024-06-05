@@ -11,10 +11,10 @@ public class FrmRelatorioAmigo extends javax.swing.JFrame {
     private Amigo objAmigo;
 
     public FrmRelatorioAmigo() {
-        initComponents();
-        carregaTabelaAmigos();
+        initComponents();       
         this.dao = new AmigoDAO();
         this.objAmigo = new Amigo();
+        carregaTabelaAmigos();
     }
 
     private void carregaTabelaAmigos() {
