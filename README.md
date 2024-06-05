@@ -44,7 +44,7 @@ NE02 - Custo de Aquisição Positivo: O custo de aquisição de uma ferramenta d
 
 NE03 - Campos Obrigatórios: O cadastro de amigos, ferramentas ou empréstimo não podem ser realizados enquanto existir algum campo em branco.
 
-NE04 - Data de Devolução Válida: A data de devolução de uma ferramenta não pode ser anterior wwà data do empréstimo.
+NE04 - Data de Devolução Válida: A data de devolução de uma ferramenta não pode ser anterior à data do empréstimo.
 
 NE05 - Pendências: O cadastro de um amigo, uma ferramenta ou um empréstimo não pode ser excluido enquanto existir alguma pendência.
 
