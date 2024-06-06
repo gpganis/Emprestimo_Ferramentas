@@ -58,12 +58,12 @@ NE05 - Pendências: O cadastro de um amigo, uma ferramenta ou um empréstimo nã
 
 # Grupo
 
-- Gabriel Pagani de Souza
+- Gabriel Pagani de Souza - RA 1072410845
 
-- Matheus Joseph de Freitas Coloni
+- Matheus Joseph de Freitas Coloni - RA 1072451389
 
-- Rafael Mendes Morais
+- Rafael Mendes Morais - RA 10724115482
 
-- Rennan Rosa Guedes
+- Rennan Rosa Guedes - RA 1072418210
 
-- Pedro Henrique Menezes André
+- Pedro Henrique Menezes André - RA 1072416494
