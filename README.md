@@ -58,12 +58,12 @@ NE05 - Pendências: O cadastro de um amigo, uma ferramenta ou um empréstimo nã
 
 # Grupo
 
-- Gabriel Pagani de Souza - RA 1072410845
+- Gabriel Pagani de Souza - RA 1072410845 ( Github: gpganis )
 
-- Matheus Joseph de Freitas Coloni - RA 1072451389
+- Matheus Joseph de Freitas Coloni - RA 1072451389 ( Github: mathe, 1072411389 )
 
-- Rafael Mendes Morais - RA 10724115482
+- Rafael Mendes Morais - RA 10724115482 ( Github: rafamendes10, RafaelMendesm )
 
-- Rennan Rosa Guedes - RA 1072418210
+- Rennan Rosa Guedes - RA 1072418210 ( Github: Guedesrosa, Rennan )
 
-- Pedro Henrique Menezes André - RA 1072416494
+- Pedro Henrique Menezes André - RA 1072416494 ( Github: pedro )
