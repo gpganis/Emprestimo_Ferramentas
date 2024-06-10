@@ -1,9 +1,3 @@
--- Cria o banco de dados se não existir
-CREATE DATABASE IF NOT EXISTS `database`;
-
--- Acessa o banco de dados
-USE `database`;
-
 -- Remove a tabela tb_ferramentas se já existir
 DROP TABLE IF EXISTS `tb_ferramentas`;
 
@@ -67,7 +61,7 @@ INSERT INTO tb_emprestimos(id_emprestimo,id_amigo,data_emprestimo, data_devoluca
 
 -- adicionando dados de exemplo na tabela de Ferramentas
 INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao,id_emprestimo) VALUES (1,'Martelo','Bosch', 23.50,1);
-INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao,id_emprestimo) VALUES (2,'Enxada','Tramontina', 45.25,1);
+INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao) VALUES (2,'Enxada','Tramontina', 45.25);
 INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao,id_emprestimo) VALUES (3,'Furadeira','Stanley', 267.00,3);
-INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao,id_emprestimo) VALUES (4,'Pá','Tramontina', 34.67,3);
+INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao) VALUES (4,'Pá','Tramontina', 34.67);
 INSERT INTO tb_ferramentas(id_ferramenta,nome,marca,custo_aquisicao,id_emprestimo) VALUES (5,'Trena','Stanley', 56.78,2);
