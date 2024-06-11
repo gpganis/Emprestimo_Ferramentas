@@ -1,5 +1,6 @@
 package visao;
 
+import dao.AmigoDAO;
 import dao.ConexaoDAO;
 import dao.EmprestimoDAO;
 import javax.swing.JOptionPane;
@@ -10,12 +11,16 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
 
     private EmprestimoDAO dao;
     private Emprestimo objEmprestimo;
+    private AmigoDAO daoAmg;
 
     public FrmRelatorioEmprestimo() {
         initComponents();    
         this.dao = new EmprestimoDAO();
         this.objEmprestimo = new Emprestimo();
+        this.daoAmg = new AmigoDAO();
         carregaTabelaEmprestimos();
+        String Amigo = daoAmg.getNomeAmigoComMaisEmprestimos();
+        AmigoMaisEmprestimo.setText(Amigo);
     }
 
     private void carregaTabelaEmprestimos() {
@@ -44,6 +49,8 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable = new javax.swing.JTable();
         JBApagar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        AmigoMaisEmprestimo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -96,7 +103,7 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         jTable.setShowGrid(true);
         jScrollPane1.setViewportView(jTable);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, 350));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 440, 320));
 
         JBApagar.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         JBApagar.setForeground(new java.awt.Color(255, 49, 49));
@@ -112,10 +119,19 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
         });
         getContentPane().add(JBApagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 419, 150, 30));
 
+        jLabel2.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Amigo com mais empréstimos: ");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
+
+        AmigoMaisEmprestimo.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        AmigoMaisEmprestimo.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(AmigoMaisEmprestimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 368, 220, 20));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Registro_Emprestimo.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
 
-        setSize(new java.awt.Dimension(514, 505));
+        setSize(new java.awt.Dimension(514, 533));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -170,9 +186,11 @@ public class FrmRelatorioEmprestimo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AmigoMaisEmprestimo;
     private javax.swing.JButton JBApagar;
     private javax.swing.JButton JBCancelar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable;
     // End of variables declaration//GEN-END:variables

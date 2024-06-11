@@ -297,6 +297,36 @@ public class AmigoDAO {
          */
         return id;
     }
+    
+    public static String getNomeAmigoComMaisEmprestimos() {
+        String nome = null;
+
+        try {
+            /**
+             * Prepara uma consulta SQL para obter o nome do amigo com mais empréstimos
+             */
+            String query = "SELECT a.nome FROM tb_emprestimos e JOIN tb_amigos a ON e.id_amigo = a.id_amigo GROUP BY a.id_amigo ORDER BY COUNT(e.id_emprestimo) DESC LIMIT 1;";
+            PreparedStatement statement = ConexaoDAO.getConexao().prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+
+            /**
+             * Se houver um resultado na consulta, obtém o nome
+             */
+            if (resultSet.next()) {
+                nome = resultSet.getString("nome");
+            }
+        } catch (SQLException ex) {
+            /**
+             * Em caso de erro, imprime o erro
+             */
+            System.out.println("Erro:" + ex);
+        }
+
+        /**
+         * Retorna o nome obtido
+         */
+        return nome;
+    }
 
     /**
      * Método para verificar se um amigo possui empréstimos pendentes
