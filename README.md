@@ -50,7 +50,7 @@ NE05 - Pendências: O cadastro de um amigo, uma ferramenta ou um empréstimo nã
 
 # Configuração do Banco de Dados
 
-- [Script do Banco de Dados](https://github.com/gpganis/Emprestimo_Ferramentas/blob/master/database.sql)
+- [Script do Banco de Dados]([https://github.com/gpganis/Emprestimo_Ferramentas/blob/master/database.sql](https://github.com/gpganis/Emprestimo_Ferramentas/blob/master/Script%20BD.sql))
 
 - Login: root
 
