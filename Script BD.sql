@@ -64,7 +64,7 @@ INSERT INTO tb_emprestimos (data_emprestimo, data_devolucao, entregue, id_amigo)
 
 INSERT INTO tb_ferramentas (nome, marca, custo_aquisicao, id_emprestimo) VALUES 
 ('Martelo', 'Bosch', 29.99, 1),
-('Enxada', 'Tramontina', 54.99, 1),
+('Enxada', 'Tramontina', 54.99, 3),
 ('Furadeira', 'Stanley', 299.99, 2),
-('Pá', 'Tramontina', 39.99, NULL),
+('Pá', 'Tramontina', 39.99, 4),
 ('Trena', 'Stanley', 69.99, NULL);
