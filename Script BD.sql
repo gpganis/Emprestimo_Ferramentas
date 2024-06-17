@@ -58,6 +58,8 @@ INSERT INTO tb_amigos (nome, telefone) VALUES
 INSERT INTO tb_emprestimos (data_emprestimo, data_devolucao, entregue, id_amigo) VALUES
 ('2024-06-10', '2024-06-15', false, 1),
 ('2024-06-05', '2025-06-05', false, 4),
+('2024-05-01', '2024-06-01', false, 3),
+('2024-05-15', '2025-06-07', false, 3),
 ('2024-06-05', '2024-06-10', true, 2);
 
 INSERT INTO tb_ferramentas (nome, marca, custo_aquisicao, id_emprestimo) VALUES 
