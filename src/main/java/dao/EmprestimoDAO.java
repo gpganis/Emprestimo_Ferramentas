@@ -11,7 +11,6 @@ import modelo.Emprestimo;
 
 public class EmprestimoDAO {
     
-    public ArrayList<String> FerSelect;
     /**
      * Lista de todos os empréstimos
      */
@@ -385,17 +384,16 @@ public class EmprestimoDAO {
      * Método para alterar o ID do empréstimo na tabela de ferramentas
      * @return 
      */
-    public boolean alterarIdEmpFerramentaLivre() {
+    public boolean alterarIdEmpFerramentaLivre(ArrayList FerSelect) {
         String sql = "UPDATE tb_ferramentas SET id_emprestimo = ? WHERE nome = ?";
         try {
             PreparedStatement stmt = connect.getConexao().prepareStatement(sql);
 
-            for (String nome : FerSelect) {
+            for (Object nome : FerSelect) {
                 stmt.setInt(1, maiorId());
-                stmt.setString(2, nome);
+                stmt.setString(2, (String) nome);
                 stmt.execute();
             }
-            FerSelect.clear();
 
             stmt.close();
 

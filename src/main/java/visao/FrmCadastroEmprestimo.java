@@ -281,7 +281,7 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
                 }
             }
 
-            if (FerSelect.size() == 0) {
+            if (FerSelect.isEmpty()) {
                 throw new Mensagem("Primeiro selecione pelo menos uma Ferramenta");
             }
 
@@ -309,7 +309,8 @@ public class FrmCadastroEmprestimo extends javax.swing.JFrame {
 
             }
 
-            daoEmp.alterarIdEmpFerramentaLivre();
+            daoEmp.alterarIdEmpFerramentaLivre(FerSelect);
+            FerSelect.clear();
             /**
              * System.out.println(this.objEmprestimo.getListaFerramentas().toString());
              */
